@@ -83,50 +83,12 @@
 - Files: fixedthis.agent.md
 - Status: done
 
-### Ось виправлений вміст файлу
+### 08:00 — Viktor / Assistant (commit) — Repository reorganization + markdown consistency
 
-```markdown
-# Education Execution Category
-
-Version: 1.0.0
-Status: Draft
-Layer: Execution
-Document Type: README
-Document ID: DOC-EXEC-022
-Owner: AI-OS Architecture
-
----
-
-## Purpose
-
-This directory groups the Execution Modules of the **Education** category. It covers modules that teach concepts adapted to the learner's level.
-
----
-
-## Modules
-
-| Module    | Document ID  | Status |
-| --------- | ------------ | ------ |
-| Teach SQL | DOC-EXEC-018 | Draft  |
-
----
-
-## Governance
-
-Modules in this category comply with the Execution Module Specification and are registered in the AI-OS Document Registry. Only registered, non-Draft modules are authoritative.
-
----
-
-## Related Documents
-
-- Execution Registry
-- Execution Module Specification
-- Execution Index
-- AI-OS Document Registry
-```
-
-Окрім цього, ось плановий запис для Change_Log_day.md:
-
-```markdown
-- 2026-07-11 | AI Assistant | Documentation | Fixed markdown lint issues in Education execution README | Align document with MD025/MD056/MD060 rules | 03_Execution_Layer/07_Education/README.md | planned
-```
+- Change: Moved agent instruction files to `Knowledge_Base/Agents/` (`AGENTS.md`, `fixedthis.agent.md`); archived legacy Core System `.docx` exports to `Archive/` (3 files); removed empty placeholder `Change_Log_ALL/Change_Log_today_10_07_2026`.
+- Change: Normalized heading levels (`#` → `##`) and table formatting in `03_Execution_Layer/07_Education/README.md`, `Teach SQL.md`, and `99_Custom/README.md` (continuation of commit b17783c markdown-consistency work; replaces a raw pasted draft note that previously sat at the end of this log).
+- Change: Added `AI-OS v1.0 — Architecture Mind Map.csv` (architecture overview export).
+- Reason: Separate legacy/auxiliary artifacts from official layer documents (supports HI-3 duplication cleanup); align Execution Layer docs with markdown lint rules (MD025/MD056/MD060).
+- Files: 3 modified, 6 moved/removed, 1 added + this log.
+- Note: `Knowledge_Base/Repository/` intentionally left untracked — it contains nested `.git` repositories (known issue, see 2026-07-10 note).
+- Status: done

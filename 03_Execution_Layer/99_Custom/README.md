@@ -9,27 +9,27 @@ Owner: AI-OS Architecture
 
 ---
 
-# Purpose
+## Purpose
 
 This directory is reserved for experimental or organization-specific Execution Modules that do not yet belong to a standard category. Modules here follow the same specification and must be registered before activation.
 
 ---
 
-# Modules
+## Modules
 
-| Module | Document ID | Status |
-|--------|-------------|--------|
-| (none yet) | — | — |
+| Module     | Document ID | Status |
+| ---------- | ----------- | ------ |
+| (none yet) | —           | —      |
 
 ---
 
-# Governance
+## Governance
 
 Custom modules comply with the Execution Module Specification and the AI-OS Document Registry. Promote a custom module to a standard category once its pattern stabilizes.
 
 ---
 
-# Related Documents
+## Related Documents
 
 - Execution Registry
 - Execution Module Specification
