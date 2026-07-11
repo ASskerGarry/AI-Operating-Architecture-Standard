@@ -37,10 +37,19 @@ Each change shall be classified as:
 - High
 - Critical
 ---
-# 5. Example Entry
+# 5. Change History
 | Date | Module | Version | Type | Impact | Description |
 |------|---------|----------|------|----------|-------------|
-| 2026-07-10 | Prompt Engineering | 2.1 | Updated | High | Improved decision framework |
+| 2026-07-11 | Prompt Engineering | 1.0.0 | Added | High | Initial module created (DOC-CAPA-011) |
+| 2026-07-11 | AI Strategy | 1.0.0 | Added | High | Initial module created (DOC-CAPA-012) |
+| 2026-07-11 | Data Analytics | 1.0.0 | Added | High | Initial module created (DOC-CAPA-013) |
+| 2026-07-11 | Statistics | 1.0.0 | Added | High | Initial module created (DOC-CAPA-014) |
+| 2026-07-11 | SQL | 1.0.0 | Added | High | Initial module created (DOC-CAPA-015) |
+| 2026-07-11 | Python | 1.0.0 | Added | High | Initial module created (DOC-CAPA-016) |
+| 2026-07-11 | Power BI | 1.0.0 | Added | High | Initial module created (DOC-CAPA-017) |
+| 2026-07-11 | Excel | 1.0.0 | Added | High | Initial module created (DOC-CAPA-018) |
+| 2026-07-11 | Teaching | 1.0.0 | Added | High | Initial module created (DOC-CAPA-019) |
+| 2026-07-11 | Technical Writing | 1.0.0 | Added | High | Initial module created (DOC-CAPA-020) |
 ---
 # 6. Governance Rules
 Every published Capability Module update shall generate a corresponding Change Log entry.

@@ -67,3 +67,4 @@ Change Logging Policy (mandatory):
 • Update the entry's status (planned → in-progress → done) as the work proceeds.
 • Changes to official documents must also stay consistent with `AI-OS_Document_Registry` and the document's own Version Information / Change Log fields (DP-008 Traceability).
 • No change is considered complete until it is logged.
+

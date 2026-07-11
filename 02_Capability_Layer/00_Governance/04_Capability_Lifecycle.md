@@ -48,7 +48,7 @@ The module has been retired from active use.
 A module may only transition to the next lifecycle stage after successfully completing the previous stage.
 All lifecycle changes shall be documented.
 ---
-# 5. Version InformationVersion
+# 5. Version Information
 | Field | Value |
 |------|------|
 | Version | 1.0.1 |

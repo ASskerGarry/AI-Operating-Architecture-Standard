@@ -39,17 +39,15 @@ For every incoming request, the Execution Registry shall perform the following s
 ---
 # 5. Execution Categories
 Every Execution Module shall belong to one primary execution category.
-Standard categories include:
+Standard categories (matching the repository structure and the Execution Index):
 - Analysis
-- Research
-- Decision Making
-- Creation
-- Optimization
+- Generation
 - Validation
-- Investigation
-- Teaching
-- Execution
-Additional categories may be introduced as the AI-OS architecture evolves.
+- Optimization
+- Development
+- Education
+- Custom
+Additional categories may be introduced as the AI-OS architecture evolves; the Execution Index is the authoritative catalog.
 ---
 # 6. Execution Selection Principles
 The Execution Registry shall:
@@ -132,15 +130,18 @@ Deprecated or Archived Execution Modules shall not be selected for new execution
 Execution Module activation shall always be deterministic and traceable.
 ---
 # 14. Version Information
-Version
-Status
-Owner
-Compatibility
-Last Updated
-Change Log
+| Field | Value |
+|------|------|
+| Version | 1.0.1 |
+| Status | Active |
+| Owner | AI-OS Architecture |
+| Compatibility | All AI platforms |
+| Last Updated | 2026-07-11 |
+| Change Log | Fixed empty Version Information section; aligned category list with actual repository categories |
+
 ## References
-Core Identity
-Core Execution Engine
-AI-OS Architectural Principles
-00_Capability_Registry
-00_Execution_Registry
+- Core Identity
+- Core Execution Engine
+- AI-OS Design Principles
+- Capability Registry (00_Capability_Registry)
+- Execution Index (06_Execution_Index)
