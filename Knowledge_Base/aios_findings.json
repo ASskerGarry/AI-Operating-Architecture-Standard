@@ -1,49 +1,22 @@
 {
-  "C9_FILENAME_SPACES": [
-    "00_Core\\Core Change Log.md",
-    "00_Core\\Core Execution Engine.md",
-    "00_Core\\Core Identity.md",
-    "02_Capability_Layer\\01_Templates\\00_Capability Module Template.md",
-    "02_Capability_Layer\\02_Modules\\AI Strategy.md",
-    "02_Capability_Layer\\02_Modules\\Data Analytics.md",
-    "02_Capability_Layer\\02_Modules\\Power BI.md",
-    "02_Capability_Layer\\02_Modules\\Prompt Engineering.md",
-    "02_Capability_Layer\\02_Modules\\Technical Writing.md",
-    "03_Execution_Layer\\02_Analysis\\Analyze Prompt.md",
-    "03_Execution_Layer\\03_Generation\\Generate Prompt.md",
-    "03_Execution_Layer\\04_Validation\\Validate Prompt.md",
-    "03_Execution_Layer\\05_Optimization\\Optimize Prompt.md",
-    "03_Execution_Layer\\06_Development\\Develop AI Assistant.md",
-    "03_Execution_Layer\\07_Education\\Teach SQL.md"
-  ],
   "C1_MISSING_DOC_ID": [
-    "CLAUDE.md",
-    "Change_Log_day.md",
-    "Knowledge_Base\\Agents\\AGENTS.md",
-    "Knowledge_Base\\Agents\\fixedthis.agent.md",
-    "Knowledge_Base\\Core_System.md",
-    "Knowledge_Base\\Debug_recomendate_2026-07-10_18-04.md",
-    "Knowledge_Base\\Repository\\AI-OS_Repository_Project_Asker\\README.md"
+    "01_Architecture/AI-OS_Design_Principles.md",
+    "Knowledge_Base/Agents/AGENTS.md"
+  ],
+  "C7_ID_NOT_IN_REGISTRY": [
+    "AGENTS.md -> N/A",
+    "CLAUDE.md -> N/A",
+    "Change_Log_day.md -> N/A",
+    "Knowledge_Base/Agents/AI_Operation_system.agent.md -> N/A",
+    "Knowledge_Base/Agents/fixedthis.agent.md -> N/A",
+    "Knowledge_Base/Agents/fixedthis.agent_Version3.md -> N/A",
+    "Knowledge_Base/Core_System.md -> N/A",
+    "SECURITY.md -> N/A"
   ],
   "C2_EMPTY_VERSION": [
-    "CLAUDE.md",
-    "Change_Log_day.md",
-    "Knowledge_Base\\Agents\\AGENTS.md",
-    "Knowledge_Base\\Agents\\fixedthis.agent.md",
-    "Knowledge_Base\\Core_System.md",
-    "Knowledge_Base\\Debug_recomendate_2026-07-10_18-04.md",
-    "Knowledge_Base\\Repository\\AI-OS_Repository_Project_Asker\\README.md"
+    "Knowledge_Base/Agents/AGENTS.md"
   ],
   "C3_EMPTY_STATUS": [
-    "CLAUDE.md",
-    "Change_Log_day.md",
-    "Knowledge_Base\\Agents\\AGENTS.md",
-    "Knowledge_Base\\Agents\\fixedthis.agent.md",
-    "Knowledge_Base\\Core_System.md",
-    "Knowledge_Base\\Debug_recomendate_2026-07-10_18-04.md",
-    "Knowledge_Base\\Repository\\AI-OS_Repository_Project_Asker\\README.md"
-  ],
-  "C8_STUB": [
-    "Knowledge_Base\\Repository\\AI-OS_Repository_Project_Asker\\README.md (3 lines)"
+    "Knowledge_Base/Agents/AGENTS.md"
   ]
 }

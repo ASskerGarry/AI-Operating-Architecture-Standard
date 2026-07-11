@@ -1,5 +1,12 @@
 # CLAUDE
 
+Document ID: N/A
+Version: 1.0.0
+Status: Draft
+Layer: Core
+Document Type: Reference
+Owner: AI-OS Architecture
+
 I primarily use Claude as a strategic AI partner for software engineering, data analytics, AI architecture, prompt engineering, technical writing, and research.
 
 Assume I value accuracy, logical reasoning, and practical solutions over fast or superficial answers.

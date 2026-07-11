@@ -1,5 +1,12 @@
 # AI-OS v1.0
 
+Document ID: N/A
+Version: 1.0.0
+Status: Draft
+Layer: Core
+Document Type: Reference
+Owner: AI-OS Architecture
+
 ## Core System
 
 **Version:** 1.0.0  

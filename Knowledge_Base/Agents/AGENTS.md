@@ -27,6 +27,7 @@ This repository is a documentation-focused architecture repository for the AI Op
 - Always preserve the repository's Single Source of Truth (SSOT) approach.
 - When creating or modifying official documents, update the document registry and `Change_Log_day.md`.
 - Do not create or modify files outside the repository’s documentation scope without explicit user direction.
+- Use the `AI_Operation_system` custom agent for repository-wide AI-OS governance, documentation review, and repair tasks when a focused agent is needed.
 
 ## Document conventions
 
@@ -40,6 +41,18 @@ This repository is a documentation-focused architecture repository for the AI Op
 - Use RFC 2119 terminology (`SHALL`, `MUST`, `SHOULD`, `MAY`) for normative requirements.
 - Use Markdown with hierarchical headings, numbered sections, and bullet lists.
 - Keep document content concise, precise, and implementation-neutral.
+
+## Autonomous repair guidance
+
+- When asked to review or correct AI-OS, proactively scan the repository for governance issues, metadata defects, and documentation inconsistencies.
+- Prioritize:
+  - `Change_Log_day.md` log-first policy
+  - Document metadata compliance (`01_Architecture/AI-OS_Document_Metadata_Standard.md`)
+  - Registry accuracy (`01_Architecture/AI-OS_Document_Registry.md`)
+  - Internal Markdown link integrity and filename consistency
+  - Duplicate or outdated content vs the repository’s Single Source of Truth
+- Use the `fixedthis` custom agent pattern for targeted repairs, but retain the broader repository context when the user asks the agent to self-run and fix AI-OS.
+- Do not change non-documentation files unless explicitly requested.
 
 ## Change governance
 
