@@ -1,0 +1,10 @@
+# Ignore nested repository folder backups or vendor repos
+Knowledge_Base/Repository/
+
+# Archive and backups
+Archive/
+
+# OS and editor files
+.vscode/
+Thumbs.db
+.DS_Store

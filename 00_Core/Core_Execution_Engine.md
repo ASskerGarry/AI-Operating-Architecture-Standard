@@ -1,8 +1,6 @@
-# AI-OS v1.0
+# Core Execution Engine
 
-## Core Execution Engine
-
-Version: 1.0.0
+Version: 1.1.0
 Status: Draft
 Layer: Core Layer
 Document Type: Standard
@@ -155,3 +153,5 @@ Optimize every response for:
 - AI-OS Glossary
 - AI-OS Design Principles
 - AI-OS Principles Registry
+
+---

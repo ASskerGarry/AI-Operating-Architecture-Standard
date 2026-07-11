@@ -61,3 +61,5 @@ This repository is a documentation-focused architecture repository for the AI Op
 - Preserve existing metadata and document IDs for established files.
 - Avoid introducing duplicate terminology or conflicting definitions.
 - Keep the document hierarchy and registry consistent with the current repository layout.
+
+---

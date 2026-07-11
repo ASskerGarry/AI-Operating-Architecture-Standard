@@ -40,3 +40,4 @@ When the user invokes /fixedthis, inspect the provided code, error message, atta
 - Mention the file or snippet changed.
 - Explain the root cause and the fix in 2-4 bullet points.
 - If verification could not be completed, say so explicitly.
+

@@ -9,26 +9,26 @@ Owner: AI-OS Architecture
 
 ---
 
-# Module Metadata
+## Module Metadata
 
-| Field | Value |
-|------|------|
-| Module Name | Teach SQL |
-| Module ID | DOC-EXEC-018 |
-| Category | Education |
-| Version | 1.0.0 |
-| Status | Draft |
-| Owner | AI-OS Architecture |
+| Field       | Value              |
+| ----------- | ------------------ |
+| Module Name | Teach SQL          |
+| Module ID   | DOC-EXEC-018       |
+| Category    | Education          |
+| Version     | 1.0.0              |
+| Status      | Draft              |
+| Owner       | AI-OS Architecture |
 
 ---
 
-# Purpose
+## Purpose
 
 Provide a standardized execution process for teaching SQL concepts adapted to the learner's level, emphasizing understanding over rote answers. Serves as the reference example of an Education-category Execution Module.
 
 ---
 
-# Scope
+## Scope
 
 Applies to requests to explain, teach, or build understanding of SQL: concepts, query construction, optimization reasoning, and common pitfalls.
 
@@ -36,14 +36,14 @@ Out of scope: writing production queries as a deliverable (that is Generate) and
 
 ---
 
-# Inputs
+## Inputs
 
 - The topic or question, and the learner's current level (assumed if unstated).
 - Optional: schema/data context, preferred depth, target dialect.
 
 ---
 
-# Outputs
+## Outputs
 
 - A clear, level-appropriate explanation with worked examples.
 - Checks for understanding (questions or small exercises).
@@ -51,13 +51,13 @@ Out of scope: writing production queries as a deliverable (that is Generate) and
 
 ---
 
-# Preconditions
+## Preconditions
 
 - The topic is identified, or a reasonable starting point is assumed and stated.
 
 ---
 
-# Execution Process
+## Execution Process
 
 1. Identify the concept and estimate the learner's level.
 2. State the objective of the lesson in one sentence.
@@ -69,7 +69,7 @@ Out of scope: writing production queries as a deliverable (that is Generate) and
 
 ---
 
-# Validation
+## Validation
 
 - Explanation is accurate and dialect-correct (or dialect noted).
 - Depth matches the learner's level.
@@ -77,7 +77,7 @@ Out of scope: writing production queries as a deliverable (that is Generate) and
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 - Objective clear; explanation step-by-step.
 - No fabricated syntax or behavior.
@@ -85,7 +85,7 @@ Out of scope: writing production queries as a deliverable (that is Generate) and
 
 ---
 
-# Error Handling
+## Error Handling
 
 - Level unknown -> start intermediate, adjust from response.
 - Dialect ambiguous -> state the assumed dialect and note key differences.
@@ -93,7 +93,7 @@ Out of scope: writing production queries as a deliverable (that is Generate) and
 
 ---
 
-# Dependencies
+## Dependencies
 
 - Core Identity, Core Execution Engine.
 - Execution Registry.
@@ -101,37 +101,38 @@ Out of scope: writing production queries as a deliverable (that is Generate) and
 
 ---
 
-# Related Modules
+## Related Modules
 
 - Analyze (DOC-EXEC-013), Generate (DOC-EXEC-014).
 
 ---
 
-# Change History
+## Change History
 
-| Version | Date | Description |
-|---------|------|-------------|
-| 1.0.0 | 2026-07-10 | Initial version — module populated from template |
-
----
-
-# Version Information
-
-| Field | Value |
-|------|------|
-| Version | 1.0.0 |
-| Status | Draft |
-| Owner | AI-OS Architecture |
-| Last Updated | 2026-07-10 |
-| Created date | 2026-07-10 |
-| Change Summary | Initial content |
+| Version | Date       | Description                                      |
+| ------- | ---------- | ------------------------------------------------ |
+| 1.0.0   | 2026-07-10 | Initial version — module populated from template |
 
 ---
 
-# Related Documents
+## Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.0.0              |
+| Status         | Draft              |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-10         |
+| Created date   | 2026-07-10         |
+| Change Summary | Initial content    |
+
+---
+
+## Related Documents
 
 - Core Identity
 - Core Execution Engine
 - Execution Module Specification
 - Execution Registry
 - AI-OS Glossary
+

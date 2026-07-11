@@ -1,42 +1,49 @@
 {
+  "C9_FILENAME_SPACES": [
+    "00_Core\\Core Change Log.md",
+    "00_Core\\Core Execution Engine.md",
+    "00_Core\\Core Identity.md",
+    "02_Capability_Layer\\01_Templates\\00_Capability Module Template.md",
+    "02_Capability_Layer\\02_Modules\\AI Strategy.md",
+    "02_Capability_Layer\\02_Modules\\Data Analytics.md",
+    "02_Capability_Layer\\02_Modules\\Power BI.md",
+    "02_Capability_Layer\\02_Modules\\Prompt Engineering.md",
+    "02_Capability_Layer\\02_Modules\\Technical Writing.md",
+    "03_Execution_Layer\\02_Analysis\\Analyze Prompt.md",
+    "03_Execution_Layer\\03_Generation\\Generate Prompt.md",
+    "03_Execution_Layer\\04_Validation\\Validate Prompt.md",
+    "03_Execution_Layer\\05_Optimization\\Optimize Prompt.md",
+    "03_Execution_Layer\\06_Development\\Develop AI Assistant.md",
+    "03_Execution_Layer\\07_Education\\Teach SQL.md"
+  ],
   "C1_MISSING_DOC_ID": [
-    "00_Core/Change Log (empty).md",
     "CLAUDE.md",
     "Change_Log_day.md",
-    "Knowledge_Base/Core_System.md",
-    "Knowledge_Base/Debug_recomendate_2026-07-10_18-04.md",
-    "Knowledge_Base/Repository/AI-OS_Repository_Project_Asker/README.md"
+    "Knowledge_Base\\Agents\\AGENTS.md",
+    "Knowledge_Base\\Agents\\fixedthis.agent.md",
+    "Knowledge_Base\\Core_System.md",
+    "Knowledge_Base\\Debug_recomendate_2026-07-10_18-04.md",
+    "Knowledge_Base\\Repository\\AI-OS_Repository_Project_Asker\\README.md"
   ],
   "C2_EMPTY_VERSION": [
-    "00_Core/Change Log (empty).md",
     "CLAUDE.md",
     "Change_Log_day.md",
-    "Knowledge_Base/Core_System.md",
-    "Knowledge_Base/Debug_recomendate_2026-07-10_18-04.md",
-    "Knowledge_Base/Repository/AI-OS_Repository_Project_Asker/README.md"
+    "Knowledge_Base\\Agents\\AGENTS.md",
+    "Knowledge_Base\\Agents\\fixedthis.agent.md",
+    "Knowledge_Base\\Core_System.md",
+    "Knowledge_Base\\Debug_recomendate_2026-07-10_18-04.md",
+    "Knowledge_Base\\Repository\\AI-OS_Repository_Project_Asker\\README.md"
   ],
   "C3_EMPTY_STATUS": [
-    "00_Core/Change Log (empty).md",
     "CLAUDE.md",
     "Change_Log_day.md",
-    "Knowledge_Base/Core_System.md",
-    "Knowledge_Base/Debug_recomendate_2026-07-10_18-04.md",
-    "Knowledge_Base/Repository/AI-OS_Repository_Project_Asker/README.md"
+    "Knowledge_Base\\Agents\\AGENTS.md",
+    "Knowledge_Base\\Agents\\fixedthis.agent.md",
+    "Knowledge_Base\\Core_System.md",
+    "Knowledge_Base\\Debug_recomendate_2026-07-10_18-04.md",
+    "Knowledge_Base\\Repository\\AI-OS_Repository_Project_Asker\\README.md"
   ],
   "C8_STUB": [
-    "00_Core/Change Log (empty).md (1 lines)",
-    "Knowledge_Base/Repository/AI-OS_Repository_Project_Asker/README.md (3 lines)"
-  ],
-  "C9_FILENAME_SPACES": [
-    "00_Core/Change Log (empty).md",
-    "00_Core/Core Execution Engine.md",
-    "00_Core/Core Identity.md",
-    "02_Capability_Layer/01_Templates/00_Capability Module Template.md",
-    "03_Execution_Layer/02_Analysis/Analyze Prompt.md",
-    "03_Execution_Layer/03_Generation/Generate Prompt.md",
-    "03_Execution_Layer/04_Validation/Validate Prompt.md",
-    "03_Execution_Layer/05_Optimization/Optimize Prompt.md",
-    "03_Execution_Layer/06_Development/Develop AI Assistant.md",
-    "03_Execution_Layer/07_Education/Teach SQL.md"
+    "Knowledge_Base\\Repository\\AI-OS_Repository_Project_Asker\\README.md (3 lines)"
   ]
 }
