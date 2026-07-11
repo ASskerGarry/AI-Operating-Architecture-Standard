@@ -1,11 +1,15 @@
-# AI-OS Design Principles
+---
+title: AI-OS Design Principles
+version: 1.0.0
+status: Draft
+layer: Architecture
+document_type: Registry
+document_id: DOC-ARCH-004
+owner: AI-OS Architecture
+---
 
-Version: 1.0.0
-Status: Draft  
-Layer: Architecture  
-Document Type: Registry
-Document ID: DOC-ARCH-004  
-Owner: AI-OS Architecture
+## AI-OS Design Principles
+
 ---
 
 ## Purpose
@@ -232,6 +236,7 @@ Updates SHALL preserve architectural consistency across the entire AI-OS reposit
 ---
 
 ## Related Documents
+
 - Core Identity
 - Core Execution Engine
 - AI-OS Documentation Standards
