@@ -182,7 +182,7 @@ Owner: AI-OS Architecture
 
 ### 15:20 — Assistant — Push attempt
 
-- Change: Set remote `origin` to https://github.com/ASskerGarry/AI-OS.git and attempted `git push --set-upstream origin main` to publish local reorganizations, filename normalizations, `.gitignore`, and archived nested `.git` backups.
+- Change: Set remote `origin` to <https://github.com/ASskerGarry/AI-OS.git> and attempted `git push --set-upstream origin main` to publish local reorganizations, filename normalizations, `.gitignore`, and archived nested `.git` backups.
 - Reason: Publish local fixes and normalization to the central repository.
 - Files: repository-wide (renames, `.gitignore`, `Archive/git_backups/2026-07-11_1430`, modified Markdown files).
 - Note: Local commit HEAD is `74fa869dcbb6eb9f54856ac595c6b464c4ca9fd7`. Push was attempted from the environment but remote confirmation was not reliably captured due to terminal rendering/SSH prompts; remote `origin` was set to the provided HTTPS URL.
