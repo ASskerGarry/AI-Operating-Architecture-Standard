@@ -225,7 +225,6 @@ Updates SHALL preserve architectural consistency across the entire AI-OS reposit
 ## Version Information
 
 | Field | Value |
-|------|------|
 | Version | 1.0.0 |
 | Status | Draft |
 | Owner | AI-OS Architecture |
