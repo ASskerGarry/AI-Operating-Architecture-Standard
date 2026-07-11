@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-OS — Core Layer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a class="brand" href="index.html">AI-OS</a>
+        <div class="nav-links">
+          <a href="core.html">Core</a>
+          <a href="architecture.html">Architecture</a>
+          <a href="capabilities.html">Capabilities</a>
+          <a href="execution.html">Execution</a>
+          <a href="platforms.html">Platforms</a>
+          <a href="templates.html">Templates</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+          <span class="theme-toggle__text">Dark</span>
+        </button>
+      </nav>
+      <div class="container page-hero">
+        <p class="eyebrow">Core layer</p>
+        <h1>Foundation of the AI-OS operating model.</h1>
+        <p class="hero-text">The core layer defines identity, execution logic, and the shared rules that stabilize every module.</p>
+      </div>
+    </header>
+    <main class="container page-content">
+      <div class="card-grid">
+        <a class="page-card reveal" href="00_Core/Core_Identity.md">
+          <h3>Core Identity</h3>
+          <p>Defines the system’s purpose, role, and architectural intent.</p>
+        </a>
+        <a class="page-card reveal" href="00_Core/Core_Execution_Engine.md">
+          <h3>Core Execution Engine</h3>
+          <p>Describes the engine that coordinates analysis, generation, validation, and optimization.</p>
+        </a>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container footer-content">
+        <span>AI-OS © <span id="year"></span></span>
+        <span>Architecture-driven AI operating system</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

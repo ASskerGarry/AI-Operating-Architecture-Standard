@@ -1,5 +1,12 @@
 # Security Policy
 
+Document ID: N/A
+Version: 1.0.0
+Status: Draft
+Layer: Core
+Document Type: Standard
+Owner: AI-OS Architecture
+
 ## Supported Versions
 
 Use this section to tell people about which versions of your project are

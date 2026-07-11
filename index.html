@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-OS — Operating System for AI Work</title>
+    <meta
+      name="description"
+      content="AI-OS is a modular architecture for governing, designing, and executing AI-driven workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a class="brand" href="index.html">AI-OS</a>
+        <div class="nav-links">
+          <a href="core.html">Core</a>
+          <a href="architecture.html">Architecture</a>
+          <a href="capabilities.html">Capabilities</a>
+          <a href="execution.html">Execution</a>
+          <a href="platforms.html">Platforms</a>
+          <a href="templates.html">Templates</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+          <span class="theme-toggle__text">Dark</span>
+        </button>
+      </nav>
+
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Modular AI architecture</p>
+          <h1>Build AI systems with structure, governance, and clarity.</h1>
+          <p class="hero-text">
+            AI-OS provides a reusable operating model for capabilities, execution flows,
+            documentation standards, and platform-agnostic design.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="core.html">Open the knowledge base</a>
+            <a class="btn btn-secondary" href="architecture.html">Explore the architecture</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <h3>Core principles</h3>
+          <ul>
+            <li>Single source of truth</li>
+            <li>Separation of concerns</li>
+            <li>Modular execution layers</li>
+            <li>Traceable governance</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What AI-OS is</p>
+          <h2>Turn scattered AI practices into a durable operating system.</h2>
+        </div>
+        <div class="split-grid">
+          <article class="panel reveal">
+            <h3>For teams</h3>
+            <p>Use consistent patterns across strategy, analytics, prompt engineering, and delivery.</p>
+          </article>
+          <article class="panel reveal">
+            <h3>For products</h3>
+            <p>Move from ad-hoc experimentation to repeatable operations with documented standards.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="layers" class="section section-alt">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Architecture layers</p>
+            <h2>A layered model for governance and delivery.</h2>
+          </div>
+          <div class="card-grid">
+            <article class="card reveal">
+              <h3>Core</h3>
+              <p>Identity and the execution engine define the foundation of the system.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Architecture</h3>
+              <p>Standards, principles, registries, and templates keep the system aligned.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Capability</h3>
+              <p>Reusable domain expertise is organized into capability modules.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Execution</h3>
+              <p>Structured processes such as Analyze, Generate, Validate, and Optimize guide work.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Platform</h3>
+              <p>Implementation choices stay portable across tools and environments.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Templates</h3>
+              <p>Reusable starting points help teams adopt the system quickly.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="docs" class="section container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Key documents</p>
+          <h2>Start with the official AI-OS references.</h2>
+        </div>
+        <div class="doc-list">
+          <a class="doc-item reveal" href="00_Core/Core_Identity.md">Core Identity</a>
+          <a class="doc-item reveal" href="00_Core/Core_Execution_Engine.md">Core Execution Engine</a>
+          <a class="doc-item reveal" href="01_Architecture/AI-OS_Design_Principles.md">Design Principles</a>
+          <a class="doc-item reveal" href="01_Architecture/AI-OS_Document_Metadata_Standard.md">Document Metadata Standard</a>
+          <a class="doc-item reveal" href="01_Architecture/AI-OS_Document_Registry.md">Document Registry</a>
+          <a class="doc-item reveal" href="01_Architecture/AI-OS_Glossary.md">Glossary</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <span>AI-OS © <span id="year"></span></span>
+        <span>Architecture-driven AI operating system</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

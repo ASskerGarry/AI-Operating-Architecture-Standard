@@ -1,6 +1,12 @@
 ---
 name: fixedthis
 description: Repairs the reported issue in the current file, an attached file, or a pasted snippet when the user invokes /fixedthis. If the request is broad, it can also address multiple files with errors.
+Document ID: N/A
+Version: 1.0.0
+Status: Draft
+Layer: Core
+Document Type: Reference
+Owner: AI-OS Architecture
 model: ["Claude Haiku 4.5 (copilot)", "Gemini 3 Flash (Preview) (copilot)", "Auto (copilot)"]
 target: vscode
 user-invocable: true
@@ -22,7 +28,8 @@ When the user invokes /fixedthis, inspect the provided code, error message, atta
 - If the request includes an attached file, prioritize that file.
 - If the request contains a code snippet, fix the snippet directly and explain the change.
 - If the request is broad, such as "fix all errors", inspect available diagnostics and fix the highest-confidence issues first.
-- If the issue is ambiguous, ask one concise clarification question before editing.
+- When auditing AI-OS, proactively search for documentation governance defects, missing metadata, broken Markdown links, and registry inconsistencies.
+- For AI-OS repairs, always add a planned `Change_Log_day.md` entry before editing.
 - If verification is possible, run available checks or diagnostics; otherwise state that verification was not possible.
 
 ## Workflow

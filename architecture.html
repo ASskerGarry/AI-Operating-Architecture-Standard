@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-OS — Architecture Layer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a class="brand" href="index.html">AI-OS</a>
+        <div class="nav-links">
+          <a href="core.html">Core</a>
+          <a href="architecture.html">Architecture</a>
+          <a href="capabilities.html">Capabilities</a>
+          <a href="execution.html">Execution</a>
+          <a href="platforms.html">Platforms</a>
+          <a href="templates.html">Templates</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+          <span class="theme-toggle__text">Dark</span>
+        </button>
+      </nav>
+      <div class="container page-hero">
+        <p class="eyebrow">Architecture layer</p>
+        <h1>Standards and rules that keep AI-OS coherent.</h1>
+        <p class="hero-text">This layer captures principles, metadata standards, registries, and the glossary that anchor the system.</p>
+      </div>
+    </header>
+    <main class="container page-content">
+      <div class="card-grid">
+        <a class="page-card reveal" href="01_Architecture/AI-OS_Design_Principles.md">
+          <h3>Design Principles</h3>
+          <p>Core rules such as SSOT, modularity, traceability, and separation of concerns.</p>
+        </a>
+        <a class="page-card reveal" href="01_Architecture/AI-OS_Document_Metadata_Standard.md">
+          <h3>Metadata Standard</h3>
+          <p>How each artifact should declare ownership, status, and lifecycle information.</p>
+        </a>
+        <a class="page-card reveal" href="01_Architecture/AI-OS_Document_Registry.md">
+          <h3>Document Registry</h3>
+          <p>Catalog of official AI-OS documents and their identifiers.</p>
+        </a>
+        <a class="page-card reveal" href="01_Architecture/AI-OS_Glossary.md">
+          <h3>Glossary</h3>
+          <p>Shared terminology that keeps the architecture understandable and consistent.</p>
+        </a>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container footer-content">
+        <span>AI-OS © <span id="year"></span></span>
+        <span>Architecture-driven AI operating system</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
