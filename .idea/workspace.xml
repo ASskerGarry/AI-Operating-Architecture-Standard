@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="892e01e9-9976-439d-8335-be7f2b5b3102" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/django.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/django.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_Architecture/AI-OS_Document_Registry.md" beforeDir="false" afterPath="$PROJECT_DIR$/01_Architecture/AI-OS_Document_Registry.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Change_Log_day.md" beforeDir="false" afterPath="$PROJECT_DIR$/Change_Log_day.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Knowledge_Base/Agents/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Knowledge_Base/Agents/AGENTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Knowledge_Base/Agents/AI_Operation_system.agent.md" beforeDir="false" afterPath="$PROJECT_DIR$/Knowledge_Base/Agents/AI_Operation_system.agent.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Knowledge_Base/Agents/fixedthis.agent.md" beforeDir="false" afterPath="$PROJECT_DIR$/Knowledge_Base/Agents/fixedthis.agent.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Knowledge_Base/Agents/fixedthis.agent_Version3.md" beforeDir="false" afterPath="$PROJECT_DIR$/Knowledge_Base/Agents/fixedthis.agent_Version3.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Knowledge_Base/Core_System.md" beforeDir="false" afterPath="$PROJECT_DIR$/Knowledge_Base/Core_System.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Knowledge_Base/aios_findings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Knowledge_Base/aios_findings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SECURITY.md" beforeDir="false" afterPath="$PROJECT_DIR$/SECURITY.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3GQVl8WlXPgQGo2fr3SVO2szXQk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "D:/AI-OS",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.26222.58" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="892e01e9-9976-439d-8335-be7f2b5b3102" name="Changes" comment="" />
+      <created>1783903934020</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783903934020</updated>
+      <workItem from="1783903936261" duration="171000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

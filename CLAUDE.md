@@ -1,6 +1,6 @@
 # CLAUDE
 
-Document ID: N/A
+Document ID: DOC-CORE-005
 Version: 1.0.0
 Status: Draft
 Layer: Core
@@ -75,3 +75,21 @@ Change Logging Policy (mandatory):
 • Changes to official documents must also stay consistent with `AI-OS_Document_Registry` and the document's own Version Information / Change Log fields (DP-008 Traceability).
 • No change is considered complete until it is logged.
 
+## Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.0.0              |
+| Status         | Draft              |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-13         |
+| Created date   | 2026-07-13         |
+| Change Summary | Added official metadata and registry identity |
+
+---
+
+## Related Documents
+
+- AGENTS.md
+- Knowledge_Base/Agents/AGENTS.md
+- SECURITY.md

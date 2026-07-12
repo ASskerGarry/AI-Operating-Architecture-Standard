@@ -80,7 +80,7 @@ Owner: AI-OS Architecture
 - Change: Added `AGENTS.md` to provide repository-specific agent guidance for AI coding assistants.
 - Reason: Help agents maintain AI-OS architecture documentation consistently and comply with repository governance.
 - Files: AGENTS.md
-- Status: planned
+- Status: done
 
 ## 2026-07-11
 
@@ -190,10 +190,10 @@ Owner: AI-OS Architecture
 
 ### 18:40 — GitHub Copilot — Metadata and cleanup fixes
 
-- Change: Add metadata headers to auxiliary AI-OS documents, remove duplicate obsolete `00_Core/Core Change Log.md`, and resolve validator defects for missing Document ID / empty Version / empty Status / filename spaces.
+- Change: Add metadata headers and registry entries for auxiliary AI-OS core governance documents, and resolve validator defects for missing Document ID / empty Version / empty Status in that scope.
 - Reason: Fix AI-OS compliance validator defects and enforce repository metadata consistency.
-- Files: AGENTS.md, CLAUDE.md, Change_Log_day.md, Knowledge_Base/Agents/AGENTS.md, Knowledge_Base/Agents/AI_Operation_system.agent.md, Knowledge_Base/Agents/fixedthis.agent.md, Knowledge_Base/Agents/fixedthis.agent_Version3.md, Knowledge_Base/Core_System.md, SECURITY.md, 00_Core/Core Change Log.md
-- Status: planned
+- Files: AGENTS.md, CLAUDE.md, Change_Log_day.md, Knowledge_Base/Agents/AGENTS.md, Knowledge_Base/Agents/AI_Operation_system.agent.md, Knowledge_Base/Agents/fixedthis.agent.md, Knowledge_Base/Agents/fixedthis.agent_Version3.md, Knowledge_Base/Core_System.md, SECURITY.md, 01_Architecture/AI-OS_Document_Registry.md
+- Status: done
 
 ## 2026-07-12
 

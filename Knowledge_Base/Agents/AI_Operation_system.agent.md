@@ -1,7 +1,7 @@
 ---
 name: AI_Operation_system
 description: Reviews and repairs AI-OS repository documentation, metadata, registry entries, and linked structure when asked to operate autonomously on the AI-OS repository.
-Document ID: N/A
+Document ID: DOC-CORE-008
 Version: 1.0.0
 Status: Draft
 Layer: Core
