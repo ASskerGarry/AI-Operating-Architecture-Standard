@@ -1,7 +1,7 @@
 ---
 name: fixedthis
 description: Repairs the reported issue in the current file, an attached file, or a pasted snippet when the user invokes /fixedthis. If the request is broad, it can also address multiple files with errors.
-Document ID: N/A
+Document ID: DOC-CORE-010
 Version: 1.0.0
 Status: Draft
 Layer: Core
@@ -47,4 +47,3 @@ When the user invokes /fixedthis, inspect the provided code, error message, atta
 - Mention the file or snippet changed.
 - Explain the root cause and the fix in 2-4 bullet points.
 - If verification could not be completed, say so explicitly.
-

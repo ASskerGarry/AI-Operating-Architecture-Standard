@@ -100,6 +100,14 @@ Each registered document SHALL include the following metadata.
 | DOC-EXEC-023 | Custom Category README             | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/99_Custom               |
 | DOC-CAPA-010 | Capability Governance README       | Capability   | README            | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
 | DOC-CORE-003 | Core Change Log                    | Core         | Change Log        | Active | 1.0.0   | AI-OS Architecture | /00_Core                                    |
+| DOC-CORE-004 | AI-OS Agent Instructions           | Core         | Guide             | Draft  | 1.0.0   | AI-OS Architecture | /AGENTS.md                                  |
+| DOC-CORE-005 | CLAUDE                             | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /CLAUDE.md                                  |
+| DOC-CORE-006 | Security Policy                    | Core         | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /SECURITY.md                                |
+| DOC-CORE-007 | AI-OS Agent Instructions           | Core         | Guide             | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/AGENTS.md            |
+| DOC-CORE-008 | AI_Operation_system Agent          | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/AI_Operation_system.agent.md |
+| DOC-CORE-009 | fixedthis Agent                    | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/fixedthis.agent.md   |
+| DOC-CORE-010 | fixedthis Agent Version 3          | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/fixedthis.agent_Version3.md |
+| DOC-CORE-011 | AI-OS v1.0                         | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Core_System.md              |
 | DOC-CAPA-011 | Prompt Engineering                 | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
 | DOC-CAPA-012 | AI Strategy                        | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
 | DOC-CAPA-013 | Data Analytics                     | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
@@ -198,12 +206,12 @@ Registry updates SHALL occur before publishing architectural changes.
 
 | Field          | Value                                                                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Version        | 1.1.0                                                                                                                              |
+| Version        | 1.1.1                                                                                                                              |
 | Status         | Active                                                                                                                             |
 | Owner          | AI-OS Architecture                                                                                                                 |
-| Last Updated   | 2026-07-11                                                                                                                         |
+| Last Updated   | 2026-07-13                                                                                                                         |
 | Created date   | 2026-07-10                                                                                                                         |
-| Change Summary | Registered Core Change Log (DOC-CORE-003) and 10 Capability Modules + Modules README (DOC-CAPA-011…021); registry now 56 documents |
+| Change Summary | Registered auxiliary core governance docs (DOC-CORE-004…011); registry now 64 documents |
 
 ---
 
@@ -217,4 +225,3 @@ Registry updates SHALL occur before publishing architectural changes.
 - AI-OS Glossary
 - AI-OS Design Principles
 - AI-OS Principles Registry
-

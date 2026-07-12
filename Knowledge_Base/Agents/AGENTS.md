@@ -1,5 +1,12 @@
 # AI-OS Agent Instructions
 
+Document ID: DOC-CORE-007
+Version: 1.0.0
+Status: Draft
+Layer: Core
+Document Type: Guide
+Owner: AI-OS Architecture
+
 This repository is a documentation-focused architecture repository for the AI Operating System (AI-OS). AI coding agents should use this file as the primary guide for making changes, authoring new documents, and preserving repository conventions.
 
 ## Purpose
