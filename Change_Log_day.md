@@ -194,3 +194,12 @@ Owner: AI-OS Architecture
 - Reason: Fix AI-OS compliance validator defects and enforce repository metadata consistency.
 - Files: AGENTS.md, CLAUDE.md, Change_Log_day.md, Knowledge_Base/Agents/AGENTS.md, Knowledge_Base/Agents/AI_Operation_system.agent.md, Knowledge_Base/Agents/fixedthis.agent.md, Knowledge_Base/Agents/fixedthis.agent_Version3.md, Knowledge_Base/Core_System.md, SECURITY.md, 00_Core/Core Change Log.md
 - Status: planned
+
+## 2026-07-12
+
+### 10:00 — Assistant — Compile AI Working Kit
+
+- Change: Analysed all project files and compiled a single-file AI context document `AI-OS_AI_Working_Kit.md` at repository root.
+- Reason: User request — provide one ready-to-use file that contains everything an AI model needs to operate within the AI-OS framework (Core Identity, Core Execution Engine, Design Principles, Capability Layer, Execution Layer, Glossary).
+- Files: `AI-OS_AI_Working_Kit.md` (new)
+- Status: done
