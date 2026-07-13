@@ -1,6 +1,6 @@
 # AI-OS Document Registry
 
-Version: 1.0.0
+Version: 1.1.2
 Status: Active
 Layer: Architecture
 Document Type: Registry
@@ -9,15 +9,15 @@ Owner: AI-OS Architecture
 
 ---
 
-# Purpose
+## Purpose
 
 This document serves as the authoritative registry of all official documents within the AI Operating System (AI-OS).
 
 The registry provides centralized governance for document identification, ownership, versioning, lifecycle management, architectural classification, and repository organization.
 
-## This document is the Single Source of Truth (SSOT) for all AI-OS documentation.
+### This document is the Single Source of Truth (SSOT) for all AI-OS documentation
 
-# Scope
+## Scope
 
 This registry applies to every official document maintained within the AI-OS repository, including:
 
@@ -34,7 +34,7 @@ This registry applies to every official document maintained within the AI-OS rep
 
 ---
 
-# Registry Structure
+## Registry Structure
 
 Each registered document SHALL include the following metadata.
 
@@ -53,72 +53,73 @@ Each registered document SHALL include the following metadata.
 
 # Document Registry
 
-| Document ID  | Document Title                     | Layer        | Category          | Status | Version | Owner              | Repository Location                         |
-| ------------ | ---------------------------------- | ------------ | ----------------- | ------ | ------- | ------------------ | ------------------------------------------- |
-| DOC-CORE-001 | Core Identity                      | Core         | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-CORE-002 | Core Execution Engine              | Core         | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-002 | AI-OS Documentation Standards      | Architecture | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-003 | AI-OS Glossary                     | Architecture | Reference         | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-004 | AI-OS Design Principles            | Architecture | Registry          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-005 | AI-OS Principle Registry           | Architecture | Registry          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-006 | AI-OS Document Metadata Standard   | Architecture | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-007 | AI-OS Document Template            | Architecture | Template          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-CAPA-001 | Capability Module Specification    | Architecture | Specification     | Draft  | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/01_Templates           |
-| DOC-EXEC-001 | Execution Module Specification     | Architecture | Specification     | Draft  | 1.1.0   | AI-OS Architecture | /03_Execution_Layer/01_Templates            |
-| DOC-EXEC-002 | Execution Module Template          | Architecture | Template          | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/01_Templates            |
-| DOC-EXEC-003 | Analysis Execution Module README   | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/02_Analysis/README.md   |
-| DOC-EXEC-004 | Generation Execution Module README | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/03_Generation/README.md |
-| DOC-PLAT-001 | Platform Layer README              | Platform     | README            | Draft  | 1.0.0   | AI-OS Architecture | /04_Platforms/README.md                     |
-| DOC-TMP-001  | Templates Layer README             | Templates    | README            | Draft  | 1.0.0   | AI-OS Architecture | /05_Templates/README.md                     |
-| DOC-CAPA-002 | Capability Registry                | Capability   | Registry          | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-003 | Capability Blueprint               | Capability   | Standard          | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-004 | Capability Writing Guide           | Capability   | Guide             | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-005 | Capability Review Standard         | Capability   | Review Standard   | Draft  | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-006 | Capability Lifecycle               | Capability   | Lifecycle         | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-007 | Capability Dependency Matrix       | Capability   | Dependency Matrix | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-008 | Capability Index                   | Capability   | Index             | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-009 | Capability Change Log              | Capability   | Change Log        | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-EXEC-005 | Execution Registry                 | Execution    | Registry          | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-006 | Execution Blueprint                | Execution    | Standard          | Active | 1.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-007 | Execution Writing Guide            | Execution    | Guide             | Active | 1.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-008 | Execution Review Standard          | Execution    | Review Standard   | Draft  | 1.0.1   | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-009 | Execution Lifecycle                | Execution    | Lifecycle         | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-010 | Execution Dependency Matrix        | Execution    | Dependency Matrix | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-011 | Execution Index                    | Execution    | Index             | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-012 | Execution Change Log               | Execution    | Change Log        | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-013 | Analyze                            | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/02_Analysis             |
-| DOC-EXEC-014 | Generate                           | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/03_Generation           |
-| DOC-EXEC-015 | Validate                           | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/04_Validation           |
-| DOC-EXEC-016 | Optimize                           | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/05_Optimization         |
-| DOC-EXEC-017 | Develop AI Assistant               | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/06_Development          |
-| DOC-EXEC-018 | Teach SQL                          | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/07_Education            |
-| DOC-EXEC-019 | Validation Category README         | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/04_Validation           |
-| DOC-EXEC-020 | Optimization Category README       | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/05_Optimization         |
-| DOC-EXEC-021 | Development Category README        | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/06_Development          |
-| DOC-EXEC-022 | Education Category README          | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/07_Education            |
-| DOC-EXEC-023 | Custom Category README             | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/99_Custom               |
-| DOC-CAPA-010 | Capability Governance README       | Capability   | README            | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CORE-003 | Core Change Log                    | Core         | Change Log        | Active | 1.0.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-CORE-004 | AI-OS Agent Instructions           | Core         | Guide             | Draft  | 1.0.0   | AI-OS Architecture | /AGENTS.md                                  |
-| DOC-CORE-005 | CLAUDE                             | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /CLAUDE.md                                  |
-| DOC-CORE-006 | Security Policy                    | Core         | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /SECURITY.md                                |
-| DOC-CORE-007 | AI-OS Agent Instructions           | Core         | Guide             | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/AGENTS.md            |
+| Document ID  | Document Title                     | Layer        | Category          | Status | Version | Owner              | Repository Location                                 |
+| ------------ | ---------------------------------- | ------------ | ----------------- | ------ | ------- | ------------------ | --------------------------------------------------- |
+| DOC-CORE-001 | Core Identity                      | Core         | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /00_Core                                            |
+| DOC-CORE-002 | Core Execution Engine              | Core         | Standard          | Draft  | 1.1.0   | AI-OS Architecture | /00_Core                                            |
+| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.1.2   | AI-OS Architecture | /01_Architecture                                    |
+| DOC-ARCH-002 | AI-OS Documentation Standards      | Architecture | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                                    |
+| DOC-ARCH-003 | AI-OS Glossary                     | Architecture | Reference         | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                                    |
+| DOC-ARCH-004 | AI-OS Design Principles            | Architecture | Standard          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                                    |
+| DOC-ARCH-005 | AI-OS Principle Registry           | Architecture | Registry          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                                    |
+| DOC-ARCH-006 | AI-OS Document Metadata Standard   | Architecture | Standard          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                                    |
+| DOC-ARCH-007 | AI-OS Document Template            | Architecture | Template          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                                    |
+| DOC-CAPA-001 | Capability Module Specification    | Architecture | Specification     | Draft  | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/01_Templates                   |
+| DOC-EXEC-001 | Execution Module Specification     | Architecture | Specification     | Draft  | 1.1.0   | AI-OS Architecture | /03_Execution_Layer/01_Templates                    |
+| DOC-EXEC-002 | Execution Module Template          | Architecture | Template          | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/01_Templates                    |
+| DOC-EXEC-003 | Analysis Execution Module README   | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/02_Analysis/README.md           |
+| DOC-EXEC-004 | Generation Execution Module README | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/03_Generation/README.md         |
+| DOC-PLAT-001 | Platform Layer README              | Platform     | README            | Draft  | 1.1.0   | AI-OS Architecture | /04_Platforms/README.md                             |
+| DOC-TMP-001  | Templates Layer README             | Templates    | README            | Draft  | 1.1.0   | AI-OS Architecture | /05_Templates/README.md                             |
+| DOC-CAPA-002 | Capability Registry                | Capability   | Registry          | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-CAPA-003 | Capability Blueprint               | Capability   | Standard          | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-CAPA-004 | Capability Writing Guide           | Capability   | Guide             | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-CAPA-005 | Capability Review Standard         | Capability   | Review Standard   | Draft  | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-CAPA-006 | Capability Lifecycle               | Capability   | Lifecycle         | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-CAPA-007 | Capability Dependency Matrix       | Capability   | Dependency Matrix | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-CAPA-008 | Capability Index                   | Capability   | Index             | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-CAPA-009 | Capability Change Log              | Capability   | Change Log        | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-EXEC-005 | Execution Registry                 | Execution    | Registry          | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance         |
+| DOC-EXEC-006 | Execution Blueprint                | Execution    | Standard          | Active | 1.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance         |
+| DOC-EXEC-007 | Execution Writing Guide            | Execution    | Guide             | Active | 1.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance         |
+| DOC-EXEC-008 | Execution Review Standard          | Execution    | Review Standard   | Draft  | 1.0.1   | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance         |
+| DOC-EXEC-009 | Execution Lifecycle                | Execution    | Lifecycle         | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance         |
+| DOC-EXEC-010 | Execution Dependency Matrix        | Execution    | Dependency Matrix | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance         |
+| DOC-EXEC-011 | Execution Index                    | Execution    | Index             | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance         |
+| DOC-EXEC-012 | Execution Change Log               | Execution    | Change Log        | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance         |
+| DOC-EXEC-013 | Analyze                            | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/02_Analysis                     |
+| DOC-EXEC-014 | Generate                           | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/03_Generation                   |
+| DOC-EXEC-015 | Validate                           | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/04_Validation                   |
+| DOC-EXEC-016 | Optimize                           | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/05_Optimization                 |
+| DOC-EXEC-017 | Develop AI Assistant               | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/06_Development                  |
+| DOC-EXEC-018 | Teach SQL                          | Execution    | Execution Module  | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/07_Education                    |
+| DOC-EXEC-019 | Validation Category README         | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/04_Validation                   |
+| DOC-EXEC-020 | Optimization Category README       | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/05_Optimization                 |
+| DOC-EXEC-021 | Development Category README        | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/06_Development                  |
+| DOC-EXEC-022 | Education Category README          | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/07_Education                    |
+| DOC-EXEC-023 | Custom Category README             | Execution    | README            | Draft  | 1.0.0   | AI-OS Architecture | /03_Execution_Layer/99_Custom                       |
+| DOC-CAPA-010 | Capability Governance README       | Capability   | README            | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/00_Governance                  |
+| DOC-CORE-003 | Core Change Log                    | Core         | Change Log        | Active | 1.0.0   | AI-OS Architecture | /00_Core                                            |
+| DOC-CORE-004 | AI-OS Agent Instructions           | Core         | Guide             | Draft  | 1.0.0   | AI-OS Architecture | /AGENTS.md                                          |
+| DOC-CORE-005 | CLAUDE                             | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /CLAUDE.md                                          |
+| DOC-CORE-006 | Security Policy                    | Core         | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /SECURITY.md                                        |
+| DOC-CORE-007 | AI-OS Agent Instructions           | Core         | Guide             | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/AGENTS.md                    |
 | DOC-CORE-008 | AI_Operation_system Agent          | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/AI_Operation_system.agent.md |
-| DOC-CORE-009 | fixedthis Agent                    | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/fixedthis.agent.md   |
-| DOC-CORE-010 | fixedthis Agent Version 3          | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/fixedthis.agent_Version3.md |
-| DOC-CORE-011 | AI-OS v1.0                         | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Core_System.md              |
-| DOC-CAPA-011 | Prompt Engineering                 | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-012 | AI Strategy                        | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-013 | Data Analytics                     | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-014 | Statistics                         | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-015 | SQL                                | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-016 | Python                             | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-017 | Power BI                           | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-018 | Excel                              | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-019 | Teaching                           | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-020 | Technical Writing                  | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-021 | Capability Modules README          | Capability   | README            | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
+| DOC-CORE-009 | fixedthis Agent                    | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/fixedthis.agent.md           |
+| DOC-CORE-010 | fixedthis Agent Version 3          | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Agents/fixedthis.agent_Version3.md  |
+| DOC-CORE-011 | AI-OS v1.0                         | Core         | Reference         | Draft  | 1.0.0   | AI-OS Architecture | /Knowledge_Base/Core_System.md                      |
+| DOC-CORE-012 | AI-OS AI Working Kit               | Core         | Reference         | Active | 1.0.1   | AI-OS Architecture | /AI-OS_AI_Working_Kit.md                            |
+| DOC-CAPA-011 | Prompt Engineering                 | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-012 | AI Strategy                        | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-013 | Data Analytics                     | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-014 | Statistics                         | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-015 | SQL                                | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-016 | Python                             | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-017 | Power BI                           | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-018 | Excel                              | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-019 | Teaching                           | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-020 | Technical Writing                  | Capability   | Capability Module | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
+| DOC-CAPA-021 | Capability Modules README          | Capability   | README            | Draft  | 1.0.0   | AI-OS Architecture | /02_Capability_Layer/02_Modules                     |
 
 # Document Categories
 
@@ -204,14 +205,14 @@ Registry updates SHALL occur before publishing architectural changes.
 
 # Version Information
 
-| Field          | Value                                                                                                                              |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Version        | 1.1.1                                                                                                                              |
-| Status         | Active                                                                                                                             |
-| Owner          | AI-OS Architecture                                                                                                                 |
-| Last Updated   | 2026-07-13                                                                                                                         |
-| Created date   | 2026-07-10                                                                                                                         |
-| Change Summary | Registered auxiliary core governance docs (DOC-CORE-004…011); registry now 64 documents |
+| Field          | Value                                                                                                                       |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Version        | 1.1.2                                                                                                                       |
+| Status         | Active                                                                                                                      |
+| Owner          | AI-OS Architecture                                                                                                          |
+| Last Updated   | 2026-07-13                                                                                                                  |
+| Created date   | 2026-07-10                                                                                                                  |
+| Change Summary | Synchronized registry versions/statuses with source docs and added DOC-CORE-012 (AI Working Kit); registry now 65 documents |
 
 ---
 
