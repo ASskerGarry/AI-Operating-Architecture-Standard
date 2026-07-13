@@ -1,6 +1,6 @@
 # Prompt Engineering
 
-Version: 1.0.0
+Version: 1.1.0
 Status: Draft
 Layer: Capability
 Document Type: Capability Module
@@ -17,14 +17,14 @@ Owner: AI-OS Architecture
 | Module ID | DOC-CAPA-011 |
 | Category | AI Engineering |
 | Capability Domain | LLM prompt design and optimization |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Draft |
 | Owner | AI-OS Architecture |
 | Role Eligibility | Independent / Primary / Secondary / Supporting |
 | Recommended Partners | AI Strategy, Teaching |
 | AI Platforms | All |
 | Created | 2026-07-11 |
-| Last Updated | 2026-07-11 |
+| Last Updated | 2026-07-14 |
 
 ---
 
@@ -123,7 +123,38 @@ User asks to improve a weak prompt → Registry activates Prompt Engineering (Pr
 
 ---
 
-## 13. Review Status
+## 13. Context Engineering Recommendations (2026)
+
+1. **Evidence mode (required for governance-sensitive outputs).**
+   - Prompt artifacts SHALL define source tiers: Tier 1 (official vendor docs/specs), Tier 2 (peer-reviewed or formal technical publications), Tier 3 (community/blog/forum content).
+   - Normative claims MUST be justified by Tier 1 or Tier 2 sources.
+   - Any unsupported claim SHALL be labeled as a hypothesis, not a fact.
+
+2. **Platform profile blocks (for portability).**
+   - Prompt artifacts SHOULD include a compact profile for Gemini, Claude, and NotebookLM.
+   - Each profile SHALL define: allowed patterns, disallowed patterns, and default output mode (narrative vs schema-first).
+
+3. **Reasoning policy (privacy and reliability).**
+   - Prompts SHALL request concise rationale and verifiable steps, not unrestricted internal reasoning traces.
+   - For reasoning-capable models, instructions SHOULD focus on task decomposition and acceptance checks rather than forcing explicit chain-of-thought output.
+
+4. **Output contract hardening (integration-safe).**
+   - Machine-consumed outputs MUST be schema-bound (JSON/XML/table contracts) with explicit required fields and value constraints.
+   - Decorative wrappers and ambiguous dual formats (e.g., "table or list") SHALL be avoided in integration mode.
+
+5. **Batch sizing heuristic (large-scale prompt operations).**
+   - For large datasets, prompts SHOULD define batch size as a function of token budget and average item weight.
+   - Recommended initial heuristic:
+     - `batch_size = floor((token_budget * 0.35 - fixed_overhead_tokens) / (avg_item_tokens * 1.25))`
+   - If `avg_item_tokens` is unknown, use conservative defaults and tune after the first batch.
+
+6. **Promptware lifecycle gates (quality governance).**
+   - Every substantial prompt update SHOULD pass requirements, design, testing, and monitoring gates.
+   - Change records MUST include expected impact, known risks, and rollback guidance.
+
+---
+
+## 14. Review Status
 
 | Field | Value |
 | ----- | ----- |
@@ -134,10 +165,11 @@ User asks to improve a weak prompt → Registry activates Prompt Engineering (Pr
 
 ---
 
-## 14. Change History
+## 15. Change History
 
 | Version | Date | Description |
 | ------- | ---- | ----------- |
+| 1.1.0 | 2026-07-14 | Added context-engineering recommendations: evidence mode, platform profiles, reasoning policy, output hardening, batch sizing heuristic, and lifecycle gates |
 | 1.0.0 | 2026-07-11 | Initial version — module created per Capability Module Specification |
 
 ---
@@ -146,12 +178,12 @@ User asks to improve a weak prompt → Registry activates Prompt Engineering (Pr
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
+| Version        | 1.1.0              |
 | Status         | Draft              |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-11         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-11         |
-| Change Summary | Initial content    |
+| Change Summary | Added 2026 context-engineering recommendation set for production prompt governance |
 
 ---
 
@@ -162,4 +194,3 @@ User asks to improve a weak prompt → Registry activates Prompt Engineering (Pr
 - Capability Dependency Matrix
 - Core Identity
 - Core Execution Engine
-
