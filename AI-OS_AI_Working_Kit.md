@@ -1,12 +1,13 @@
-# AI-OS — AI Working Kit
+# AI-OS AI Working Kit
 
-**Document ID:** DOC-KIT-001  
-**Version:** 1.0.0  
-**Status:** Active  
-**Layer:** Cross-Layer Compilation  
-**Owner:** AI-OS Architecture  
-**Last Updated:** 2026-07-12  
-**Source:** Compiled from official AI-OS repository documents  
+Version: 1.0.1
+Status: Active
+Layer: Core
+Document Type: Reference
+Document ID: DOC-CORE-012
+Owner: AI-OS Architecture
+Last Updated: 2026-07-13
+Source: Compiled from official AI-OS repository documents
 
 > **Purpose:** This file is the single-file operational context for any AI model working within the AI-OS framework.  
 > It consolidates Core Identity, Core Execution Engine, Design Principles, Capability Layer, Execution Layer, and Glossary into one ready-to-use document.  
@@ -362,17 +363,29 @@ When multiple strategies are proposed, priority:
 
 ---
 
-## Document Metadata
+## Version Information
 
 | Field | Value |
 |-------|-------|
-| Document ID | DOC-KIT-001 |
-| Version | 1.0.0 |
+| Version | 1.0.1 |
 | Status | Active |
 | Owner | AI-OS Architecture |
-| Created | 2026-07-12 |
-| Source Documents | DOC-CORE-001, DOC-CORE-002, DOC-ARCH-003, DOC-ARCH-004, DOC-ARCH-005, DOC-CAPA-002, DOC-CAPA-003, DOC-EXEC-005, DOC-EXEC-006 |
+| Last Updated | 2026-07-13 |
+| Created date | 2026-07-12 |
+| Change Summary | Normalized metadata to AI-OS standard and assigned canonical Document ID DOC-CORE-012 |
 
 ---
 
-*End of AI-OS AI Working Kit v1.0.0*
+## Related Documents
+
+- 00_Core/Core_Identity.md (DOC-CORE-001)
+- 00_Core/Core_Execution_Engine.md (DOC-CORE-002)
+- 01_Architecture/AI-OS_Glossary.md (DOC-ARCH-003)
+- 01_Architecture/AI-OS_Design_Principles.md (DOC-ARCH-004)
+- 01_Architecture/AI-OS_Principles_Registry.md (DOC-ARCH-005)
+- 02_Capability_Layer/00_Governance/00_Capability_Registry.md (DOC-CAPA-002)
+- 03_Execution_Layer/00_Execution_Governance/00_Execution_Registry.md (DOC-EXEC-005)
+
+---
+
+*End of AI-OS AI Working Kit v1.0.1*

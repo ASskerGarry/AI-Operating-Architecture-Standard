@@ -1,14 +1,10 @@
----
-title: AI-OS Design Principles
-version: 1.0.0
-status: Draft
-layer: Architecture
-document_type: Registry
-document_id: DOC-ARCH-004
-owner: AI-OS Architecture
----
-
-## AI-OS Design Principles
+# AI-OS Design Principles
+Version: 1.1.0
+Status: Active
+Layer: Architecture
+Document Type: Standard
+Document ID: DOC-ARCH-004
+Owner: AI-OS Architecture
 
 ---
 
@@ -226,12 +222,12 @@ Updates SHALL preserve architectural consistency across the entire AI-OS reposit
 
 | Field | Value |
 | --- | --- |
-| Version | 1.0.0 |
-| Status | Draft |
+| Version | 1.1.0 |
+| Status | Active |
 | Owner | AI-OS Architecture |
-| Last Updated | 2026-07-10 |
+| Last Updated | 2026-07-13 |
 | Created date | 2026-07-10 |
-| Change Summary | Preparing Release |
+| Change Summary | Normalized metadata header to canonical AI-OS format and aligned lifecycle status/type |
 
 ---
 
