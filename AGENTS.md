@@ -1,4 +1,4 @@
-AI-OS Agent Instructions
+# AI-OS Agent Instructions
 
 Document ID: DOC-CORE-004
 Version: 1.0.0
@@ -31,14 +31,14 @@ See `Knowledge_Base/Agents/AGENTS.md` for the full repository-specific instructi
 
 ## Version Information
 
-| Field          | Value              |
-| -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
-| Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-13         |
-| Created date   | 2026-07-13         |
-| Change Summary | Added official metadata and registry identity |
+| Field           | Value                                      |
+| --------------- | ------------------------------------------ |
+| Version         | 1.0.0                                      |
+| Status          | Draft                                      |
+| Owner           | AI-OS Architecture                         |
+| Last Updated    | 2026-07-13                                 |
+| Created date    | 2026-07-13                                 |
+| Change Summary  | Added official metadata and registry identity |
 
 ---
 
