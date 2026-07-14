@@ -1,7 +1,7 @@
 # Core Execution Engine
 
-Version: 1.1.0
-Status: Draft
+Version: 1.2.0
+Status: Active
 Layer: Core Layer
 Document Type: Standard
 Document ID: DOC-CORE-002
@@ -136,12 +136,12 @@ Optimize every response for:
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
+| Version        | 1.2.0              |
+| Status         | Active             |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-10         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-10         |
-| Change Summary | Preparing Release  |
+| Change Summary | Quality Gate review: reconciled header/table/registry version mismatch (1.1.0 vs 1.0.0); promoted Draft → Active |
 
 ## Related Documents
 

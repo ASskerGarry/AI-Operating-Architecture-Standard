@@ -1,7 +1,7 @@
 # Capability Modules
 
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Capability
 Document Type: README
 Document ID: DOC-CAPA-021
@@ -48,12 +48,12 @@ New modules follow the creation process defined in the Capability Layer Governan
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
+| Version        | 1.0.1              |
+| Status         | Active              |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-11         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-11         |
-| Change Summary | Initial content — directory created with 10 modules |
+| Change Summary | Promoted to Active after Quality Gate review |
 
 ---
 

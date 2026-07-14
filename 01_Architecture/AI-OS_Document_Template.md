@@ -1,6 +1,6 @@
 # AI-OS Document Template
 
-Version: 1.1.0
+Version: 1.1.1
 Status: Active
 Layer: Architecture Layer
 Document Type: Template
@@ -27,8 +27,8 @@ Canonical metadata values (statuses, layers, document types) are defined in the 
 
 Version: 1.0.0
 Status: Draft
-Layer: <Core | Architecture | Capability | Execution | Platform | Templates>
-Document Type: <Standard | Registry | Template | Guide | README | Change Log | Module Specification | Capability Module | Execution Module>
+Layer: <Core | Architecture | Capability | Execution | Platform | Templates | Memory>
+Document Type: <Standard | Registry | Template | Guide | README | Change Log | Module Specification | Capability Module | Execution Module | Platform Adapter>
 Document ID: <DOC-XXXX-NNN>
 Owner: AI-OS Architecture
 
@@ -77,12 +77,12 @@ Owner: AI-OS Architecture
 
 | Field          | Value                                        |
 | -------------- | -------------------------------------------- |
-| Version        | 1.1.0                                        |
+| Version        | 1.1.1                                        |
 | Status         | Active                                       |
 | Owner          | AI-OS Architecture                           |
-| Last Updated   | 2026-07-11                                   |
+| Last Updated   | 2026-07-14                                   |
 | Created date   | 2026-07-10                                   |
-| Change Summary | Replaced `...` placeholders with usable template and usage instructions |
+| Change Summary | Synced layer and document-type placeholders with Metadata Standard (Memory, Platform Adapter) |
 
 ---
 

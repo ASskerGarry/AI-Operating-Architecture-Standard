@@ -1,7 +1,7 @@
 # Capability Layer Governance
 
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Capability
 Document Type: README
 Document ID: DOC-CAPA-010
@@ -45,7 +45,7 @@ All Capability Layer documents SHALL comply with the following architectural pri
 - Maintainability
 - Scalability
 
-The authoritative definition of these principles is maintained in **AI-OS Architectural Principles**.
+The authoritative definition of these principles is maintained in **AI-OS Design Principles** (DOC-ARCH-004).
 
 ---
 
@@ -55,7 +55,7 @@ The Capability Layer depends on:
 
 - Core Identity
 - Core Execution Engine
-- AI-OS Design Architectural
+- AI-OS Design Principles
 - Documentation Standards
 - Glossary
 
@@ -84,99 +84,24 @@ The governance defined in this directory applies to every Capability Module rega
 
 ---
 
+# Version Information
+
+| Field | Value |
+| ----- | ----- |
+| Version | 1.0.1 |
+| Status | Active |
+| Owner | AI-OS Architecture |
+| Last Updated | 2026-07-14 |
+| Created date | 2026-07-10 |
+| Change Summary | Quality Gate review: removed duplicated Ukrainian copy (DRY), fixed broken references to AI-OS Design Principles, added Version Information table; promoted to Active |
+
+---
+
 # Related Documents
 
 - Core Identity
 - Core Execution Engine
-- AI-OS Design Architectural
+- AI-OS Design Principles
 - Documentation Standards
 - Glossary
 
-ENG
----
-UA
-
-# Capability Layer Governance
-
-## Призначення
-
-Ця папка містить нормативні документи (Governance Documents), які визначають правила проєктування, документування, перевірки, супроводу та розвитку Capability Layer в AI-OS.
-
-Документи цієї папки є єдиним джерелом істини (Single Source of Truth) для всіх Capability Modules.
-
-Вони встановлюють єдині вимоги до структури, якості, архітектури та життєвого циклу модулів.
-
----
-
-# Структура Governance
-
-| Документ | Призначення |
-|----------|-------------|
-| Capability Registry | Реєстр усіх Capability Modules та їх класифікації |
-| Capability Blueprint | Архітектурна модель Capability Module |
-| Capability Writing Guide | Стандарт написання Capability Modules |
-| Capability Review Standard | Правила перевірки та приймання Capability Modules |
-| Capability Lifecycle | Життєвий цикл Capability Modules |
-| Capability Dependency Matrix | Правила взаємодії між Capability Modules |
-| Capability Index | Центральний каталог усіх Capability Modules |
-| Capability Change Log | Історія змін Capability Layer |
-
----
-
-# Основні принципи
-
-Усі документи Capability Layer повинні відповідати таким принципам:
-
-- Single Source of Truth (SSOT)
-- Separation of Concerns (SoC)
-- Don't Repeat Yourself (DRY)
-- Single Responsibility Principle (SRP)
-- Architecture First
-- Reusability
-- Maintainability
-- Scalability
-
-Архітектурні принципи визначаються документом **AI-OS Architectural Principles**.
-
----
-
-# Залежності
-
-Capability Layer базується на:
-
-- Core Identity
-- Core Execution Engine
-- AI-OS Architectural Principles
-- Documentation Standards
-- Glossary
-
-Execution Layer використовує Capability Layer як джерело професійних компетенцій.
-
----
-
-# Порядок створення нового Capability Module
-
-1. Зареєструвати модуль у Capability Registry.
-2. Створити модуль відповідно до Capability Module Specification.
-3. Дотримуватися Capability Blueprint.
-4. Використовувати Capability Writing Guide.
-5. Визначити залежності через Capability Dependency Matrix.
-6. Пройти Capability Review Standard.
-7. Оновити Capability Index.
-8. Зафіксувати зміни у Capability Change Log.
-
----
-
-# Область застосування
-
-Документи цієї папки застосовуються до всіх Capability Modules незалежно від платформи, моделі ШІ чи середовища виконання.
-
----
-
-# Пов'язані документи
-
-- Core Identity
-- Core Execution Engine
-- AI-OS Design Architectural
-- Documentation Standards
-- Glossary

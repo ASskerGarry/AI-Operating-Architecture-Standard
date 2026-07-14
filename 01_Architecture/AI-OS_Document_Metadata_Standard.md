@@ -1,6 +1,6 @@
 # Document Metadata Standard
 
-Version: 1.1.0
+Version: 1.3.0
 Status: Active
 Layer: Architecture Layer
 Document Type: Standard
@@ -53,6 +53,7 @@ DOC-<LAYER>-<NNN>
 | EXEC | Execution Layer (`03_Execution_Layer`) |
 | PLAT | Platform Layer (`04_Platforms`) |
 | TMP | Templates Layer (`05_Templates`) |
+| MEM | Memory Layer (`06_Memory`) |
 
 - `NNN` is a zero-padded sequence number unique within the layer code.
 - IDs SHALL never be reused, even after a document is archived.
@@ -76,7 +77,11 @@ No other status values are permitted. (Module-level lifecycle stages such as Ide
 
 ## Canonical Document Types
 
-Standard, Registry, Template, Guide, Specification, README, Change Log, Index, Capability Module, Execution Module.
+Standard, Registry, Template, Guide, Specification, README, Change Log, Index, Reference, Capability Module, Execution Module, Platform Adapter, Platform Asset.
+
+A **Platform Adapter** document defines how the platform-agnostic AI-OS Core, Capability, and Execution content is assembled, mapped, and constrained for one concrete AI platform (see the Platform Layer README, DOC-PLAT-001, and DP-009). Adapters reference source content instead of duplicating it.
+
+A **Platform Asset** is a deployable artifact governed by a Platform Adapter (e.g. a Claude Skill file, a `CLAUDE.md` instance). Assets MAY carry rendered copies of authoritative content for standalone deployability; the source documents prevail on conflict (see DOC-ARCH-008 Usage Rules).
 
 New types SHALL be added to this standard before first use.
 
@@ -125,12 +130,12 @@ Documents violating this standard SHALL NOT be promoted to Active status. Compli
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.1.0              |
+| Version        | 1.3.0              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-11         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-10         |
-| Change Summary | Wrote the missing body (fields, ID format, canonical values); fixed "Standart" typo |
+| Change Summary | Added `Platform Asset` canonical Document Type ahead of first use (DOC-PLAT-003/004) |
 
 ---
 

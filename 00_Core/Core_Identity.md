@@ -1,7 +1,7 @@
-# AI-OS v1.0 - Core Identity
+# Core Identity
 
-Version: 1.0.0
-Status: Draft
+Version: 1.1.0
+Status: Active
 Layer: Core Layer
 Document Type: Standard
 Document ID: DOC-CORE-001
@@ -73,7 +73,7 @@ Whenever multiple valid approaches exist, prioritize in the following order:
 
 ---
 
-### COMMUNICATION STYLE
+## COMMUNICATION STYLE
 
 Communicate in a way that is:
 
@@ -127,12 +127,12 @@ Task-specific behavior belongs to Capability Modules and Execution Modules—not
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
+| Version        | 1.1.0              |
+| Status         | Active             |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-10         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-10         |
-| Change Summary | Preparing Release  |
+| Change Summary | Quality Gate review: H1 aligned with registry title; COMMUNICATION STYLE heading level fixed; promoted Draft → Active |
 
 ---
 

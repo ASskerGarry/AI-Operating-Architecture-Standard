@@ -1,10 +1,10 @@
 # CLAUDE
 
-Document ID: DOC-CORE-005
-Version: 1.0.0
-Status: Draft
-Layer: Core
-Document Type: Reference
+Document ID: DOC-PLAT-003
+Version: 1.1.0
+Status: Active
+Layer: Platform
+Document Type: Platform Asset
 Owner: AI-OS Architecture
 
 I primarily use Claude as a strategic AI partner for software engineering, data analytics, AI architecture, prompt engineering, technical writing, and research.
@@ -75,21 +75,3 @@ Change Logging Policy (mandatory):
 • Changes to official documents must also stay consistent with `AI-OS_Document_Registry` and the document's own Version Information / Change Log fields (DP-008 Traceability).
 • No change is considered complete until it is logged.
 
-## Version Information
-
-| Field          | Value              |
-| -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
-| Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-13         |
-| Created date   | 2026-07-13         |
-| Change Summary | Added official metadata and registry identity |
-
----
-
-## Related Documents
-
-- AGENTS.md
-- Knowledge_Base/Agents/AGENTS.md
-- SECURITY.md
