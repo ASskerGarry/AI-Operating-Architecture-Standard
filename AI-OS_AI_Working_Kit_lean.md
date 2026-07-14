@@ -1,47 +1,22 @@
-# AI-OS — AI Working Kit
+# AI-OS — AI Working Kit (Lean)
 
-Document ID: DOC-CORE-009
-Version: 2.1.0
+Document ID: DOC-CORE-010
+Version: 1.0.0
 Status: Active
 Layer: Core
 Document Type: Reference
 Owner: AI-OS Architecture
 Last Updated: 2026-07-14
 
-> **GENERATED FILE — do not edit by hand.** This is a rendered copy assembled
-> from the official AI-OS documents (sources prevail on conflict, DP-001).
-> Regenerate with: `python3 Knowledge_Base/generate_working_kit.py`
->
-> **Purpose:** single-file operational context for any AI model working within
-> the AI-OS framework.
-
-## Source Versions
-
-| Section | Document ID | Version |
-| ------- | ----------- | ------- |
-| Core Identity | DOC-CORE-001 | 1.1.0 |
-| Core Execution Engine | DOC-CORE-002 | 1.2.0 |
-| AI-OS Design Principles | DOC-ARCH-004 | 1.1.0 |
-| AI-OS Reasoning Patterns | DOC-ARCH-008 | 1.0.1 |
-| Memory Architecture | DOC-MEM-002 | 1.0.1 |
-| AI-OS Glossary | DOC-ARCH-003 | 1.1.0 |
-
-## Table of Contents
-
-1. Core Identity
-2. Core Execution Engine
-3. AI-OS Design Principles
-4. AI-OS Reasoning Patterns
-5. Memory Architecture
-6. AI-OS Glossary
-7. Capability Layer — Module Index
-8. Execution Layer — Module Index
+> **GENERATED FILE — do not edit by hand.** Token-efficient rendered copy of
+> the official AI-OS documents for use as model context (sources prevail on
+> conflict, DP-001). Governance metadata lives in `AI-OS_AI_Working_Kit.md`
+> and the source documents. Regenerate with:
+> `python3 Knowledge_Base/generate_working_kit.py`
 
 ---
 
 ## Core Identity
-
-> Source: `00_Core/Core_Identity.md` (DOC-CORE-001 v1.1.0) — the source document prevails on conflict.
 
 ### PURPOSE
 
@@ -158,8 +133,6 @@ Task-specific behavior belongs to Capability Modules and Execution Modules—not
 ---
 
 ## Core Execution Engine
-
-> Source: `00_Core/Core_Execution_Engine.md` (DOC-CORE-002 v1.2.0) — the source document prevails on conflict.
 
 ### PURPOSE
 
@@ -285,8 +258,6 @@ Optimize every response for:
 ---
 
 ## AI-OS Design Principles
-
-> Source: `01_Architecture/AI-OS_Design_Principles.md` (DOC-ARCH-004 v1.1.0) — the source document prevails on conflict.
 
 ### Purpose
 
@@ -478,29 +449,7 @@ Unnecessary complexity SHALL be avoided.
 
 ---
 
-### Compliance
-
-Every official AI-OS document, module, workflow, and governance artifact SHALL comply with this standard.
-
-Compliance SHALL be verified during architecture reviews.
-
-Non-compliant artifacts SHALL be revised before approval.
-
----
-
-### Governance
-
-The AI-OS Architecture Team owns this standard.
-
-Changes SHALL be reviewed through the Architecture Governance process.
-
-Updates SHALL preserve architectural consistency across the entire AI-OS repository.
-
----
-
 ## AI-OS Reasoning Patterns
-
-> Source: `01_Architecture/AI-OS_Reasoning_Patterns.md` (DOC-ARCH-008 v1.0.1) — the source document prevails on conflict.
 
 ### Purpose
 
@@ -679,8 +628,6 @@ Iteration budget: ~5 (1–2 tools), ~10 (3–5 steps), ~20 (audits/parsing).
 
 ## Memory Architecture
 
-> Source: `06_Memory/Memory_Architecture.md` (DOC-MEM-002 v1.0.1) — the source document prevails on conflict.
-
 ### Purpose
 
 This standard defines how AI-OS manages knowledge **across time** — beyond a single request and beyond a single context window. It establishes a three-tier memory hierarchy, the contract for the persistent `MEMORY.md` artifact, and the consolidation cycle that keeps memory accurate.
@@ -763,17 +710,7 @@ Consolidation SHALL be recorded in `Change_Log_day.md` like any other change (lo
 
 ---
 
-### Governance
-
-- Memory artifacts follow the same rules as all repository content: log-first change recording, metadata compliance where applicable, and SSOT.
-- The Memory Layer owns the **model**; Platform Adapters own the **mechanics** (how a given platform loads Core Memory, e.g. Claude's `CLAUDE.md`/Projects). Adapters SHALL map their mechanism to these tiers explicitly.
-- Quality criterion (DP-014): a reader with no session history, given Core + Recall memory, can continue the work without re-asking the user for known facts.
-
----
-
 ## AI-OS Glossary
-
-> Source: `01_Architecture/AI-OS_Glossary.md` (DOC-ARCH-003 v1.1.0) — the source document prevails on conflict.
 
 ### Purpose
 
@@ -880,27 +817,6 @@ Additional identifier families MAY be introduced as the architecture evolves.
 | ISO | International Organization for Standardization |
 | TOGAF | The Open Group Architecture Framework |
 | RFC | Request for Comments |
-
----
-
-### Governance
-
-AI-OS Architecture is responsible for maintaining this glossary.
-
-New terminology SHALL be reviewed before becoming part of the official AI-OS vocabulary.
-
-Duplicate or conflicting terminology SHALL NOT be introduced.
-
----
-
-### Maintenance Rules
-
-Every new architectural concept SHALL:
-
-- define a unique official term;
-- avoid ambiguity;
-- remain consistent with existing terminology;
-- be added to this glossary before being referenced by other official documents.
 
 ---
 

@@ -1,6 +1,6 @@
 # AI-OS Document Registry
 
-Version: 1.8.0
+Version: 1.9.0
 Status: Active
 Layer: Architecture
 Document Type: Registry
@@ -57,7 +57,7 @@ Each registered document SHALL include the following metadata.
 | ------------ | ---------------------------------- | ------------ | ----------------- | ------ | ------- | ------------------ | ------------------------------------------- |
 | DOC-CORE-001 | Core Identity                      | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /00_Core                                    |
 | DOC-CORE-002 | Core Execution Engine              | Core         | Standard          | Active | 1.2.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.8.0  | AI-OS Architecture | /01_Architecture                            |
+| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.9.0  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-002 | AI-OS Documentation Standards      | Architecture | Standard          | Active | 1.0.1  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-003 | AI-OS Glossary                     | Architecture | Reference         | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-004 | AI-OS Design Principles            | Architecture | Registry          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
@@ -85,7 +85,8 @@ Each registered document SHALL include the following metadata.
 | DOC-CORE-006 | Contributing to AI-OS              | Core         | Guide             | Active | 1.1.0   | AI-OS Architecture | /CONTRIBUTING.md                            |
 | DOC-CORE-007 | Security Policy                    | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /SECURITY.md                                |
 | DOC-CORE-008 | AI-OS Agent Instructions           | Core         | Guide             | Active | 1.1.0   | AI-OS Architecture | /AGENTS.md                                  |
-| DOC-CORE-009 | AI-OS — AI Working Kit             | Core         | Reference         | Active | 2.0.0   | AI-OS Architecture | /AI-OS_AI_Working_Kit.md                    |
+| DOC-CORE-009 | AI-OS — AI Working Kit             | Core         | Reference         | Active | 2.1.0   | AI-OS Architecture | /AI-OS_AI_Working_Kit.md                    |
+| DOC-CORE-010 | AI-OS — AI Working Kit (Lean)      | Core         | Reference         | Active | 1.0.0   | AI-OS Architecture | /AI-OS_AI_Working_Kit_lean.md               |
 | DOC-PLAT-003 | CLAUDE                             | Platform     | Platform Asset    | Active | 1.1.0   | AI-OS Architecture | /CLAUDE.md                                  |
 | DOC-PLAT-004 | Prompt Generator (AI-OS)           | Platform     | Platform Asset    | Active | 4.0.2   | AI-OS Architecture | /04_Platforms/Claude/prompt-generator.skill.md |
 | DOC-TMP-001  | Templates Layer README             | Templates    | README            | Active | 1.1.1  | AI-OS Architecture | /05_Templates/README.md                     |
@@ -218,12 +219,12 @@ Registry updates SHALL occur before publishing architectural changes.
 
 | Field          | Value                                                                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Version        | 1.8.0                                                                                                                              |
+| Version        | 1.9.0                                                                                                                              |
 | Status         | Active                                                                                                                             |
 | Owner          | AI-OS Architecture                                                                                                                 |
 | Last Updated   | 2026-07-14                                                                                                                         |
 | Created date   | 2026-07-10                                                                                                                         |
-| Change Summary | Registered five Open-Core commercial documents (DOC-ARCH-010…014, Draft); registry now 74 documents |
+| Change Summary | Registered the Lean Working Kit (DOC-CORE-010, Active 1.0.0); Working Kit bumped to 2.1.0; registry now 75 documents |
 
 ---
 
