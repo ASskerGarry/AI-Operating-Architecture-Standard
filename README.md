@@ -1,11 +1,13 @@
 # AI-OS — AI Operating Architecture Standard
 
 Document ID: DOC-CORE-005
-Version: 1.3.1
+Version: 1.3.2
 Status: Active
 Layer: Core
 Document Type: README
 Owner: AI-OS Architecture
+
+[![AI-OS Governance Validation](https://github.com/ASskerGarry/AI-Operating-Architecture-Standard/actions/workflows/validate.yml/badge.svg)](https://github.com/ASskerGarry/AI-Operating-Architecture-Standard/actions/workflows/validate.yml)
 
 **Make your AI behave the same way tomorrow as it did today.**
 
@@ -76,12 +78,12 @@ Compliance is checked automatically: [`Knowledge_Base/validate_aios.py`](Knowled
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.3.1              |
+| Version        | 1.3.2              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-14         |
-| Change Summary | Added the AI-OS MCP Server (DOC-PLAT-005) to How to Deploy |
+| Change Summary | Added the CI validation status badge |
 
 ---
 
