@@ -1,7 +1,7 @@
 # Validate
 
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Execution
 Document Type: Execution Module
 Document ID: DOC-EXEC-015
@@ -16,8 +16,8 @@ Owner: AI-OS Architecture
 | Module Name | Validate |
 | Module ID | DOC-EXEC-015 |
 | Category | Validation |
-| Version | 1.0.0 |
-| Status | Draft |
+| Version | 1.0.1 |
+| Status | Active |
 | Owner | AI-OS Architecture |
 
 ---
@@ -121,12 +121,12 @@ Out of scope: open-ended assessment (see Analyze), improvement (see Optimize).
 
 | Field | Value |
 |------|------|
-| Version | 1.0.0 |
-| Status | Draft |
+| Version | 1.0.1 |
+| Status | Active |
 | Owner | AI-OS Architecture |
-| Last Updated | 2026-07-10 |
+| Last Updated | 2026-07-14 |
 | Created date | 2026-07-10 |
-| Change Summary | Initial content |
+| Change Summary | Promoted to Active after Quality Gate review |
 
 ---
 

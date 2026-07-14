@@ -1,7 +1,7 @@
 # Templates Layer
 
-Version: 1.1.0
-Status: Draft
+Version: 1.1.1
+Status: Active
 Layer: Templates
 Document Type: README
 Document ID: DOC-TMP-001
@@ -40,12 +40,12 @@ Layer-specific templates remain owned by their layers (Single Source of Truth, D
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.1.0              |
-| Status         | Draft              |
+| Version        | 1.1.1              |
+| Status         | Active              |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-11         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-10         |
-| Change Summary | Expanded stub into full layer description with template index and usage rules |
+| Change Summary | Promoted to Active after Quality Gate review |
 
 ---
 

@@ -1,6 +1,6 @@
 # AI-OS Documentation Standards
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Architecture
 Document Type: Standard
 Document ID: DOC-ARCH-002
@@ -183,12 +183,12 @@ All future documentation shall comply with this specification.
 # 20. Version Information
 | Field | Value |
 |------|------|
-| Version | 1.0.0 |
-| Status | Draft |
+| Version | 1.0.1 |
+| Status | Active |
 | Owner | AI-OS Architecture |
-| Last Updated | 2026-07-10 |
+| Last Updated | 2026-07-14 |
 | Created date | 2026-07-10 |
-| Change Summary | Preparing Release |
+| Change Summary | Promoted to Active after Quality Gate review |
 # 21. Related Documents
 - Core Identity
 - Core Execution Engine

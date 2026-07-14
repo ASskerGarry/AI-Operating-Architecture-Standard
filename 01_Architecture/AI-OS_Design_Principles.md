@@ -1,8 +1,9 @@
 # AI-OS Design Principles
+
 Version: 1.1.0
 Status: Active
 Layer: Architecture
-Document Type: Standard
+Document Type: Registry
 Document ID: DOC-ARCH-004
 Owner: AI-OS Architecture
 
@@ -225,9 +226,9 @@ Updates SHALL preserve architectural consistency across the entire AI-OS reposit
 | Version | 1.1.0 |
 | Status | Active |
 | Owner | AI-OS Architecture |
-| Last Updated | 2026-07-13 |
+| Last Updated | 2026-07-14 |
 | Created date | 2026-07-10 |
-| Change Summary | Normalized metadata header to canonical AI-OS format and aligned lifecycle status/type |
+| Change Summary | Quality Gate review: converted YAML front-matter to the standard header block; promoted Draft → Active |
 
 ---
 

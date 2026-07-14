@@ -1,7 +1,7 @@
 # Power BI
 
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Capability
 Document Type: Capability Module
 Document ID: DOC-CAPA-017
@@ -17,14 +17,14 @@ Owner: AI-OS Architecture
 | Module ID | DOC-CAPA-017 |
 | Category | Data & Analytics |
 | Capability Domain | Business intelligence and dashboard development |
-| Version | 1.0.0 |
-| Status | Draft |
+| Version | 1.0.1 |
+| Status | Active |
 | Owner | AI-OS Architecture |
 | Role Eligibility | Independent / Primary / Secondary / Supporting |
 | Recommended Partners | SQL, Data Analytics |
 | AI Platforms | All |
 | Created | 2026-07-11 |
-| Last Updated | 2026-07-11 |
+| Last Updated | 2026-07-14 |
 
 ---
 
@@ -122,9 +122,9 @@ User's YTD measure shows wrong values on month slicers → Power BI (Primary) �
 
 | Field | Value |
 | ----- | ----- |
-| Review Date | — |
-| Reviewer | — |
-| Review Result | Pending |
+| Review Date | 2026-07-14 |
+| Reviewer | AI-OS Architecture |
+| Review Result | Approved |
 | Open Issues | None recorded |
 
 ---
@@ -141,12 +141,12 @@ User's YTD measure shows wrong values on month slicers → Power BI (Primary) �
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
+| Version        | 1.0.1              |
+| Status         | Active              |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-11         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-11         |
-| Change Summary | Initial content    |
+| Change Summary | Promoted to Active after Quality Gate review |
 
 ---
 

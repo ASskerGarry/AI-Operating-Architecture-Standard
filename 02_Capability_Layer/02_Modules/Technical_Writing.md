@@ -1,7 +1,7 @@
 # Technical Writing
 
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Capability
 Document Type: Capability Module
 Document ID: DOC-CAPA-020
@@ -17,14 +17,14 @@ Owner: AI-OS Architecture
 | Module ID | DOC-CAPA-020 |
 | Category | Communication |
 | Capability Domain | Technical documentation and structured communication |
-| Version | 1.0.0 |
-| Status | Draft |
+| Version | 1.0.1 |
+| Status | Active |
 | Owner | AI-OS Architecture |
 | Role Eligibility | Independent / Secondary / Supporting (not Primary, per Capability Dependency Matrix) |
 | Recommended Partners | Any Primary Capability |
 | AI Platforms | All |
 | Created | 2026-07-11 |
-| Last Updated | 2026-07-11 |
+| Last Updated | 2026-07-14 |
 
 ---
 
@@ -122,9 +122,9 @@ User asks to document a data pipeline → Python (Primary) + Technical Writing (
 
 | Field | Value |
 | ----- | ----- |
-| Review Date | — |
-| Reviewer | — |
-| Review Result | Pending |
+| Review Date | 2026-07-14 |
+| Reviewer | AI-OS Architecture |
+| Review Result | Approved |
 | Open Issues | None recorded |
 
 ---
@@ -141,12 +141,12 @@ User asks to document a data pipeline → Python (Primary) + Technical Writing (
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
+| Version        | 1.0.1              |
+| Status         | Active              |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-11         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-11         |
-| Change Summary | Initial content    |
+| Change Summary | Promoted to Active after Quality Gate review |
 
 ---
 
