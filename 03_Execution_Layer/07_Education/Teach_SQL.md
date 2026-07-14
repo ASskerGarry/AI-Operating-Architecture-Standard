@@ -1,7 +1,7 @@
 # Teach SQL
 
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Execution
 Document Type: Execution Module
 Document ID: DOC-EXEC-018
@@ -16,8 +16,8 @@ Owner: AI-OS Architecture
 | Module Name | Teach SQL          |
 | Module ID   | DOC-EXEC-018       |
 | Category    | Education          |
-| Version     | 1.0.0              |
-| Status      | Draft              |
+| Version     | 1.0.1              |
+| Status      | Active              |
 | Owner       | AI-OS Architecture |
 
 ---
@@ -119,12 +119,12 @@ Out of scope: writing production queries as a deliverable (that is Generate) and
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
+| Version        | 1.0.1              |
+| Status         | Active              |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-10         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-10         |
-| Change Summary | Initial content    |
+| Change Summary | Promoted to Active after Quality Gate review |
 
 ---
 

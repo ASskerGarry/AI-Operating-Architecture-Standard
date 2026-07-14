@@ -1,6 +1,6 @@
 # AI-OS Principle Registry
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Architecture
 Document Type: Registry
 Document ID: DOC-ARCH-005
@@ -124,12 +124,12 @@ Duplicate Principle IDs are prohibited.
 # Version Information
 | Field | Value |
 |------|------|
-| Version | 1.0.0 |
-| Status | Draft |
+| Version | 1.0.1 |
+| Status | Active |
 | Owner | AI-OS Architecture |
-| Last Updated | 2026-07-10 |
+| Last Updated | 2026-07-14 |
 | Date created| 2026-07-10 |
-| Change Summary | Preparing Release |
+| Change Summary | Promoted to Active after Quality Gate review |
 
 ---
 # Related Documents

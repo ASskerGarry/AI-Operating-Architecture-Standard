@@ -1,7 +1,7 @@
 # SQL
 
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Capability
 Document Type: Capability Module
 Document ID: DOC-CAPA-015
@@ -17,14 +17,14 @@ Owner: AI-OS Architecture
 | Module ID | DOC-CAPA-015 |
 | Category | Data & Analytics |
 | Capability Domain | Relational data querying and modeling |
-| Version | 1.0.0 |
-| Status | Draft |
+| Version | 1.0.1 |
+| Status | Active |
 | Owner | AI-OS Architecture |
 | Role Eligibility | Independent / Primary / Secondary / Supporting |
 | Recommended Partners | Statistics, Power BI |
 | AI Platforms | All |
 | Created | 2026-07-11 |
-| Last Updated | 2026-07-11 |
+| Last Updated | 2026-07-14 |
 
 ---
 
@@ -123,9 +123,9 @@ User asks why a query double-counts revenue → SQL (Primary) → Analyze → fa
 
 | Field | Value |
 | ----- | ----- |
-| Review Date | — |
-| Reviewer | — |
-| Review Result | Pending |
+| Review Date | 2026-07-14 |
+| Reviewer | AI-OS Architecture |
+| Review Result | Approved |
 | Open Issues | None recorded |
 
 ---
@@ -142,12 +142,12 @@ User asks why a query double-counts revenue → SQL (Primary) → Analyze → fa
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
+| Version        | 1.0.1              |
+| Status         | Active              |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-11         |
+| Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-11         |
-| Change Summary | Initial content    |
+| Change Summary | Promoted to Active after Quality Gate review |
 
 ---
 

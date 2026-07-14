@@ -1,7 +1,7 @@
 # Development Execution Category
 
-Version: 1.0.0
-Status: Draft
+Version: 1.0.1
+Status: Active
 Layer: Execution
 Document Type: README
 Document ID: DOC-EXEC-021
@@ -26,6 +26,19 @@ This directory groups the Execution Modules of the **Development** category. It 
 # Governance
 
 Modules in this category comply with the Execution Module Specification and are registered in the AI-OS Document Registry. Only registered, non-Draft modules are authoritative.
+
+---
+
+# Version Information
+
+| Field | Value |
+| ----- | ----- |
+| Version | 1.0.1 |
+| Status | Active |
+| Owner | AI-OS Architecture |
+| Last Updated | 2026-07-14 |
+| Created date | 2026-07-10 |
+| Change Summary | Promoted to Active after Quality Gate review; added missing Version Information table |
 
 ---
 

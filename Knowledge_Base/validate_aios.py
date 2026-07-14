@@ -14,9 +14,19 @@ CANON_STATUS = {"Draft", "Review", "Active", "Deprecated", "Archived"}  # per Do
 
 def rel(p): return os.path.relpath(p, ROOT)
 
+# Out of official-document scope per DOC-ARCH-006 ("working notes, exports,
+# and archive content are out of scope") and DOC-MEM-002 (Knowledge_Base is
+# the Archival memory tier, Archive is historical retention).
+SKIP_PREFIXES = ("Knowledge_Base", "Archive")
+
+def skip_dir(dp):
+    r = os.path.relpath(dp, ROOT)
+    parts = r.split(os.sep)
+    return any(p.startswith(".") for p in parts if p != ".") or parts[0] in SKIP_PREFIXES
+
 md_files = []
 for dp, dn, fn in os.walk(ROOT):
-    if "/." in dp: continue
+    if skip_dir(dp): continue
     for f in fn:
         if f.lower().endswith(".md"):
             md_files.append(os.path.join(dp, f))
@@ -110,7 +120,7 @@ unregistered_gov = [d["path"] for d in gov_docs
 # empty dirs
 empty_dirs = []
 for dp, dn, fn in os.walk(ROOT):
-    if "/." in dp: continue
+    if skip_dir(dp): continue
     if not dn and not fn: empty_dirs.append(rel(dp))
 
 # summary

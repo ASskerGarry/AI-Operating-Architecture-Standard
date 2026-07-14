@@ -1,0 +1,55 @@
+name: AI-OS Governance Validation
+
+# Runs the repository's own compliance validator (DP-014 Quality by Design)
+# on every change. Uses a ratchet baseline: the build fails only if the
+# total flagged-item count REGRESSES above the committed baseline.
+#
+# When you fix flagged items, lower BASELINE accordingly so the improvement
+# is locked in. Never raise BASELINE without recording the reason in
+# Change_Log_day.md.
+
+on:
+  push:
+  pull_request:
+
+env:
+  # Zero-defect gate. Reached 2026-07-14: validator scoped to official content
+  # (Knowledge_Base/Archive are out of scope per DOC-ARCH-006 + DOC-MEM-002),
+  # all root/platform files registered, all official documents compliant.
+  # Any new flag fails the build. See Change_Log_day.md 2026-07-14.
+  BASELINE: 0
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run AI-OS compliance validator
+        run: |
+          python3 Knowledge_Base/validate_aios.py . | tee validator-report.txt
+
+      - name: Enforce ratchet baseline
+        run: |
+          TOTAL=$(grep -oP 'TOTAL FLAGGED ITEMS:\s*\K\d+' validator-report.txt)
+          echo "Flagged items: $TOTAL (baseline: $BASELINE)"
+          if [ "$TOTAL" -gt "$BASELINE" ]; then
+            echo "::error::Governance regression: $TOTAL flagged items exceed baseline $BASELINE."
+            echo "::error::Fix the new defects or, if intentional, update BASELINE in .github/workflows/validate.yml and log the reason in Change_Log_day.md."
+            exit 1
+          fi
+          if [ "$TOTAL" -lt "$BASELINE" ]; then
+            echo "::notice::Flag count ($TOTAL) is below baseline ($BASELINE) — consider lowering BASELINE to lock in the improvement."
+          fi
+
+      - name: Upload validator report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validator-report
+          path: validator-report.txt

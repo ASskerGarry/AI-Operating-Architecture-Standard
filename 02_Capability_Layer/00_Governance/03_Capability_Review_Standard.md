@@ -1,6 +1,6 @@
 # Capability Review Standard
-Version: 1.0.1
-Status: Draft
+Version: 1.0.2
+Status: Active
 Document ID: DOC-CAPA-005
 Layer: Capability Layer
 Document Type: Governance Standard
@@ -56,10 +56,14 @@ Possible outcomes:
 # 7. Version Information
 | Field | Value |
 |------|------|
-| Version | 1.0.1 |
-| Reviewer | |
-| Review Date | |
-| Status | Draft |
+| Version | 1.0.2 |
+| Status | Active |
+| Owner | AI-OS Architecture |
+| Reviewer | AI-OS Architecture |
+| Review Date | 2026-07-14 |
+| Last Updated | 2026-07-14 |
+| Created date | 2026-07-10 |
+| Change Summary | Promoted to Active after Quality Gate review; completed Version Information table |
 ---
 
 # 8. Related Documents

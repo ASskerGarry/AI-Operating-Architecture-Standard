@@ -1,8 +1,8 @@
 # AI-OS Agent Instructions
 
-Document ID: DOC-CORE-004
-Version: 1.0.0
-Status: Draft
+Document ID: DOC-CORE-008
+Version: 1.1.0
+Status: Active
 Layer: Core
 Document Type: Guide
 Owner: AI-OS Architecture
@@ -28,22 +28,3 @@ See `Knowledge_Base/Agents/AGENTS.md` for the full repository-specific instructi
 ## Available custom agents
 
 - `AI_Operation_system` — repository-focused agent for AI-OS governance, documentation review, and autonomous repair tasks.
-
-## Version Information
-
-| Field           | Value                                      |
-| --------------- | ------------------------------------------ |
-| Version         | 1.0.0                                      |
-| Status          | Draft                                      |
-| Owner           | AI-OS Architecture                         |
-| Last Updated    | 2026-07-13                                 |
-| Created date    | 2026-07-13                                 |
-| Change Summary  | Added official metadata and registry identity |
-
----
-
-## Related Documents
-
-- Knowledge_Base/Agents/AGENTS.md
-- CLAUDE.md
-- SECURITY.md
