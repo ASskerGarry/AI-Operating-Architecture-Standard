@@ -1,7 +1,7 @@
 # AI-OS — AI Operating Architecture Standard
 
 Document ID: DOC-CORE-005
-Version: 1.3.0
+Version: 1.3.1
 Status: Active
 Layer: Core
 Document Type: README
@@ -44,6 +44,7 @@ The design rules are defined in [`01_Architecture/AI-OS_Design_Principles.md`](0
 AI-OS content is deployed through **Platform Adapters** — no vendor-specific behavior lives in the Core.
 
 - **Claude** (Projects, Claude Code, MCP): see the [Claude Adapter](04_Platforms/Claude_Adapter.md) (`DOC-PLAT-002`) — assembly rule, concept mapping, constraints, and the governed [Prompt Generator Skill](04_Platforms/Claude/prompt-generator.skill.md).
+- **Any MCP client** (Claude Desktop, Claude Code, other MCP hosts): the read-only [AI-OS MCP Server](04_Platforms/AIOS_MCP_Server.md) (`DOC-PLAT-005`) serves the registry and modules as on-demand tools — no static context needed.
 - **GPT / Generic platforms**: planned — see the [Platform Layer README](04_Platforms/README.md).
 
 Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the Capability and Execution modules your task needs, in that order, per the adapter's Assembly Rule — or use a single generated file: [`AI-OS_AI_Working_Kit.md`](AI-OS_AI_Working_Kit.md) (full, with provenance for audit) or [`AI-OS_AI_Working_Kit_lean.md`](AI-OS_AI_Working_Kit_lean.md) (token-efficient, for the model's context window). Both are rebuilt deterministically by `python3 Knowledge_Base/generate_working_kit.py`.
@@ -52,7 +53,7 @@ Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the C
 
 ## Governance
 
-Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 75 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
+Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 76 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
 
 Two rules are non-negotiable:
 
@@ -75,12 +76,12 @@ Compliance is checked automatically: [`Knowledge_Base/validate_aios.py`](Knowled
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.3.0              |
+| Version        | 1.3.1              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-14         |
-| Change Summary | Value-first repositioning: lead with predictability / traceability / token-efficiency ("Why AI-OS"); reference Lean Working Kit; registry count 68 → 75 |
+| Change Summary | Added the AI-OS MCP Server (DOC-PLAT-005) to How to Deploy |
 
 ---
 

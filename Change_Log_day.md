@@ -311,3 +311,11 @@ Owner: AI-OS Architecture
 - Files: `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: README 1.3.0 opens with the problem/answer framing and a "Why AI-OS" section (Quality Gates / traceable change control / token-efficient modular context); Quick Start now offers full vs lean kit. Registry v1.9.1, validator TOTAL FLAGGED ITEMS: 0 (75 documents).
 - Status: done
+
+### 18:10 — Assistant — AI-OS MCP server (dynamic tool-calling, read-only)
+
+- Change: Added `Knowledge_Base/aios_mcp_server.py` — a dependency-free (stdlib-only) Model Context Protocol server over stdio that exposes the official AI-OS documents to AI clients as three read-only tools: `list_documents` (live registry index, filterable by layer/status), `get_document` (full text by Document ID or repo-relative path), `search_documents` (keyword search across official docs). Path access is sandboxed to the repo root, limited to official-scope .md files (same scope rules as the validator: `Knowledge_Base/`, `Archive/`, dot-dirs excluded); no write tools exist. Added `Knowledge_Base/Dockerfile.mcp` for containerized, non-root, read-only deployment. Documented and registered as `04_Platforms/AIOS_MCP_Server.md` (DOC-PLAT-005, Platform Asset). README Deploy section references the server. Registry → v1.10.0 (76 documents).
+- Reason: External review recommendations #1/#2 (dynamic tool-calling instead of static registries in context; working MCP integration layer instead of "MAS on paper"). This is the first executable integration layer — evidence input for promoting DOC-ARCH-009 per DP-015. Security posture per the MCP stdio-transport risk analysis: read-only by default, sandboxed paths, container isolation guidance.
+- Files: `Knowledge_Base/aios_mcp_server.py` (new), `Knowledge_Base/Dockerfile.mcp` (new), `04_Platforms/AIOS_MCP_Server.md` (new), `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
+- Result: End-to-end acceptance test 9/9 PASS (initialize handshake, tools/list, all three tools against live content, path-traversal refusal, out-of-scope refusal, unknown-ID and unknown-method errors) — recorded in DOC-PLAT-005 Validation. Registry v1.10.0, 76 documents; README 1.3.1; validator TOTAL FLAGGED ITEMS: 0.
+- Status: done
