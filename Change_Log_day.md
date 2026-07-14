@@ -295,3 +295,11 @@ Owner: AI-OS Architecture
 - Files: `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: Validator clean in the session tree (TOTAL FLAGGED ITEMS: 0); applying the same registry on the user's local tree resolves all five C7 flags. Registry v1.8.0, 74 documents: 68 Active + 6 Draft (DOC-ARCH-009 by design; DOC-ARCH-010…014 pending Quality Gate review).
 - Status: done
+
+### 16:40 — Assistant — Lean Working Kit build (token-efficient model context)
+
+- Change: Extended `Knowledge_Base/generate_working_kit.py` to emit a second artifact in the same run: `AI-OS_AI_Working_Kit_lean.md` — the same assembled content with governance/bureaucratic noise stripped (per-section provenance stamps, Source Versions table, in-document Related Documents / Change History sections), keeping only the operational rules, module indexes and a minimal registry-compliant header. Registered the lean kit as `DOC-CORE-010` (Reference, Active 1.0.0); registry 74 → 75 (v1.9.0).
+- Reason: External review recommendation (analytical report + gem follow-up): metadata blocks in the model-facing context cause Attention Clutter and token overuse (~20–25% of the kit). Split "for humans" (full kit, audit trail) vs "for machines" (lean kit) while keeping one generator — SSOT/DRY, no drift between the two.
+- Files: `Knowledge_Base/generate_working_kit.py`, `AI-OS_AI_Working_Kit.md` (regenerated), `AI-OS_AI_Working_Kit_lean.md` (new), `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
+- Result: Lean kit 853 lines / 36.7k chars vs full kit 937 lines / 39.5k chars — 8% (~700 tokens) saved with all 15 DPs, 10 RPs and both module indexes intact. Honest correction to the external report's 20–30% estimate: the v2.0.0 generator had already stripped most metadata, so the remaining reduction is modest. Validator: TOTAL FLAGGED ITEMS 0, registry 75 documents (v1.9.0).
+- Status: done
