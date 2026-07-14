@@ -2,9 +2,17 @@
 """
 AI-OS Working Kit Generator
 
-Rebuilds AI-OS_AI_Working_Kit.md (DOC-CORE-009) from the current official
-source documents, so the single-file operational context never drifts from
-the SSOT (DP-001, DP-003 — the kit is a *rendered copy*; sources prevail).
+Rebuilds both operational-context artifacts from the current official
+source documents, so they never drift from the SSOT (DP-001, DP-003 —
+the kits are *rendered copies*; sources prevail):
+
+  AI-OS_AI_Working_Kit.md       (DOC-CORE-009) — full kit for humans/audit:
+                                keeps provenance stamps and source versions.
+  AI-OS_AI_Working_Kit_lean.md  (DOC-CORE-010) — token-efficient kit for the
+                                model context window: same rules, governance
+                                metadata stripped (no provenance stamps, no
+                                Source Versions table, no Related Documents /
+                                Change History sections).
 
 Usage:  python3 Knowledge_Base/generate_working_kit.py [repo_root]
 """
@@ -12,7 +20,8 @@ import os, re, sys
 from datetime import date
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
-KIT_VERSION = "2.0.0"
+KIT_VERSION = "2.1.0"
+LEAN_VERSION = "1.0.0"
 TODAY = date.today().isoformat()
 
 # Full-body sources, in kit order: (section title, path)
@@ -49,6 +58,17 @@ def body(text):
     b = re.sub(r"^## ", "### ", b, flags=re.M)
     return b
 
+def lean_body(text):
+    """body() minus in-document governance sections (Related Documents,
+    Change History / Change Log) — operational rules only."""
+    b = body(text)
+    b = re.sub(r"^#{1,4}\s*(?:\d+\.\s*)?(Related Documents?|Change (History|Log)|Version Information|Compliance|Governance|Maintenance Rules?)\s*$.*?(?=^#{1,4}\s|\Z)",
+               "", b, flags=re.M | re.S)
+    # collapse separator/blank-line runs left behind by removed sections
+    b = re.sub(r"(\n---\s*)+(?=\n---|\n*\Z)", "", b)
+    b = re.sub(r"\n{3,}", "\n\n", b)
+    return b.strip()
+
 def purpose_line(text):
     """First paragraph of the Purpose section, single line."""
     m = re.search(r"^#{1,3}\s*(?:\d+\.\s*)?Purpose\s*$(.+?)(?=^#{1,3}\s|\n---)", text, re.M | re.S)
@@ -58,6 +78,7 @@ def purpose_line(text):
     return " ".join(para.split())
 
 parts = []
+lean_parts = []
 sources_table = []
 
 # --- assemble full sections
@@ -66,6 +87,7 @@ for title, path in FULL_SOURCES:
     ver, did = field(t, "Version"), field(t, "Document ID")
     sources_table.append((title, did, ver))
     parts.append(f"## {title}\n\n> Source: `{path}` ({did} v{ver}) — the source document prevails on conflict.\n\n{body(t)}")
+    lean_parts.append(f"## {title}\n\n{lean_body(t)}")
 
 # --- capability index
 rows = []
@@ -76,6 +98,7 @@ for f in sorted(os.listdir(os.path.join(ROOT, CAPA_DIR))):
     rows.append(f"| {field(t,'Document ID')} | {t.splitlines()[0].lstrip('# ').strip()} | {purpose_line(t)} |")
 capa = "## Capability Layer — Module Index\n\n> Full modules live in `02_Capability_Layer/02_Modules/`. Activate only the expertise a task needs.\n\n| ID | Module | Purpose |\n| -- | ------ | ------- |\n" + "\n".join(rows)
 parts.append(capa)
+lean_parts.append(capa)
 
 # --- execution index
 rows = []
@@ -88,6 +111,7 @@ for d in EXEC_DIRS:
         rows.append(f"| {field(t,'Document ID')} | {t.splitlines()[0].lstrip('# ').strip()} | {purpose_line(t)} |")
 exe = "## Execution Layer — Module Index\n\n> Full modules live in `03_Execution_Layer/`. Each defines a reusable work process; domain content comes from the active Capability Modules.\n\n| ID | Module | Purpose |\n| -- | ------ | ------- |\n" + "\n".join(rows)
 parts.append(exe)
+lean_parts.append(exe)
 
 toc = "\n".join(f"{i+1}. {p.splitlines()[0].lstrip('# ')}" for i, p in enumerate(parts))
 srcs = "\n".join(f"| {t} | {d} | {v} |" for t, d, v in sources_table)
@@ -127,3 +151,29 @@ out = os.path.join(ROOT, "AI-OS_AI_Working_Kit.md")
 with open(out, "w", encoding="utf-8") as fh:
     fh.write(kit)
 print(f"Generated {out}: {len(kit.splitlines())} lines, {len(parts)} sections")
+
+lean = f"""# AI-OS — AI Working Kit (Lean)
+
+Document ID: DOC-CORE-010
+Version: {LEAN_VERSION}
+Status: Active
+Layer: Core
+Document Type: Reference
+Owner: AI-OS Architecture
+Last Updated: {TODAY}
+
+> **GENERATED FILE — do not edit by hand.** Token-efficient rendered copy of
+> the official AI-OS documents for use as model context (sources prevail on
+> conflict, DP-001). Governance metadata lives in `AI-OS_AI_Working_Kit.md`
+> and the source documents. Regenerate with:
+> `python3 Knowledge_Base/generate_working_kit.py`
+
+---
+
+""" + "\n\n---\n\n".join(lean_parts) + "\n"
+
+out_lean = os.path.join(ROOT, "AI-OS_AI_Working_Kit_lean.md")
+with open(out_lean, "w", encoding="utf-8") as fh:
+    fh.write(lean)
+saved = 100 - round(100 * len(lean) / len(kit))
+print(f"Generated {out_lean}: {len(lean.splitlines())} lines, {len(lean_parts)} sections ({saved}% smaller than the full kit)")
