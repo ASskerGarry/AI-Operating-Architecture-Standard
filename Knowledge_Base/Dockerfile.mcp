@@ -1,0 +1,21 @@
+# AI-OS MCP Server — containerized deployment (DOC-PLAT-005)
+#
+# Isolation posture per the MCP stdio-transport risk analysis:
+# non-root user, read-only repository mount, no network needed.
+#
+# Build (from the repository root):
+#   docker build -f Knowledge_Base/Dockerfile.mcp -t aios-mcp .
+#
+# Run (read-only mount, no network):
+#   docker run -i --rm --read-only --network none \
+#     -v "$(pwd)":/repo:ro aios-mcp
+FROM python:3.12-slim
+
+RUN useradd --create-home --shell /usr/sbin/nologin aios
+USER aios
+WORKDIR /repo
+
+# The server is stdlib-only: no pip installs, no supply-chain surface.
+COPY --chown=aios Knowledge_Base/aios_mcp_server.py /srv/aios_mcp_server.py
+
+ENTRYPOINT ["python3", "/srv/aios_mcp_server.py", "/repo"]
