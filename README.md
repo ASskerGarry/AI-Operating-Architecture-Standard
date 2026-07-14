@@ -1,13 +1,23 @@
 # AI-OS — AI Operating Architecture Standard
 
 Document ID: DOC-CORE-005
-Version: 1.2.0
+Version: 1.3.0
 Status: Active
 Layer: Core
 Document Type: README
 Owner: AI-OS Architecture
 
-**AI-OS** is a layered, platform-agnostic architecture standard for operating an AI assistant as a governed system — not a pile of prompts.
+**Make your AI behave the same way tomorrow as it did today.**
+
+Teams adopting LLMs hit the same three walls: the AI behaves *unpredictably* (the same prompt drifts between sessions and model updates), changes are *untraceable* (nobody knows which instruction edit broke production), and context is *expensive* (monolithic prompts burn tokens on content the task never uses).
+
+**AI-OS** answers all three with one move: it treats AI instructions as a governed software system — not a pile of prompts.
+
+## Why AI-OS
+
+- **Predictability through Quality Gates.** Every artifact passes explicit validation criteria before it ships (`Validate`, DOC-EXEC-015; DP-014 Quality by Design), and a zero-defect CI gate ([`validate.yml`](.github/workflows/validate.yml)) blocks any change that breaks the standard. The AI operates inside hard rails, not vibes.
+- **Traceability through governed change control.** Immutable document IDs, semantic versions, lifecycle states, and a mandatory log-first change log mean every behavior change has an author, a reason, and a diff — so regressions are found in minutes, not sprints.
+- **Token efficiency through modular context.** The AI loads only the capability and process modules a task needs; a generated, metadata-free [Lean Working Kit](AI-OS_AI_Working_Kit_lean.md) keeps the model's context window on business rules instead of bureaucracy.
 
 It separates *who the AI is* (stable identity) from *what it knows* (capabilities), *how it works* (execution processes), and *where it runs* (platform adapters), with enterprise-style documentation governance on top: a document registry, immutable IDs, metadata standards, lifecycle states, and a mandatory change log.
 
@@ -36,13 +46,13 @@ AI-OS content is deployed through **Platform Adapters** — no vendor-specific b
 - **Claude** (Projects, Claude Code, MCP): see the [Claude Adapter](04_Platforms/Claude_Adapter.md) (`DOC-PLAT-002`) — assembly rule, concept mapping, constraints, and the governed [Prompt Generator Skill](04_Platforms/Claude/prompt-generator.skill.md).
 - **GPT / Generic platforms**: planned — see the [Platform Layer README](04_Platforms/README.md).
 
-Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the Capability and Execution modules your task needs, in that order, per the adapter's Assembly Rule — or use the single-file [`AI-OS_AI_Working_Kit.md`](AI-OS_AI_Working_Kit.md).
+Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the Capability and Execution modules your task needs, in that order, per the adapter's Assembly Rule — or use a single generated file: [`AI-OS_AI_Working_Kit.md`](AI-OS_AI_Working_Kit.md) (full, with provenance for audit) or [`AI-OS_AI_Working_Kit_lean.md`](AI-OS_AI_Working_Kit_lean.md) (token-efficient, for the model's context window). Both are rebuilt deterministically by `python3 Knowledge_Base/generate_working_kit.py`.
 
 ---
 
 ## Governance
 
-Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 68 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
+Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 75 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
 
 Two rules are non-negotiable:
 
@@ -65,12 +75,12 @@ Compliance is checked automatically: [`Knowledge_Base/validate_aios.py`](Knowled
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.2.0              |
+| Version        | 1.3.0              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-14         |
-| Change Summary | Registered as DOC-CORE-005 and promoted to Active; registry count → 68 |
+| Change Summary | Value-first repositioning: lead with predictability / traceability / token-efficiency ("Why AI-OS"); reference Lean Working Kit; registry count 68 → 75 |
 
 ---
 

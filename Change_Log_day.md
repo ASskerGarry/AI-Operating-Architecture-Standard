@@ -303,3 +303,11 @@ Owner: AI-OS Architecture
 - Files: `Knowledge_Base/generate_working_kit.py`, `AI-OS_AI_Working_Kit.md` (regenerated), `AI-OS_AI_Working_Kit_lean.md` (new), `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: Lean kit 853 lines / 36.7k chars vs full kit 937 lines / 39.5k chars — 8% (~700 tokens) saved with all 15 DPs, 10 RPs and both module indexes intact. Honest correction to the external report's 20–30% estimate: the v2.0.0 generator had already stripped most metadata, so the remaining reduction is modest. Validator: TOTAL FLAGGED ITEMS 0, registry 75 documents (v1.9.0).
 - Status: done
+
+### 17:30 — Assistant — README repositioning (value-first for adopters)
+
+- Change: Rewrote the README opening to lead with the adopter's problem (unstable, unpredictable, token-expensive AI behavior) and AI-OS's answer (Quality Gates, governed change control, token-efficient modular context) instead of opening with internal architecture vocabulary. Added a "Why AI-OS" section with the three value pillars; architecture map and governance sections kept below. Updated the stale registry count (68 → 75), referenced the Lean Working Kit in Quick Start. README → 1.3.0; registry row updated (v1.9.1).
+- Reason: External review recommendation (marketing positioning): the README spoke architect-to-architect; tech leads evaluating the project need the stability/cost value proposition first.
+- Files: `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
+- Result: README 1.3.0 opens with the problem/answer framing and a "Why AI-OS" section (Quality Gates / traceable change control / token-efficient modular context); Quick Start now offers full vs lean kit. Registry v1.9.1, validator TOTAL FLAGGED ITEMS: 0 (75 documents).
+- Status: done

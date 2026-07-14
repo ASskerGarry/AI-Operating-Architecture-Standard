@@ -1,6 +1,6 @@
 # AI-OS Document Registry
 
-Version: 1.9.0
+Version: 1.9.1
 Status: Active
 Layer: Architecture
 Document Type: Registry
@@ -57,7 +57,7 @@ Each registered document SHALL include the following metadata.
 | ------------ | ---------------------------------- | ------------ | ----------------- | ------ | ------- | ------------------ | ------------------------------------------- |
 | DOC-CORE-001 | Core Identity                      | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /00_Core                                    |
 | DOC-CORE-002 | Core Execution Engine              | Core         | Standard          | Active | 1.2.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.9.0  | AI-OS Architecture | /01_Architecture                            |
+| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.9.1  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-002 | AI-OS Documentation Standards      | Architecture | Standard          | Active | 1.0.1  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-003 | AI-OS Glossary                     | Architecture | Reference         | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-004 | AI-OS Design Principles            | Architecture | Registry          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
@@ -81,7 +81,7 @@ Each registered document SHALL include the following metadata.
 | DOC-MEM-001  | Memory Layer README                | Memory       | README            | Active | 1.0.1  | AI-OS Architecture | /06_Memory/README.md                        |
 | DOC-MEM-002  | Memory Architecture                | Memory       | Standard          | Active | 1.0.1  | AI-OS Architecture | /06_Memory/Memory_Architecture.md           |
 | DOC-CORE-004 | AI-OS — Daily Change Log           | Core         | Change Log        | Active | 1.1.0   | AI-OS Architecture | /Change_Log_day.md                          |
-| DOC-CORE-005 | AI-OS — AI Operating Architecture Standard | Core | README            | Active | 1.2.0   | AI-OS Architecture | /README.md                                  |
+| DOC-CORE-005 | AI-OS — AI Operating Architecture Standard | Core | README            | Active | 1.3.0   | AI-OS Architecture | /README.md                                  |
 | DOC-CORE-006 | Contributing to AI-OS              | Core         | Guide             | Active | 1.1.0   | AI-OS Architecture | /CONTRIBUTING.md                            |
 | DOC-CORE-007 | Security Policy                    | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /SECURITY.md                                |
 | DOC-CORE-008 | AI-OS Agent Instructions           | Core         | Guide             | Active | 1.1.0   | AI-OS Architecture | /AGENTS.md                                  |
@@ -219,12 +219,12 @@ Registry updates SHALL occur before publishing architectural changes.
 
 | Field          | Value                                                                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Version        | 1.9.0                                                                                                                              |
+| Version        | 1.9.1                                                                                                                              |
 | Status         | Active                                                                                                                             |
 | Owner          | AI-OS Architecture                                                                                                                 |
 | Last Updated   | 2026-07-14                                                                                                                         |
 | Created date   | 2026-07-10                                                                                                                         |
-| Change Summary | Registered the Lean Working Kit (DOC-CORE-010, Active 1.0.0); Working Kit bumped to 2.1.0; registry now 75 documents |
+| Change Summary | README (DOC-CORE-005) bumped to 1.3.0 after value-first repositioning |
 
 ---
 
