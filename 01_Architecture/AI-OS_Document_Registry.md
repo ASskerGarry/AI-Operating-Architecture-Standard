@@ -81,7 +81,7 @@ Each registered document SHALL include the following metadata.
 | DOC-MEM-001  | Memory Layer README                | Memory       | README            | Active | 1.0.1  | AI-OS Architecture | /06_Memory/README.md                        |
 | DOC-MEM-002  | Memory Architecture                | Memory       | Standard          | Active | 1.0.1  | AI-OS Architecture | /06_Memory/Memory_Architecture.md           |
 | DOC-CORE-004 | AI-OS — Daily Change Log           | Core         | Change Log        | Active | 1.1.0   | AI-OS Architecture | /Change_Log_day.md                          |
-| DOC-CORE-005 | AI-OS — AI Operating Architecture Standard | Core | README            | Active | 1.3.1   | AI-OS Architecture | /README.md                                  |
+| DOC-CORE-005 | AI-OS — AI Operating Architecture Standard | Core | README            | Active | 1.3.2   | AI-OS Architecture | /README.md                                  |
 | DOC-CORE-006 | Contributing to AI-OS              | Core         | Guide             | Active | 1.1.0   | AI-OS Architecture | /CONTRIBUTING.md                            |
 | DOC-CORE-007 | Security Policy                    | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /SECURITY.md                                |
 | DOC-CORE-008 | AI-OS Agent Instructions           | Core         | Guide             | Active | 1.1.0   | AI-OS Architecture | /AGENTS.md                                  |
