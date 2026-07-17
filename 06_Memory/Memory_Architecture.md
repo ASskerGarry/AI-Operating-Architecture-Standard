@@ -1,6 +1,6 @@
 # Memory Architecture
 
-Version: 1.0.1
+Version: 1.1.0
 Status: Active
 Layer: Memory
 Document Type: Standard
@@ -91,6 +91,16 @@ Consolidation SHALL be recorded in `Change_Log_day.md` like any other change (lo
 
 ---
 
+### Tooling
+
+The deterministic part of this cycle is automated by
+`Knowledge_Base/consolidate_memory.py`: it rotates fully completed day
+sections of `Change_Log_day.md` older than 14 days into
+`Knowledge_Base/change_log_archive/` (Recall → Archival transition) and
+rebuilds `Knowledge_Base/archival_index.md`, the navigable index of the
+Archival tier. Dry-run by default; `--apply` writes. Semantic consolidation
+(clustering, summarization) remains a manual or model-assisted step.
+
 ## Governance
 
 - Memory artifacts follow the same rules as all repository content: log-first change recording, metadata compliance where applicable, and SSOT.
@@ -103,12 +113,12 @@ Consolidation SHALL be recorded in `Change_Log_day.md` like any other change (lo
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.1              |
+| Version        | 1.1.0              |
 | Status         | Active              |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-14         |
-| Change Summary | Promoted to Active after Quality Gate review |
+| Change Summary | Documented the consolidation tooling (consolidate_memory.py, change-log rotation, archival index) |
 
 ---
 

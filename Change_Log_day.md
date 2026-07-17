@@ -355,3 +355,11 @@ Owner: AI-OS Architecture
 - Files: `Knowledge_Base/behavior_eval/cases.jsonl`, `Knowledge_Base/behavior_eval/eval_spec.json`, `Knowledge_Base/behavior_eval/baseline_results.json`, `Knowledge_Base/check_kit_size.py` (new), `Knowledge_Base/kit_size_baseline.json` (new), `.github/workflows/validate.yml`, `03_Execution_Layer/04_Validation/Behavioral_Evaluation.md`, `Change_Log_day.md`
 - Result: Baseline 35/35 (injection_resistance 1.0); injection FAIL path verified (1 broken case → 0.90 < 0.95, critical regression +0.10, exit 1). FinOps gate verified both ways (+0.0% PASS; simulated +20% FAIL exit 1). DOC-EXEC-024 → 1.1.0.
 - Status: done
+
+### 11:05 — Assistant — Memory consolidation tooling (review response, step 2)
+
+- Change: Added `Knowledge_Base/consolidate_memory.py` — the deterministic implementation of the DOC-MEM-002 consolidation cycle: (1) rotates fully completed day sections of `Change_Log_day.md` older than N days (default 14) into `Knowledge_Base/change_log_archive/YYYY-MM.md` (Recall → Archival tier transition; the active log keeps recent days only); (2) rebuilds `Knowledge_Base/archival_index.md` — a navigable index of the Archival tier (file, size, first heading) for retrieval. Dry-run mode is the default; `--apply` executes. DOC-MEM-002 → 1.1.0 (documents the tool).
+- Reason: External reviews v.2 and v.3 both flagged the consolidation cycle as documentation-only with no executable tooling; the Recall log otherwise grows unboundedly, feeding the very context-bloat problem the architecture fights. LLM-based clustering deliberately deferred (needs API credentials and separate design).
+- Files: `Knowledge_Base/consolidate_memory.py` (new), `Knowledge_Base/archival_index.md` (generated), `06_Memory/Memory_Architecture.md`, `Change_Log_day.md`
+- Result: Dry-run default verified (14-day threshold: nothing moves; --days 2 correctly selects only fully completed days and keeps 2026-07-10 with open planned items); archival index generated (28 items). DOC-MEM-002 → 1.1.0.
+- Status: done
