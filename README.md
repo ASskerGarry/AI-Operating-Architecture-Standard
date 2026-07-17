@@ -1,7 +1,7 @@
 # AI-OS — AI Operating Architecture Standard
 
 Document ID: DOC-CORE-005
-Version: 1.3.2
+Version: 1.3.3
 Status: Active
 Layer: Core
 Document Type: README
@@ -55,14 +55,14 @@ Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the C
 
 ## Governance
 
-Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 76 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
+Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 77 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
 
 Two rules are non-negotiable:
 
 1. **Log first** — every change is recorded in [`Change_Log_day.md`](Change_Log_day.md) *before or as* it is made.
 2. **Registry before Active** — no document becomes authoritative until registered and metadata-compliant.
 
-Compliance is checked automatically: [`Knowledge_Base/validate_aios.py`](Knowledge_Base/validate_aios.py) runs in CI on every push (see `.github/workflows/validate.yml`).
+Compliance is checked automatically at two layers: **structural** — [`Knowledge_Base/validate_aios.py`](Knowledge_Base/validate_aios.py) verifies metadata and registry consistency on every push (`validate.yml`); **behavioral** — a 25-case evaluation gate ([Behavioral Evaluation](03_Execution_Layer/04_Validation/Behavioral_Evaluation.md), `DOC-EXEC-024`) blocks changes that degrade task success, policy compliance, refusal correctness, format adherence, or hallucination avoidance beyond declared limits (`behavior_eval.yml`).
 
 ---
 
@@ -78,12 +78,12 @@ Compliance is checked automatically: [`Knowledge_Base/validate_aios.py`](Knowled
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.3.2              |
+| Version        | 1.3.3              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-14         |
-| Change Summary | Added the CI validation status badge |
+| Change Summary | Documented the two-layer validation model (structural + behavioral, DOC-EXEC-024) |
 
 ---
 
