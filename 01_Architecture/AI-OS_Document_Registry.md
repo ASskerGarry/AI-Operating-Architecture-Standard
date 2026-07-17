@@ -1,6 +1,6 @@
 # AI-OS Document Registry
 
-Version: 1.11.0
+Version: 1.12.0
 Status: Active
 Layer: Architecture
 Document Type: Registry
@@ -57,7 +57,7 @@ Each registered document SHALL include the following metadata.
 | ------------ | ---------------------------------- | ------------ | ----------------- | ------ | ------- | ------------------ | ------------------------------------------- |
 | DOC-CORE-001 | Core Identity                      | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /00_Core                                    |
 | DOC-CORE-002 | Core Execution Engine              | Core         | Standard          | Active | 1.2.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.11.0 | AI-OS Architecture | /01_Architecture                            |
+| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.12.0 | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-002 | AI-OS Documentation Standards      | Architecture | Standard          | Active | 1.0.1  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-003 | AI-OS Glossary                     | Architecture | Reference         | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-004 | AI-OS Design Principles            | Architecture | Registry          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
@@ -66,11 +66,11 @@ Each registered document SHALL include the following metadata.
 | DOC-ARCH-007 | AI-OS Document Template            | Architecture | Template          | Active | 1.1.1   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-008 | AI-OS Reasoning Patterns           | Architecture | Reference         | Active | 1.0.1  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-009 | AI-OS Orchestration Standard       | Architecture | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-010 | AI-OS Open-Core Paid Modules MVP   | Architecture | Specification     | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-011 | AI-OS Open-Core Diagnostic Service Specification | Architecture | Specification | Draft | 1.0.0 | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-012 | AI-OS Open-Core Pricing and Packaging Guide | Architecture | Guide    | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-013 | AI-OS Open-Core GTM and Sales Playbook | Architecture | Guide         | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-014 | AI-OS Open-Core Pilot Delivery Kit | Architecture | Guide             | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
+| DOC-ARCH-010 | AI-OS Open-Core Paid Modules MVP   | Architecture | Specification     | Draft  | 1.0.0   | AI-OS Architecture | Private: AI-OS-Commercial |
+| DOC-ARCH-011 | AI-OS Open-Core Diagnostic Service Specification | Architecture | Specification | Draft | 1.0.0 | AI-OS Architecture | Private: AI-OS-Commercial |
+| DOC-ARCH-012 | AI-OS Open-Core Pricing and Packaging Guide | Architecture | Guide    | Draft  | 1.0.0   | AI-OS Architecture | Private: AI-OS-Commercial |
+| DOC-ARCH-013 | AI-OS Open-Core GTM and Sales Playbook | Architecture | Guide         | Draft  | 1.0.0   | AI-OS Architecture | Private: AI-OS-Commercial |
+| DOC-ARCH-014 | AI-OS Open-Core Pilot Delivery Kit | Architecture | Guide             | Draft  | 1.0.0   | AI-OS Architecture | Private: AI-OS-Commercial |
 | DOC-CAPA-001 | Capability Module Specification    | Architecture | Specification     | Active | 1.0.2  | AI-OS Architecture | /02_Capability_Layer/01_Templates           |
 | DOC-EXEC-001 | Execution Module Specification     | Architecture | Specification     | Active | 1.1.1  | AI-OS Architecture | /03_Execution_Layer/01_Templates            |
 | DOC-EXEC-002 | Execution Module Template          | Architecture | Template          | Active | 1.0.1  | AI-OS Architecture | /03_Execution_Layer/01_Templates            |
@@ -221,12 +221,12 @@ Registry updates SHALL occur before publishing architectural changes.
 
 | Field          | Value                                                                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Version        | 1.11.0                                                                                                                              |
+| Version        | 1.12.0                                                                                                                              |
 | Status         | Active                                                                                                                             |
 | Owner          | AI-OS Architecture                                                                                                                 |
 | Last Updated   | 2026-07-14                                                                                                                         |
 | Created date   | 2026-07-10                                                                                                                         |
-| Change Summary | Registered Behavioral Evaluation (DOC-EXEC-024, Execution Module, Active 1.0.0); registry now 77 documents |
+| Change Summary | Commercial documents DOC-ARCH-010…014 moved to the private AI-OS-Commercial repository; rows retained for traceability |
 
 ---
 

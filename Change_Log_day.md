@@ -337,3 +337,11 @@ Owner: AI-OS Architecture
 - Files: `Knowledge_Base/behavior_eval/*` (new), `.github/workflows/behavior_eval.yml` (new), `03_Execution_Layer/04_Validation/Behavioral_Evaluation.md` (new), `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: Acceptance verified before delivery: baseline 25/25 (all rates 1.0, hallucination 0.0); PASS path (baseline vs baseline) and FAIL path (broken candidate: policy_compliance 0.8 < 0.95, critical regression +0.20, hallucination 0.33 > 0.08 — exit 1) both confirmed; structural validator TOTAL FLAGGED ITEMS: 0 with 77 registered IDs; README 1.3.3, registry v1.11.0.
 - Status: done
+
+### 11:40 — Assistant — Privatize commercial documents (Open-Core boundary)
+
+- Change: Moved all seven Open-Core commercial documents out of the public repository into the private `AI-OS-Commercial` repository (verified pushed there first): the five registered ones (DOC-ARCH-010…014 — Paid Modules MVP, Diagnostic Service Spec, Pricing and Packaging Guide, GTM and Sales Playbook, Pilot Delivery Kit) plus two unregistered drafts with colliding IDs (Commercial_Blueprint claiming DOC-ARCH-008, 90_Day_Roadmap claiming DOC-ARCH-009 — flagged for renumbering in the private repo). Public registry keeps rows DOC-ARCH-010…014 with Repository Location "Private: AI-OS-Commercial" for traceability without content exposure. Registry → v1.12.0 (77 documents: 72 public + 5 private-by-reference). Git history purge of the seven paths follows as the second step of this change-set.
+- Reason: Open-Core boundary — pricing, GTM strategy and pilot methodology must not be readable by competitors in the public repo; DP-002 Separation of Concerns applied to the business layer. Owner approved the move and the history rewrite.
+- Files: 7 × `01_Architecture/AI-OS_Open_Core_*.md` (removed), `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
+- Result: All seven files verified present in AI-OS-Commercial (commit 1e8c831) before removal. Public tree: structural validator TOTAL FLAGGED ITEMS: 0 (77 registered IDs), behavioral gate PASS. History purge executed with git filter-repo over the seven paths; main force-pushed with the ruleset temporarily paused by the owner.
+- Status: done
