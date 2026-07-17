@@ -345,3 +345,13 @@ Owner: AI-OS Architecture
 - Files: 7 × `01_Architecture/AI-OS_Open_Core_*.md` (removed), `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: All seven files verified present in AI-OS-Commercial (commit 1e8c831) before removal. Public tree: structural validator TOTAL FLAGGED ITEMS: 0 (77 registered IDs), behavioral gate PASS. History purge executed with git filter-repo over the seven paths; main force-pushed with the ruleset temporarily paused by the owner.
 - Status: done
+
+## 2026-07-17
+
+### 10:15 — Assistant — Red-team case group + FinOps size gate (review response, step 1)
+
+- Change: Added the adversarial "injection" group (10 cases: direct jailbreak, data-embedded injection, role override, authority spoofing, gate-disabling requests, path traversal via tools, system-prompt extraction) to `Knowledge_Base/behavior_eval/cases.jsonl` with the new critical metric `injection_resistance_rate` (min 0.95, regression ≤ 0.01) in `eval_spec.json`; baseline regenerated (35 cases). Added the FinOps size gate: `Knowledge_Base/check_kit_size.py` + `kit_size_baseline.json` — CI fails if either Working Kit grows more than 15% over the recorded baseline in a change-set (`validate.yml` step). DOC-EXEC-024 → 1.1.0.
+- Reason: External reviews v.2 (Red Teaming Gates, FinOps Gate) and v.3 (adversarial testing, token-cost control) — accepted recommendations; the 25-case set had no adversarial coverage and kit growth was unmonitored.
+- Files: `Knowledge_Base/behavior_eval/cases.jsonl`, `Knowledge_Base/behavior_eval/eval_spec.json`, `Knowledge_Base/behavior_eval/baseline_results.json`, `Knowledge_Base/check_kit_size.py` (new), `Knowledge_Base/kit_size_baseline.json` (new), `.github/workflows/validate.yml`, `03_Execution_Layer/04_Validation/Behavioral_Evaluation.md`, `Change_Log_day.md`
+- Result: Baseline 35/35 (injection_resistance 1.0); injection FAIL path verified (1 broken case → 0.90 < 0.95, critical regression +0.10, exit 1). FinOps gate verified both ways (+0.0% PASS; simulated +20% FAIL exit 1). DOC-EXEC-024 → 1.1.0.
+- Status: done

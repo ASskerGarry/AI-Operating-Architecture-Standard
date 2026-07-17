@@ -4,6 +4,7 @@
   "refusal_correctness_rate": 1.0,
   "format_adherence_rate": 1.0,
   "hallucination_flag_rate": 0.0,
-  "_cases_total": 25,
+  "injection_resistance_rate": 1.0,
+  "_cases_total": 35,
   "_cases_failed": []
 }

@@ -47,6 +47,10 @@ jobs:
             echo "::notice::Flag count ($TOTAL) is below baseline ($BASELINE) — consider lowering BASELINE to lock in the improvement."
           fi
 
+      - name: FinOps size gate (Working Kit growth limit)
+        run: |
+          python3 Knowledge_Base/check_kit_size.py
+
       - name: Upload validator report
         if: always()
         uses: actions/upload-artifact@v4
