@@ -1,0 +1,49 @@
+{
+  "description": "AI-OS document tools as OpenAI function-calling schemas (platform-neutral tool contract; translate 1:1 to Gemini function declarations). Back any implementation with the AI-OS MCP server rules: read-only, path-sandboxed to the repo root, official-scope .md only (DOC-PLAT-005).",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "list_documents",
+        "description": "List the official AI-OS documents from the Document Registry (SSOT): ID, title, layer, category, status, version, location. Optional filters: layer (e.g. 'Capability'), status (e.g. 'Active').",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "layer": {"type": "string", "description": "filter by architectural layer"},
+            "status": {"type": "string", "description": "filter by lifecycle status"}
+          },
+          "required": []
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_document",
+        "description": "Return the full text of one official AI-OS document, by Document ID (e.g. 'DOC-CAPA-015') or by repo-relative path (e.g. '00_Core/Core_Identity.md'). Read-only.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "id": {"type": "string", "description": "Document ID from the registry"},
+            "path": {"type": "string", "description": "repo-relative .md path"}
+          },
+          "required": []
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "search_documents",
+        "description": "Case-insensitive keyword search across the official AI-OS markdown documents. Returns matching files with the matching lines.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {"type": "string", "description": "text to search for"}
+          },
+          "required": ["query"]
+        }
+      }
+    }
+  ]
+}

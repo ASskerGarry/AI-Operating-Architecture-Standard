@@ -363,3 +363,11 @@ Owner: AI-OS Architecture
 - Files: `Knowledge_Base/consolidate_memory.py` (new), `Knowledge_Base/archival_index.md` (generated), `06_Memory/Memory_Architecture.md`, `Change_Log_day.md`
 - Result: Dry-run default verified (14-day threshold: nothing moves; --days 2 correctly selects only fully completed days and keeps 2026-07-10 with open planned items); archival index generated (28 items). DOC-MEM-002 → 1.1.0.
 - Status: done
+
+### 12:10 — Assistant — GPT, Gemini and Copilot Platform Adapters (review response, step 3)
+
+- Change: Added three Platform Adapters mirroring the Claude Adapter pattern: `04_Platforms/GPT_Adapter.md` (DOC-PLAT-006 — OpenAI Assistants/Responses API, JSON-schema tool calling, `Knowledge_Base/openai_tools.json` with the three AI-OS MCP tools as OpenAI function definitions), `04_Platforms/Gemini_Adapter.md` (DOC-PLAT-007 — Google AI Studio / Vertex AI system instructions, up-to-2M-token context strategy, function declarations), `04_Platforms/Copilot_Adapter.md` (DOC-PLAT-008 — GitHub Copilot: repository custom instructions + AGENTS.md mapping; added the deployable `.github/copilot-instructions.md`). All three registered as Draft — promotion to Active requires validation on the live platform per DP-015. Platform README (DOC-PLAT-001 → 1.2.0) and root README updated (adapters list, 35-case gate wording, 80 documents). Registry → v1.13.0 (80 documents).
+- Reason: The most repeated demand across all external reviews (v.2 A1, v.3 rec.1, earlier reports): platform-agnostic claim requires more than one adapter; the OpenAI function-schema file also provides the tool-calling abstraction outside MCP that v.3 demanded.
+- Files: `04_Platforms/GPT_Adapter.md` (new), `04_Platforms/Gemini_Adapter.md` (new), `04_Platforms/Copilot_Adapter.md` (new), `.github/copilot-instructions.md` (new), `Knowledge_Base/openai_tools.json` (new), `04_Platforms/README.md`, `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
+- Result: Registry v1.13.0, 80 documents (75 public rows + 5 private-by-reference), validator 0 flags; behavioral gate PASS (35 cases); FinOps gate PASS; openai_tools.json parses (3 tools). Claude Adapter row corrected to its actual Active status in the Platform README table.
+- Status: done
