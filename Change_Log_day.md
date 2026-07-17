@@ -327,3 +327,13 @@ Owner: AI-OS Architecture
 - Files: `.gitignore`, `docs/*` (moved), `Knowledge_Base/AI-OS_v1.0_Architecture_Mind_Map.csv` (moved), 3 media files (deleted), `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Knowledge_Base/RELEASE_NOTES_v1.0.0.md` (new), `Change_Log_day.md`
 - Result: .gitignore coherent (conflict markers gone); site self-contained under /docs with 22 .md links rewritten to GitHub URLs; README 1.3.2 with CI badge; validator TOTAL FLAGGED ITEMS: 0. History purge of the 3 media blobs performed as a separate follow-up step (owner-approved, pre-fork window).
 - Status: done
+
+## 2026-07-15
+
+### 09:20 — Assistant — Behavioral Evaluation Gate (PromptOps regression testing, DOC-EXEC-024)
+
+- Change: Implemented the behavioral validation layer properly, superseding the non-functional `feature/behavioral-validation-gate` branch draft: `Knowledge_Base/behavior_eval/` with `eval_spec.json` (5 metrics with thresholds and regression deltas), `cases.jsonl` (25 curated golden cases across task-success / policy-compliance / refusal-correctness / format-adherence / hallucination groups), `run_behavior_eval.py` (deterministic stdlib-only scorer), `compare_eval.py` (threshold + regression gate), `baseline_results.json` (generated). Added `.github/workflows/behavior_eval.yml` CI job. Registered `03_Execution_Layer/04_Validation/Behavioral_Evaluation.md` as DOC-EXEC-024 (Execution Module, Active). README gains the two-layer validation line (→ 1.3.3). Registry → v1.11.0 (77 documents).
+- Reason: External review recommendation #4 (PromptOps regression testing) and the Copilot branch idea — reworked because the branch draft was non-runnable (missing runner script, dataset and baseline), broke the zero-defect gate (unregistered .md in official scope) and degraded the README. This gate is the technical core of the future PromptOps Pack.
+- Files: `Knowledge_Base/behavior_eval/*` (new), `.github/workflows/behavior_eval.yml` (new), `03_Execution_Layer/04_Validation/Behavioral_Evaluation.md` (new), `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
+- Result: Acceptance verified before delivery: baseline 25/25 (all rates 1.0, hallucination 0.0); PASS path (baseline vs baseline) and FAIL path (broken candidate: policy_compliance 0.8 < 0.95, critical regression +0.20, hallucination 0.33 > 0.08 — exit 1) both confirmed; structural validator TOTAL FLAGGED ITEMS: 0 with 77 registered IDs; README 1.3.3, registry v1.11.0.
+- Status: done

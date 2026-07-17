@@ -1,0 +1,38 @@
+name: AI-OS Behavioral Evaluation
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  behavior-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Score the current case set (golden answers unless a candidate
+      # responses file is committed) — stdlib only, no pip installs.
+      - name: Run behavioral evaluation
+        run: |
+          python3 Knowledge_Base/behavior_eval/run_behavior_eval.py \
+            --cases Knowledge_Base/behavior_eval/cases.jsonl \
+            --output Knowledge_Base/behavior_eval/results_candidate.json
+
+      - name: Enforce thresholds and regression limits
+        run: |
+          python3 Knowledge_Base/behavior_eval/compare_eval.py \
+            --spec Knowledge_Base/behavior_eval/eval_spec.json \
+            --baseline Knowledge_Base/behavior_eval/baseline_results.json \
+            --candidate Knowledge_Base/behavior_eval/results_candidate.json
+
+      - name: Upload results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: behavior-eval-results
+          path: Knowledge_Base/behavior_eval/results_candidate.json
