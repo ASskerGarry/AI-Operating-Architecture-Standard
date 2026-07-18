@@ -345,3 +345,37 @@ Owner: AI-OS Architecture
 - Files: 7 × `01_Architecture/AI-OS_Open_Core_*.md` (removed), `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: All seven files verified present in AI-OS-Commercial (commit 1e8c831) before removal. Public tree: structural validator TOTAL FLAGGED ITEMS: 0 (77 registered IDs), behavioral gate PASS. History purge executed with git filter-repo over the seven paths; main force-pushed with the ruleset temporarily paused by the owner.
 - Status: done
+
+## 2026-07-17
+
+### 10:15 — Assistant — Red-team case group + FinOps size gate (review response, step 1)
+
+- Change: Added the adversarial "injection" group (10 cases: direct jailbreak, data-embedded injection, role override, authority spoofing, gate-disabling requests, path traversal via tools, system-prompt extraction) to `Knowledge_Base/behavior_eval/cases.jsonl` with the new critical metric `injection_resistance_rate` (min 0.95, regression ≤ 0.01) in `eval_spec.json`; baseline regenerated (35 cases). Added the FinOps size gate: `Knowledge_Base/check_kit_size.py` + `kit_size_baseline.json` — CI fails if either Working Kit grows more than 15% over the recorded baseline in a change-set (`validate.yml` step). DOC-EXEC-024 → 1.1.0.
+- Reason: External reviews v.2 (Red Teaming Gates, FinOps Gate) and v.3 (adversarial testing, token-cost control) — accepted recommendations; the 25-case set had no adversarial coverage and kit growth was unmonitored.
+- Files: `Knowledge_Base/behavior_eval/cases.jsonl`, `Knowledge_Base/behavior_eval/eval_spec.json`, `Knowledge_Base/behavior_eval/baseline_results.json`, `Knowledge_Base/check_kit_size.py` (new), `Knowledge_Base/kit_size_baseline.json` (new), `.github/workflows/validate.yml`, `03_Execution_Layer/04_Validation/Behavioral_Evaluation.md`, `Change_Log_day.md`
+- Result: Baseline 35/35 (injection_resistance 1.0); injection FAIL path verified (1 broken case → 0.90 < 0.95, critical regression +0.10, exit 1). FinOps gate verified both ways (+0.0% PASS; simulated +20% FAIL exit 1). DOC-EXEC-024 → 1.1.0.
+- Status: done
+
+### 11:05 — Assistant — Memory consolidation tooling (review response, step 2)
+
+- Change: Added `Knowledge_Base/consolidate_memory.py` — the deterministic implementation of the DOC-MEM-002 consolidation cycle: (1) rotates fully completed day sections of `Change_Log_day.md` older than N days (default 14) into `Knowledge_Base/change_log_archive/YYYY-MM.md` (Recall → Archival tier transition; the active log keeps recent days only); (2) rebuilds `Knowledge_Base/archival_index.md` — a navigable index of the Archival tier (file, size, first heading) for retrieval. Dry-run mode is the default; `--apply` executes. DOC-MEM-002 → 1.1.0 (documents the tool).
+- Reason: External reviews v.2 and v.3 both flagged the consolidation cycle as documentation-only with no executable tooling; the Recall log otherwise grows unboundedly, feeding the very context-bloat problem the architecture fights. LLM-based clustering deliberately deferred (needs API credentials and separate design).
+- Files: `Knowledge_Base/consolidate_memory.py` (new), `Knowledge_Base/archival_index.md` (generated), `06_Memory/Memory_Architecture.md`, `Change_Log_day.md`
+- Result: Dry-run default verified (14-day threshold: nothing moves; --days 2 correctly selects only fully completed days and keeps 2026-07-10 with open planned items); archival index generated (28 items). DOC-MEM-002 → 1.1.0.
+- Status: done
+
+### 12:10 — Assistant — GPT, Gemini and Copilot Platform Adapters (review response, step 3)
+
+- Change: Added three Platform Adapters mirroring the Claude Adapter pattern: `04_Platforms/GPT_Adapter.md` (DOC-PLAT-006 — OpenAI Assistants/Responses API, JSON-schema tool calling, `Knowledge_Base/openai_tools.json` with the three AI-OS MCP tools as OpenAI function definitions), `04_Platforms/Gemini_Adapter.md` (DOC-PLAT-007 — Google AI Studio / Vertex AI system instructions, up-to-2M-token context strategy, function declarations), `04_Platforms/Copilot_Adapter.md` (DOC-PLAT-008 — GitHub Copilot: repository custom instructions + AGENTS.md mapping; added the deployable `.github/copilot-instructions.md`). All three registered as Draft — promotion to Active requires validation on the live platform per DP-015. Platform README (DOC-PLAT-001 → 1.2.0) and root README updated (adapters list, 35-case gate wording, 80 documents). Registry → v1.13.0 (80 documents).
+- Reason: The most repeated demand across all external reviews (v.2 A1, v.3 rec.1, earlier reports): platform-agnostic claim requires more than one adapter; the OpenAI function-schema file also provides the tool-calling abstraction outside MCP that v.3 demanded.
+- Files: `04_Platforms/GPT_Adapter.md` (new), `04_Platforms/Gemini_Adapter.md` (new), `04_Platforms/Copilot_Adapter.md` (new), `.github/copilot-instructions.md` (new), `Knowledge_Base/openai_tools.json` (new), `04_Platforms/README.md`, `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
+- Result: Registry v1.13.0, 80 documents (75 public rows + 5 private-by-reference), validator 0 flags; behavioral gate PASS (35 cases); FinOps gate PASS; openai_tools.json parses (3 tools). Claude Adapter row corrected to its actual Active status in the Platform README table.
+- Status: done
+
+### 14:20 — Assistant — Scheduled live behavioral evaluation (step 4: drift detection)
+
+- Change: Added `Knowledge_Base/behavior_eval/record_live.py` — a multi-provider recorder (stdlib-only) that sends all 35 behavioral cases to a live model and stores its answers: providers `claude` (Anthropic Messages API), `openai` (Chat Completions), `gemini` (generateContent), each assembled per its Platform Adapter convention (Claude: XML-wrapped lean kit; GPT/Gemini: Markdown lean kit as system instructions), plus a `mock` provider for offline pipeline testing. Added `.github/workflows/behavior_eval_live.yml`: every Monday 06:00 UTC (and on manual dispatch) it records answers for every provider whose API-key secret is configured (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY` — missing keys are skipped gracefully), scores them with the existing DOC-EXEC-024 gate, and on any threshold/regression breach opens a GitHub Issue with the diagnostics and fails the run. DOC-EXEC-024 → 1.2.0 (Live Evaluation section); registry → v1.14.0.
+- Reason: Closes the central objection of all three external reviews (provider model updates silently change behavior while documents stay unchanged): drift is now detected automatically within a week, per platform. For the Draft adapters (DOC-PLAT-006/007) the same run doubles as the DP-015 promotion evidence instrument.
+- Files: `Knowledge_Base/behavior_eval/record_live.py` (new), `.github/workflows/behavior_eval_live.yml` (new), `03_Execution_Layer/04_Validation/Behavioral_Evaluation.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
+- Result: Offline end-to-end verification: mock provider → full pipeline PASS; missing key → clean skip (exit 3); mock with one jailbroken answer → gate FAIL exit 1 (injection_resistance 0.90 < 0.95, critical regression). DOC-EXEC-024 → 1.2.0, registry v1.14.0. Live path activates after merge once ANTHROPIC_API_KEY secret is set (schedule runs from the default branch).
+- Status: done

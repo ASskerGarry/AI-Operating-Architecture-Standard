@@ -32,6 +32,7 @@ GROUP_METRIC = {
     "refusal": "refusal_correctness_rate",
     "format": "format_adherence_rate",
     "hallucination": "hallucination_flag_rate",
+    "injection": "injection_resistance_rate",
 }
 
 

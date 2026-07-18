@@ -1,7 +1,7 @@
 # AI-OS — AI Operating Architecture Standard
 
 Document ID: DOC-CORE-005
-Version: 1.3.3
+Version: 1.3.4
 Status: Active
 Layer: Core
 Document Type: README
@@ -47,7 +47,7 @@ AI-OS content is deployed through **Platform Adapters** — no vendor-specific b
 
 - **Claude** (Projects, Claude Code, MCP): see the [Claude Adapter](04_Platforms/Claude_Adapter.md) (`DOC-PLAT-002`) — assembly rule, concept mapping, constraints, and the governed [Prompt Generator Skill](04_Platforms/Claude/prompt-generator.skill.md).
 - **Any MCP client** (Claude Desktop, Claude Code, other MCP hosts): the read-only [AI-OS MCP Server](04_Platforms/AIOS_MCP_Server.md) (`DOC-PLAT-005`) serves the registry and modules as on-demand tools — no static context needed.
-- **GPT / Generic platforms**: planned — see the [Platform Layer README](04_Platforms/README.md).
+- **GPT** ([adapter](04_Platforms/GPT_Adapter.md), `DOC-PLAT-006`), **Gemini** ([adapter](04_Platforms/Gemini_Adapter.md), `DOC-PLAT-007`), **GitHub Copilot** ([adapter](04_Platforms/Copilot_Adapter.md), `DOC-PLAT-008`): Draft adapters — complete mappings pending live-platform validation. Overview: [Platform Layer README](04_Platforms/README.md).
 
 Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the Capability and Execution modules your task needs, in that order, per the adapter's Assembly Rule — or use a single generated file: [`AI-OS_AI_Working_Kit.md`](AI-OS_AI_Working_Kit.md) (full, with provenance for audit) or [`AI-OS_AI_Working_Kit_lean.md`](AI-OS_AI_Working_Kit_lean.md) (token-efficient, for the model's context window). Both are rebuilt deterministically by `python3 Knowledge_Base/generate_working_kit.py`.
 
@@ -55,14 +55,14 @@ Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the C
 
 ## Governance
 
-Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 77 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
+Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 80 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
 
 Two rules are non-negotiable:
 
 1. **Log first** — every change is recorded in [`Change_Log_day.md`](Change_Log_day.md) *before or as* it is made.
 2. **Registry before Active** — no document becomes authoritative until registered and metadata-compliant.
 
-Compliance is checked automatically at two layers: **structural** — [`Knowledge_Base/validate_aios.py`](Knowledge_Base/validate_aios.py) verifies metadata and registry consistency on every push (`validate.yml`); **behavioral** — a 25-case evaluation gate ([Behavioral Evaluation](03_Execution_Layer/04_Validation/Behavioral_Evaluation.md), `DOC-EXEC-024`) blocks changes that degrade task success, policy compliance, refusal correctness, format adherence, or hallucination avoidance beyond declared limits (`behavior_eval.yml`).
+Compliance is checked automatically at two layers: **structural** — [`Knowledge_Base/validate_aios.py`](Knowledge_Base/validate_aios.py) verifies metadata and registry consistency on every push (`validate.yml`); **behavioral** — a 35-case evaluation gate (incl. adversarial injection resistance) ([Behavioral Evaluation](03_Execution_Layer/04_Validation/Behavioral_Evaluation.md), `DOC-EXEC-024`) blocks changes that degrade task success, policy compliance, refusal correctness, format adherence, or hallucination avoidance beyond declared limits (`behavior_eval.yml`).
 
 ---
 
@@ -78,12 +78,12 @@ Compliance is checked automatically at two layers: **structural** — [`Knowledg
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.3.3              |
+| Version        | 1.3.4              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-14         |
-| Change Summary | Documented the two-layer validation model (structural + behavioral, DOC-EXEC-024) |
+| Change Summary | Listed GPT/Gemini/Copilot adapters; 35-case gate; 80 documents |
 
 ---
 

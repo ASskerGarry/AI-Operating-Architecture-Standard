@@ -1,6 +1,6 @@
 # Platform Layer
 
-Version: 1.1.2
+Version: 1.2.0
 Status: Active
 Layer: Platform
 Document Type: README
@@ -35,13 +35,15 @@ A Platform Adapter defines, for one target platform:
 
 ---
 
-## Planned Adapters
+## Adapters
 
 | Adapter | Target | Status |
 | ------- | ------ | ------ |
-| Claude Adapter (`DOC-PLAT-002`) | Claude Projects, Claude Code (Skills, CLAUDE.md), MCP | Draft |
-| GPT Adapter | Custom GPTs, Assistants API | Planned |
-| Generic Adapter | Gemini, local models, any system-prompt-capable platform | Planned |
+| Claude Adapter (`DOC-PLAT-002`) | Claude Projects, Claude Code (Skills, CLAUDE.md), MCP | Active |
+| GPT Adapter (`DOC-PLAT-006`) | Custom GPTs, Responses/Assistants API, JSON-schema tools | Draft |
+| Gemini Adapter (`DOC-PLAT-007`) | Google AI Studio, Vertex AI, Gems (2M context, context caching) | Draft |
+| Copilot Adapter (`DOC-PLAT-008`) | GitHub Copilot Chat / coding agent (repository instructions) | Draft |
+| Generic Adapter | Local models, any system-prompt-capable platform | Planned |
 
 Each adapter SHALL be an official document (`DOC-PLAT-NNN`) registered in the AI-OS Document Registry.
 
@@ -59,7 +61,7 @@ Each adapter SHALL be an official document (`DOC-PLAT-NNN`) registered in the AI
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.1.2              |
+| Version        | 1.2.0              |
 | Status         | Active              |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
