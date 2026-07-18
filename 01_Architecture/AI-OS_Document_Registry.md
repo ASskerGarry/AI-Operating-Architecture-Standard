@@ -1,6 +1,6 @@
 # AI-OS Document Registry
 
-Version: 1.13.0
+Version: 1.14.0
 Status: Active
 Layer: Architecture
 Document Type: Registry
@@ -57,7 +57,7 @@ Each registered document SHALL include the following metadata.
 | ------------ | ---------------------------------- | ------------ | ----------------- | ------ | ------- | ------------------ | ------------------------------------------- |
 | DOC-CORE-001 | Core Identity                      | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /00_Core                                    |
 | DOC-CORE-002 | Core Execution Engine              | Core         | Standard          | Active | 1.2.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.13.0 | AI-OS Architecture | /01_Architecture                            |
+| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.14.0 | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-002 | AI-OS Documentation Standards      | Architecture | Standard          | Active | 1.0.1  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-003 | AI-OS Glossary                     | Architecture | Reference         | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-004 | AI-OS Design Principles            | Architecture | Registry          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
@@ -121,7 +121,7 @@ Each registered document SHALL include the following metadata.
 | DOC-EXEC-021 | Development Category README        | Execution    | README            | Active | 1.0.1  | AI-OS Architecture | /03_Execution_Layer/06_Development          |
 | DOC-EXEC-022 | Education Category README          | Execution    | README            | Active | 1.0.1  | AI-OS Architecture | /03_Execution_Layer/07_Education            |
 | DOC-EXEC-023 | Custom Category README             | Execution    | README            | Active | 1.0.1  | AI-OS Architecture | /03_Execution_Layer/99_Custom               |
-| DOC-EXEC-024 | Behavioral Evaluation              | Execution    | Execution Module  | Active | 1.1.0   | AI-OS Architecture | /03_Execution_Layer/04_Validation           |
+| DOC-EXEC-024 | Behavioral Evaluation              | Execution    | Execution Module  | Active | 1.2.0   | AI-OS Architecture | /03_Execution_Layer/04_Validation           |
 | DOC-CAPA-010 | Capability Governance README       | Capability   | README            | Active | 1.0.1  | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
 | DOC-CORE-003 | Core Change Log                    | Core         | Change Log        | Active | 1.0.0   | AI-OS Architecture | /00_Core                                    |
 | DOC-CAPA-011 | Prompt Engineering                 | Capability   | Capability Module | Active | 1.0.2  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
@@ -224,12 +224,12 @@ Registry updates SHALL occur before publishing architectural changes.
 
 | Field          | Value                                                                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Version        | 1.13.0                                                                                                                              |
+| Version        | 1.14.0                                                                                                                              |
 | Status         | Active                                                                                                                             |
 | Owner          | AI-OS Architecture                                                                                                                 |
 | Last Updated   | 2026-07-14                                                                                                                         |
 | Created date   | 2026-07-10                                                                                                                         |
-| Change Summary | Registered GPT/Gemini/Copilot adapters (DOC-PLAT-006…008, Draft); row bumps for DOC-EXEC-024, DOC-MEM-002, DOC-PLAT-001, DOC-CORE-005; registry now 80 documents |
+| Change Summary | DOC-EXEC-024 → 1.2.0: weekly multi-provider Live Evaluation added |
 
 ---
 
