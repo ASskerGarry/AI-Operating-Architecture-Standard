@@ -379,3 +379,11 @@ Owner: AI-OS Architecture
 - Files: `Knowledge_Base/behavior_eval/record_live.py` (new), `.github/workflows/behavior_eval_live.yml` (new), `03_Execution_Layer/04_Validation/Behavioral_Evaluation.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: Offline end-to-end verification: mock provider → full pipeline PASS; missing key → clean skip (exit 3); mock with one jailbroken answer → gate FAIL exit 1 (injection_resistance 0.90 < 0.95, critical regression). DOC-EXEC-024 → 1.2.0, registry v1.14.0. Live path activates after merge once ANTHROPIC_API_KEY secret is set (schedule runs from the default branch).
 - Status: done
+
+### 15:30 — Assistant — CI actions upgraded to Node 24 runtimes
+
+- Change: Bumped GitHub Actions across all three workflows (`validate.yml`, `behavior_eval.yml`, `behavior_eval_live.yml`): `actions/checkout` v4 → v5, `actions/setup-python` v5 → v6, `actions/upload-artifact` v4 → v6 — the majors that run on Node.js 24.
+- Reason: Runner deprecation warning on the behavior-gate run ("Node.js 20 is deprecated... forced to run on Node.js 24"); upgrading removes the warning and pre-empts the eventual hard break.
+- Files: `.github/workflows/validate.yml`, `.github/workflows/behavior_eval.yml`, `.github/workflows/behavior_eval_live.yml`, `Change_Log_day.md`
+- Result: All uses: lines verified — checkout@v5 ×3, setup-python@v6 ×3, upload-artifact@v6 ×3; versions confirmed against the actions' release notes (node24 majors). No workflow logic changed.
+- Status: done
