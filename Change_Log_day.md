@@ -387,3 +387,11 @@ Owner: AI-OS Architecture
 - Files: `.github/workflows/validate.yml`, `.github/workflows/behavior_eval.yml`, `.github/workflows/behavior_eval_live.yml`, `Change_Log_day.md`
 - Result: All uses: lines verified — checkout@v5 ×3, setup-python@v6 ×3, upload-artifact@v6 ×3; versions confirmed against the actions' release notes (node24 majors). No workflow logic changed.
 - Status: done
+
+### 13:05 — Assistant — Live recorder: surface real API error bodies (diagnostics)
+
+- Change: `record_live.py` now captures the HTTP error response body from providers (Anthropic/OpenAI/Gemini return a JSON error message that explains the real cause — bad model id, missing billing/credits, auth) instead of the opaque `HTTP Error NNN`. Added early-abort on a first-case failure (systemic auth/billing/model errors stop after one call instead of burning 35). Purpose: the first live run (2026-07-18) recorded all 35 cases as errors with only "HTTP Error" text; this change exposes the actual reason so it can be fixed.
+- Reason: First manual live evaluation (Action 1.1) failed to record — the gate correctly flagged it as a regression, but the diagnostics were too vague to act on. Better error surfacing is required before the weekly job is meaningful.
+- Files: `Knowledge_Base/behavior_eval/record_live.py`, `Change_Log_day.md`
+- Result: Diagnostic run (branch claude/live-eval-fix) revealed the real cause in one API call — HTTP 400 "Your credit balance is too low to access the Anthropic API" (valid key, correct model, working code; the account simply has no credits). Early-abort worked: 1 call instead of 35. No spurious drift Issue was left open. Fix is on the account side (add billing); the pipeline itself is confirmed correct end-to-end.
+- Status: done

@@ -44,6 +44,10 @@ KEY_ENV = {"claude": "ANTHROPIC_API_KEY", "openai": "OPENAI_API_KEY",
            "gemini": "GEMINI_API_KEY"}
 
 
+class ApiError(Exception):
+    pass
+
+
 def http_json(url, payload, headers, timeout=90, retries=2):
     body = json.dumps(payload).encode("utf-8")
     for attempt in range(retries + 1):
@@ -52,9 +56,17 @@ def http_json(url, payload, headers, timeout=90, retries=2):
                                          headers={"Content-Type": "application/json", **headers})
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            # 4xx are not transient — surface the provider's JSON error body and stop
+            detail = exc.read().decode("utf-8", "replace")[:300] if exc.fp else ""
+            if 400 <= exc.code < 500:
+                raise ApiError(f"HTTP {exc.code}: {detail}") from None
+            if attempt == retries:
+                raise ApiError(f"HTTP {exc.code}: {detail}") from None
+            time.sleep(2 ** (attempt + 1))
         except (urllib.error.URLError, TimeoutError) as exc:
             if attempt == retries:
-                raise
+                raise ApiError(f"{type(exc).__name__}: {exc}") from None
             time.sleep(2 ** (attempt + 1))
 
 
@@ -123,6 +135,14 @@ def main():
             except Exception as exc:
                 errors += 1
                 responses[c["id"]] = f"[RECORDING ERROR: {exc}]"
+                # A failure on the very first case is systemic (auth, billing,
+                # bad model id) — stop instead of repeating it 35 times.
+                if i == 1:
+                    print(f"  [1/{len(cases)}] {c['id']} FAILED: {exc}", flush=True)
+                    print(f"SYSTEMIC ERROR on the first case ({args.provider}, "
+                          f"model={model}) — aborting. Fix the cause above, then re-run.",
+                          flush=True)
+                    sys.exit(4)
             print(f"  [{i}/{len(cases)}] {c['id']}", flush=True)
         if errors:
             print(f"WARNING: {errors} case(s) failed to record — they will "
