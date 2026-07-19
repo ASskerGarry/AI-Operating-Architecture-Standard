@@ -1,7 +1,7 @@
 # AI-OS Orchestration Standard
 
-Version: 1.0.0
-Status: Draft
+Version: 1.1.0
+Status: Active
 Layer: Architecture
 Document Type: Standard
 Document ID: DOC-ARCH-009
@@ -15,7 +15,7 @@ This standard defines how AI-OS scales from a single assistant to a **multi-agen
 
 The central design decision: **AI-OS already contains the agent contracts.** A Capability Module defines what a Specialist knows; an Execution Module defines the protocol a task follows; the Capability Registry defines routing. Orchestration adds coordination rules on top — it does not introduce a parallel architecture (DP-003, DP-010).
 
-**Status note:** this document is intentionally **Draft** — the model has not yet been validated by a working implementation. It SHALL NOT be promoted to Active until at least one orchestrated deployment has passed the Quality Validation criteria of DOC-CORE-002 (per DP-015, Evidence-Based Decision Making).
+**Validation status:** promoted to **Active** on 2026-07-19 after the first orchestrated deployment passed the Quality Validation criteria of DOC-CORE-002 (DP-015). Evidence: the MAS pilot run (`Knowledge_Base/mas_pilot/run_2026-07-19.md`) — a sequential Analyze → Generate → Validate pipeline with three Specialist subagents on Claude Code that produced, reviewed (two iterations, independent Reviewer), and promoted the Power Query Capability Module (DOC-CAPA-022). The run exercised task/response packets, context isolation, escalations, iteration budgets, and all three quality-gate layers as specified.
 
 ---
 
@@ -145,12 +145,12 @@ Platform mechanics belong to adapters (DP-009). For Claude, the natural mapping 
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
-| Status         | Draft              |
+| Version        | 1.1.0              |
+| Status         | Active             |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-14         |
+| Last Updated   | 2026-07-19         |
 | Created date   | 2026-07-14         |
-| Change Summary | Initial orchestration model — roles, routing, handoff contract, context isolation, quality gates, patterns; Draft until validated by implementation |
+| Change Summary | Promoted to Active: first orchestrated deployment (MAS pilot, Power Query module) passed DOC-CORE-002 validation per DP-015 |
 
 ---
 

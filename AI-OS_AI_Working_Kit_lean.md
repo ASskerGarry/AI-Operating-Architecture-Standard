@@ -6,7 +6,7 @@ Status: Active
 Layer: Core
 Document Type: Reference
 Owner: AI-OS Architecture
-Last Updated: 2026-07-14
+Last Updated: 2026-07-19
 
 > **GENERATED FILE — do not edit by hand.** Token-efficient rendered copy of
 > the official AI-OS documents for use as model context (sources prevail on
@@ -710,6 +710,18 @@ Consolidation SHALL be recorded in `Change_Log_day.md` like any other change (lo
 
 ---
 
+### Tooling
+
+The deterministic part of this cycle is automated by
+`Knowledge_Base/consolidate_memory.py`: it rotates fully completed day
+sections of `Change_Log_day.md` older than 14 days into
+`Knowledge_Base/change_log_archive/` (Recall → Archival transition) and
+rebuilds `Knowledge_Base/archival_index.md`, the navigable index of the
+Archival tier. Dry-run by default; `--apply` writes. Semantic consolidation
+(clustering, summarization) remains a manual or model-assisted step.
+
+---
+
 ## AI-OS Glossary
 
 ### Purpose
@@ -830,6 +842,7 @@ Additional identifier families MAY be introduced as the architecture evolves.
 | DOC-CAPA-013 | Data Analytics | Provide expertise in turning data into decisions: framing analytical questions, choosing methodology, interpreting results, and communicating insights with appropriate confidence. |
 | DOC-CAPA-018 | Excel | Provide expertise in building correct, maintainable, and auditable Excel workbooks: formulas, structured analysis, pivot models, and automation where appropriate. |
 | DOC-CAPA-017 | Power BI | Provide expertise in designing and building Power BI solutions: data models, DAX measures, and reports that communicate the right insight to the right audience. |
+| DOC-CAPA-022 | Power Query | Provide expertise in building refreshable, maintainable data extraction and transformation pipelines with Power Query and the M language, as used in Excel, Power BI, and Dataflows. |
 | DOC-CAPA-011 | Prompt Engineering | Provide professional expertise in designing, analyzing, and optimizing prompts and prompt-based systems for large language models, so that AI-OS can produce robust, reusable, and platform-portable prompt artifacts. |
 | DOC-CAPA-016 | Python | Provide expertise in writing clean, maintainable Python for scripting, automation, data processing, and application development, following established engineering principles (SOLID, DRY, KISS). |
 | DOC-CAPA-015 | SQL | Provide expertise in writing correct, readable, and performant SQL, and in relational data modeling, across major dialects (PostgreSQL, MySQL, SQL Server, SQLite, BigQuery, Snowflake). |
@@ -847,6 +860,7 @@ Additional identifier families MAY be introduced as the architecture evolves.
 | -- | ------ | ------- |
 | DOC-EXEC-013 | Analyze | Provide a standardized execution process for analyzing an input artifact — a prompt, document, dataset, system, or problem statement — and producing structured, evidence-based findings. This module governs *how* analysis is performed; the domain expertise applied is supplied by the active Capability Modules. |
 | DOC-EXEC-014 | Generate | Provide a standardized execution process for creating a new deliverable — a prompt, document, code artifact, plan, or design — that satisfies a defined objective and its acceptance criteria. Domain content is supplied by the active Capability Modules. |
+| DOC-EXEC-024 | Behavioral Evaluation | Provide a standardized execution process for measuring the *behavior* of an AI-OS deployment — not just its document structure. The structural gate (`validate_aios.py`) proves the documentation is compliant; this module proves the assembled system still answers the way the standard requires after any change to instructions, modules, or the underlying model. |
 | DOC-EXEC-015 | Validate | Provide a standardized execution process for verifying that an artifact meets its acceptance criteria, quality standards, and applicable architectural principles before it is accepted or published. |
 | DOC-EXEC-016 | Optimize | Provide a standardized execution process for improving an existing artifact against defined objectives — clarity, correctness, performance, cost, or maintainability — while preserving its intent and interfaces. |
 | DOC-EXEC-017 | Develop AI Assistant | Provide a standardized execution process for designing an AI assistant or agent — its role, behavior, capabilities, workflows, and guardrails — as a reusable, platform-agnostic specification. |

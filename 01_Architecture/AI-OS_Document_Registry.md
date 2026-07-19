@@ -1,6 +1,6 @@
 # AI-OS Document Registry
 
-Version: 1.14.0
+Version: 1.15.0
 Status: Active
 Layer: Architecture
 Document Type: Registry
@@ -57,7 +57,7 @@ Each registered document SHALL include the following metadata.
 | ------------ | ---------------------------------- | ------------ | ----------------- | ------ | ------- | ------------------ | ------------------------------------------- |
 | DOC-CORE-001 | Core Identity                      | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /00_Core                                    |
 | DOC-CORE-002 | Core Execution Engine              | Core         | Standard          | Active | 1.2.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.14.0 | AI-OS Architecture | /01_Architecture                            |
+| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.15.0 | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-002 | AI-OS Documentation Standards      | Architecture | Standard          | Active | 1.0.1  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-003 | AI-OS Glossary                     | Architecture | Reference         | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-004 | AI-OS Design Principles            | Architecture | Registry          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
@@ -65,7 +65,7 @@ Each registered document SHALL include the following metadata.
 | DOC-ARCH-006 | AI-OS Document Metadata Standard   | Architecture | Standard          | Active | 1.3.0   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-007 | AI-OS Document Template            | Architecture | Template          | Active | 1.1.1   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-008 | AI-OS Reasoning Patterns           | Architecture | Reference         | Active | 1.0.1  | AI-OS Architecture | /01_Architecture                            |
-| DOC-ARCH-009 | AI-OS Orchestration Standard       | Architecture | Standard          | Draft  | 1.0.0   | AI-OS Architecture | /01_Architecture                            |
+| DOC-ARCH-009 | AI-OS Orchestration Standard       | Architecture | Standard          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-010 | AI-OS Open-Core Paid Modules MVP   | Architecture | Specification     | Draft  | 1.0.0   | AI-OS Architecture | Private: AI-OS-Commercial |
 | DOC-ARCH-011 | AI-OS Open-Core Diagnostic Service Specification | Architecture | Specification | Draft | 1.0.0 | AI-OS Architecture | Private: AI-OS-Commercial |
 | DOC-ARCH-012 | AI-OS Open-Core Pricing and Packaging Guide | Architecture | Guide    | Draft  | 1.0.0   | AI-OS Architecture | Private: AI-OS-Commercial |
@@ -81,7 +81,7 @@ Each registered document SHALL include the following metadata.
 | DOC-MEM-001  | Memory Layer README                | Memory       | README            | Active | 1.0.1  | AI-OS Architecture | /06_Memory/README.md                        |
 | DOC-MEM-002  | Memory Architecture                | Memory       | Standard          | Active | 1.1.0  | AI-OS Architecture | /06_Memory/Memory_Architecture.md           |
 | DOC-CORE-004 | AI-OS — Daily Change Log           | Core         | Change Log        | Active | 1.1.0   | AI-OS Architecture | /Change_Log_day.md                          |
-| DOC-CORE-005 | AI-OS — AI Operating Architecture Standard | Core | README            | Active | 1.3.4   | AI-OS Architecture | /README.md                                  |
+| DOC-CORE-005 | AI-OS — AI Operating Architecture Standard | Core | README            | Active | 1.3.5   | AI-OS Architecture | /README.md                                  |
 | DOC-CORE-006 | Contributing to AI-OS              | Core         | Guide             | Active | 1.1.0   | AI-OS Architecture | /CONTRIBUTING.md                            |
 | DOC-CORE-007 | Security Policy                    | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /SECURITY.md                                |
 | DOC-CORE-008 | AI-OS Agent Instructions           | Core         | Guide             | Active | 1.1.0   | AI-OS Architecture | /AGENTS.md                                  |
@@ -131,10 +131,11 @@ Each registered document SHALL include the following metadata.
 | DOC-CAPA-015 | SQL                                | Capability   | Capability Module | Active | 1.0.1  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
 | DOC-CAPA-016 | Python                             | Capability   | Capability Module | Active | 1.0.1  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
 | DOC-CAPA-017 | Power BI                           | Capability   | Capability Module | Active | 1.0.1  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
-| DOC-CAPA-018 | Excel                              | Capability   | Capability Module | Active | 1.0.1  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
+| DOC-CAPA-018 | Excel                              | Capability   | Capability Module | Active | 1.0.2  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
 | DOC-CAPA-019 | Teaching                           | Capability   | Capability Module | Active | 1.0.1  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
 | DOC-CAPA-020 | Technical Writing                  | Capability   | Capability Module | Active | 1.0.1  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
 | DOC-CAPA-021 | Capability Modules README          | Capability   | README            | Active | 1.0.1  | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
+| DOC-CAPA-022 | Power Query                        | Capability   | Capability Module | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/02_Modules             |
 
 # Document Categories
 
@@ -224,12 +225,12 @@ Registry updates SHALL occur before publishing architectural changes.
 
 | Field          | Value                                                                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Version        | 1.14.0                                                                                                                              |
+| Version        | 1.15.0                                                                                                                              |
 | Status         | Active                                                                                                                             |
 | Owner          | AI-OS Architecture                                                                                                                 |
 | Last Updated   | 2026-07-14                                                                                                                         |
 | Created date   | 2026-07-10                                                                                                                         |
-| Change Summary | DOC-EXEC-024 → 1.2.0: weekly multi-provider Live Evaluation added |
+| Change Summary | MAS pilot: registered Power Query (DOC-CAPA-022, Active 1.0.1); Orchestration Standard promoted to Active 1.1.0 per DP-015; Excel → 1.0.2; registry now 81 documents |
 
 ---
 

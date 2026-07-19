@@ -388,10 +388,30 @@ Owner: AI-OS Architecture
 - Result: All uses: lines verified — checkout@v5 ×3, setup-python@v6 ×3, upload-artifact@v6 ×3; versions confirmed against the actions' release notes (node24 majors). No workflow logic changed.
 - Status: done
 
+## 2026-07-18
+
 ### 13:05 — Assistant — Live recorder: surface real API error bodies (diagnostics)
 
 - Change: `record_live.py` now captures the HTTP error response body from providers (Anthropic/OpenAI/Gemini return a JSON error message that explains the real cause — bad model id, missing billing/credits, auth) instead of the opaque `HTTP Error NNN`. Added early-abort on a first-case failure (systemic auth/billing/model errors stop after one call instead of burning 35). Purpose: the first live run (2026-07-18) recorded all 35 cases as errors with only "HTTP Error" text; this change exposes the actual reason so it can be fixed.
 - Reason: First manual live evaluation (Action 1.1) failed to record — the gate correctly flagged it as a regression, but the diagnostics were too vague to act on. Better error surfacing is required before the weekly job is meaningful.
 - Files: `Knowledge_Base/behavior_eval/record_live.py`, `Change_Log_day.md`
 - Result: Diagnostic run (branch claude/live-eval-fix) revealed the real cause in one API call — HTTP 400 "Your credit balance is too low to access the Anthropic API" (valid key, correct model, working code; the account simply has no credits). Early-abort worked: 1 call instead of 35. No spurious drift Issue was left open. Fix is on the account side (add billing); the pipeline itself is confirmed correct end-to-end.
+- Status: done
+
+## 2026-07-19
+
+### 16:20 — Assistant (Orchestrator) — MAS pilot run: new Power Query capability via orchestrated pipeline (Action 1.2)
+
+- Change: First real execution of the Orchestration Standard (DOC-ARCH-009): sequential pipeline Analyze → Generate → Validate with three Specialist subagents, structured task/response packets, scoped context slices (RP-007), iteration budgets per RP-004, and orchestrator-side quality gates (RP-008 pre-dispatch, contract check on return, DOC-CORE-002 post-merge). Deliverable: new Capability Module `02_Capability_Layer/02_Modules/Power_Query.md` (DOC-CAPA-022). Run evidence recorded in `Knowledge_Base/mas_pilot/run_2026-07-19.md`. On success: DOC-ARCH-009 promoted Draft → Active 1.1.0 per DP-015 (this run is the implementation evidence), registry → v1.15.0.
+- Reason: Roadmap Action 1.2 — close the "MAS on paper" critique with a working orchestrated deployment, produce the DP-015 promotion evidence for the Orchestration Standard, and fill a real capability-catalog gap (Power Query).
+- Files: `02_Capability_Layer/02_Modules/Power_Query.md` (new), `Knowledge_Base/mas_pilot/run_2026-07-19.md` (new), `01_Architecture/AI-OS_Orchestration_Standard.md`, `01_Architecture/AI-OS_Document_Registry.md`, `02_Capability_Layer/02_Modules/Excel.md`, `02_Capability_Layer/00_Governance/05_Capability_Dependency_Matrix.md`, `02_Capability_Layer/00_Governance/06_Capability_Index.md`, `README.md`, Working Kits (regenerated), `Change_Log_day.md`
+- Result: Pipeline executed end-to-end: Analyze (high confidence, escalated the Excel scope collision), Generate (161-line module, contract met), Validate (iteration 1: Needs Revision with 1 blocking + full checklist; iteration 2 after orchestrator fixes: **Approved**). Power Query promoted to Active 1.0.1; Excel amended to 1.0.2 (incl. restored missing 1.0.1 Change History row — pre-existing DP-008 defect found by the reviewer); DOC-ARCH-009 promoted Draft → **Active 1.1.0** per DP-015; registry v1.15.0 (81 documents). Open follow-up: Blueprint §3 vs module template reconciliation (reviewer escalation). All gates green.
+- Status: done
+
+### 18:05 — Assistant — Repurpose aios_validate.yml into the Link Integrity gate
+
+- Change: `.github/workflows/aios_validate.yml` (added by PR #6 as a duplicate of validate.yml with outdated actions and an unused GH_PAT) is repurposed into a distinct, useful gate: **AI-OS Link Integrity** — runs the new `Knowledge_Base/check_links.py` (stdlib-only), which scans all official-scope markdown for relative links and fails the build on any broken target. Actions upgraded to Node 24 majors (checkout@v5, setup-python@v6); unused GH_PAT removed.
+- Reason: Owner request ("приведи до ладу") after the duplicate was flagged; external audit #6 independently identified missing link-checking as a real gap — this closes it without adding a new workflow file.
+- Files: `.github/workflows/aios_validate.yml`, `Knowledge_Base/check_links.py` (new), `Change_Log_day.md`
+- Result: Gate verified both ways: 25 relative links across official markdown → PASS; synthetic broken link → FAIL exit 1 with file/target diagnostics. Repository now has four CI gates: structure, behavior, FinOps, link integrity.
 - Status: done
