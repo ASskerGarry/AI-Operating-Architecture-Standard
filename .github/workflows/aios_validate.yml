@@ -1,0 +1,19 @@
+name: AI-OS Quality Gate
+
+on: [push]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Validate AI-OS Integrity
+        run: python3 Knowledge_Base/validate_aios.py
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
