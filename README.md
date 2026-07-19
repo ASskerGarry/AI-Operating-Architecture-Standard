@@ -1,7 +1,7 @@
 # AI-OS — AI Operating Architecture Standard
 
 Document ID: DOC-CORE-005
-Version: 1.3.4
+Version: 1.3.5
 Status: Active
 Layer: Core
 Document Type: README
@@ -55,7 +55,7 @@ Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the C
 
 ## Governance
 
-Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 80 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
+Every official document is registered in the [Document Registry](01_Architecture/AI-OS_Document_Registry.md) (SSOT, 81 documents) with an immutable `DOC-<LAYER>-<NNN>` ID, semantic version, lifecycle status, and owner.
 
 Two rules are non-negotiable:
 
@@ -78,12 +78,12 @@ Compliance is checked automatically at two layers: **structural** — [`Knowledg
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.3.4              |
+| Version        | 1.3.5              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-14         |
-| Change Summary | Listed GPT/Gemini/Copilot adapters; 35-case gate; 80 documents |
+| Change Summary | 81 documents; Orchestration Standard now Active (validated by the MAS pilot) |
 
 ---
 

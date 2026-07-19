@@ -90,7 +90,8 @@ The Capability Registry shall:
 | SQL | ✓ | ✓ | ✓ | ✓ | Statistics, Power BI |
 | Python | ✓ | ✓ | ✓ | ✓ | Statistics, Data Analytics |
 | Power BI | ✓ | ✓ | ✓ | ✓ | SQL, Data Analytics |
-| Excel | ✓ | ✓ | ✓ | ✓ | Power BI |
+| Excel | ✓ | ✓ | ✓ | ✓ | Power BI, Power Query |
+| Power Query | ✓ | ✓ | ✓ | ✓ | Excel, Power BI |
 | Teaching | ✗ | ✗ | ✓ | ✓ | Prompt Engineering |
 | Technical Writing | ✓ | ✗ | ✓ | ✓ | Any Primary Capability |
 ---

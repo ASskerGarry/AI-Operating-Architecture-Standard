@@ -80,7 +80,8 @@ Modules not registered in the Capability Index shall not be activated by the Cap
 | SQL                | DOC-CAPA-015 | Data & Analytics     | 1.0.0   | Draft  | Draft     | Statistics, Power BI       | /02_Capability_Layer/02_Modules |
 | Python             | DOC-CAPA-016 | Software Engineering | 1.0.0   | Draft  | Draft     | Statistics, Data Analytics | /02_Capability_Layer/02_Modules |
 | Power BI           | DOC-CAPA-017 | Data & Analytics     | 1.0.0   | Draft  | Draft     | SQL, Data Analytics        | /02_Capability_Layer/02_Modules |
-| Excel              | DOC-CAPA-018 | Data & Analytics     | 1.0.0   | Draft  | Draft     | Power BI                   | /02_Capability_Layer/02_Modules |
+| Excel              | DOC-CAPA-018 | Data & Analytics     | 1.0.2   | Active | Active    | Power BI, Power Query      | /02_Capability_Layer/02_Modules |
+| Power Query        | DOC-CAPA-022 | Data & Analytics     | 1.0.1   | Active | Active    | Excel, Power BI            | /02_Capability_Layer/02_Modules |
 | Teaching           | DOC-CAPA-019 | Education            | 1.0.0   | Draft  | Draft     | Prompt Engineering         | /02_Capability_Layer/02_Modules |
 | Technical Writing  | DOC-CAPA-020 | Communication        | 1.0.0   | Draft  | Draft     | Any Primary Capability     | /02_Capability_Layer/02_Modules |
 

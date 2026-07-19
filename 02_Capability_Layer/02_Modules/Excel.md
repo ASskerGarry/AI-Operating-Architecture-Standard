@@ -1,6 +1,6 @@
 # Excel
 
-Version: 1.0.1
+Version: 1.0.2
 Status: Active
 Layer: Capability
 Document Type: Capability Module
@@ -17,14 +17,14 @@ Owner: AI-OS Architecture
 | Module ID | DOC-CAPA-018 |
 | Category | Data & Analytics |
 | Capability Domain | Spreadsheet modeling and analysis |
-| Version | 1.0.1 |
+| Version | 1.0.2 |
 | Status | Active |
 | Owner | AI-OS Architecture |
 | Role Eligibility | Independent / Primary / Secondary / Supporting |
-| Recommended Partners | Power BI |
+| Recommended Partners | Power BI, Power Query |
 | AI Platforms | All |
 | Created | 2026-07-11 |
-| Last Updated | 2026-07-14 |
+| Last Updated | 2026-07-19         |
 
 ---
 
@@ -36,9 +36,9 @@ Provide expertise in building correct, maintainable, and auditable Excel workboo
 
 ## 2. Scope
 
-**Included:** formula design (lookup, aggregation, dynamic arrays, LAMBDA), tables and structured references, PivotTables, Power Query in Excel, workbook architecture, error auditing, basic VBA/Office Scripts guidance.
+**Included:** formula design (lookup, aggregation, dynamic arrays, LAMBDA), tables and structured references, PivotTables, workbook architecture, error auditing, basic VBA/Office Scripts guidance.
 
-**Excluded:** enterprise BI solutions (Power BI), statistical methodology (Statistics), database work (SQL).
+**Excluded:** enterprise BI solutions (Power BI), statistical methodology (Statistics), database work (SQL), Power Query and M development (Power Query, DOC-CAPA-022).
 
 ---
 
@@ -55,7 +55,7 @@ Provide expertise in building correct, maintainable, and auditable Excel workboo
 
 - Modern functions: XLOOKUP, FILTER, SUMIFS family, LET, LAMBDA, dynamic arrays.
 - Data hygiene: tables, validation, avoiding merged-cell traps, date/number type issues.
-- Pivot-based analysis and Power Query transformations.
+- Pivot-based analysis; consuming Power Query outputs (query development is handed off to Power Query).
 - Auditability: formula tracing, consistent layout conventions, named ranges.
 
 ---
@@ -64,7 +64,7 @@ Provide expertise in building correct, maintainable, and auditable Excel workboo
 
 1. Structure before formulas: proper tables prevent most formula complexity.
 2. Prefer readable formula chains (LET, helper columns) over monolithic formulas.
-3. Manual steps are last resort — prefer refreshable Power Query for repeated imports.
+3. Manual steps are last resort — prefer refreshable imports; pipeline design is handed off to Power Query (DOC-CAPA-022).
 4. Escalate to another tool when data volume or logic complexity exceeds spreadsheet safety.
 
 ---
@@ -86,7 +86,7 @@ Provide expertise in building correct, maintainable, and auditable Excel workboo
 
 ## 8. Output Standards
 
-Deliverables: formulas in code formatting with placement instructions, workbook structure description, step-by-step Power Query/Pivot instructions, verification checks.
+Deliverables: formulas in code formatting with placement instructions, workbook structure description, step-by-step Pivot instructions, verification checks.
 
 ---
 
@@ -106,14 +106,14 @@ Deliverables: formulas in code formatting with placement instructions, workbook 
 
 ## 11. Typical Execution Scenarios
 
-User has a slow, error-prone report workbook → Excel (Primary) → Optimize → restructured tables + refreshable Power Query + simplified formulas.
+User has a slow, error-prone report workbook → Excel (Primary) → Optimize → restructured tables + refreshable pipeline (with Power Query, DOC-CAPA-022) + simplified formulas.
 
 ---
 
 ## 12. Examples
 
 - Simple: replace nested VLOOKUPs with a single XLOOKUP.
-- Intermediate: build a monthly report driven by Power Query with a pivot layer.
+- Intermediate: build a monthly report on a Power Query-delivered pipeline with a pivot layer.
 - Complex: redesign a legacy multi-sheet model into an input→logic→output architecture with audit checks.
 
 ---
@@ -122,7 +122,7 @@ User has a slow, error-prone report workbook → Excel (Primary) → Optimize �
 
 | Field | Value |
 | ----- | ----- |
-| Review Date | 2026-07-14 |
+| Review Date | 2026-07-19 |
 | Reviewer | AI-OS Architecture |
 | Review Result | Approved |
 | Open Issues | None recorded |
@@ -134,6 +134,8 @@ User has a slow, error-prone report workbook → Excel (Primary) → Optimize �
 | Version | Date | Description |
 | ------- | ---- | ----------- |
 | 1.0.0 | 2026-07-11 | Initial version — module created per Capability Module Specification |
+| 1.0.1 | 2026-07-14 | Promoted to Active after Quality Gate review |
+| 1.0.2 | 2026-07-19 | Scope hand-off: Power Query and M development moved to the Power Query module (DOC-CAPA-022) |
 
 ---
 
@@ -141,12 +143,12 @@ User has a slow, error-prone report workbook → Excel (Primary) → Optimize �
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.1              |
-| Status         | Active              |
+| Version        | 1.0.2              |
+| Status         | Active             |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-14         |
+| Last Updated   | 2026-07-19         |
 | Created date   | 2026-07-11         |
-| Change Summary | Promoted to Active after Quality Gate review |
+| Change Summary | Scope hand-off of Power Query/M development to DOC-CAPA-022 (MAS pilot reviewer finding) |
 
 ---
 
@@ -157,4 +159,5 @@ User has a slow, error-prone report workbook → Excel (Primary) → Optimize �
 - Capability Dependency Matrix
 - Core Identity
 - Core Execution Engine
+- Power Query (DOC-CAPA-022)
 
