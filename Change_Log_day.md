@@ -407,3 +407,11 @@ Owner: AI-OS Architecture
 - Files: `02_Capability_Layer/02_Modules/Power_Query.md` (new), `Knowledge_Base/mas_pilot/run_2026-07-19.md` (new), `01_Architecture/AI-OS_Orchestration_Standard.md`, `01_Architecture/AI-OS_Document_Registry.md`, `02_Capability_Layer/02_Modules/Excel.md`, `02_Capability_Layer/00_Governance/05_Capability_Dependency_Matrix.md`, `02_Capability_Layer/00_Governance/06_Capability_Index.md`, `README.md`, Working Kits (regenerated), `Change_Log_day.md`
 - Result: Pipeline executed end-to-end: Analyze (high confidence, escalated the Excel scope collision), Generate (161-line module, contract met), Validate (iteration 1: Needs Revision with 1 blocking + full checklist; iteration 2 after orchestrator fixes: **Approved**). Power Query promoted to Active 1.0.1; Excel amended to 1.0.2 (incl. restored missing 1.0.1 Change History row — pre-existing DP-008 defect found by the reviewer); DOC-ARCH-009 promoted Draft → **Active 1.1.0** per DP-015; registry v1.15.0 (81 documents). Open follow-up: Blueprint §3 vs module template reconciliation (reviewer escalation). All gates green.
 - Status: done
+
+### 18:05 — Assistant — Repurpose aios_validate.yml into the Link Integrity gate
+
+- Change: `.github/workflows/aios_validate.yml` (added by PR #6 as a duplicate of validate.yml with outdated actions and an unused GH_PAT) is repurposed into a distinct, useful gate: **AI-OS Link Integrity** — runs the new `Knowledge_Base/check_links.py` (stdlib-only), which scans all official-scope markdown for relative links and fails the build on any broken target. Actions upgraded to Node 24 majors (checkout@v5, setup-python@v6); unused GH_PAT removed.
+- Reason: Owner request ("приведи до ладу") after the duplicate was flagged; external audit #6 independently identified missing link-checking as a real gap — this closes it without adding a new workflow file.
+- Files: `.github/workflows/aios_validate.yml`, `Knowledge_Base/check_links.py` (new), `Change_Log_day.md`
+- Result: Gate verified both ways: 25 relative links across official markdown → PASS; synthetic broken link → FAIL exit 1 with file/target diagnostics. Repository now has four CI gates: structure, behavior, FinOps, link integrity.
+- Status: done

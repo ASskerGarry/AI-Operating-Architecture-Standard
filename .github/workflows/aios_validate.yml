@@ -1,19 +1,26 @@
-name: AI-OS Quality Gate
+name: AI-OS Link Integrity
 
-on: [push]
+# Repurposed from the former duplicate quality-gate workflow (PR #6):
+# now a distinct gate that fails the build if any relative markdown link
+# in the official documentation points at a missing target.
+# Complements validate.yml (structure/metadata) and behavior_eval.yml
+# (behavior) — external audit 2026-07-18 flagged link checking as the
+# missing layer.
+
+on:
+  push:
+  pull_request:
 
 jobs:
-  validate:
+  link-integrity:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
         with:
-          python-version: '3.x'
-          
-      - name: Validate AI-OS Integrity
-        run: python3 Knowledge_Base/validate_aios.py
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          python-version: "3.12"
+
+      - name: Check internal markdown links
+        run: |
+          python3 Knowledge_Base/check_links.py .
