@@ -1,6 +1,6 @@
 # AI-OS Document Registry
 
-Version: 1.15.0
+Version: 1.16.0
 Status: Active
 Layer: Architecture
 Document Type: Registry
@@ -57,7 +57,7 @@ Each registered document SHALL include the following metadata.
 | ------------ | ---------------------------------- | ------------ | ----------------- | ------ | ------- | ------------------ | ------------------------------------------- |
 | DOC-CORE-001 | Core Identity                      | Core         | Standard          | Active | 1.1.0   | AI-OS Architecture | /00_Core                                    |
 | DOC-CORE-002 | Core Execution Engine              | Core         | Standard          | Active | 1.2.0   | AI-OS Architecture | /00_Core                                    |
-| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.15.0 | AI-OS Architecture | /01_Architecture                            |
+| DOC-ARCH-001 | AI-OS Document Registry            | Architecture | Standard          | Active | 1.16.0 | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-002 | AI-OS Documentation Standards      | Architecture | Standard          | Active | 1.0.1  | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-003 | AI-OS Glossary                     | Architecture | Reference         | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
 | DOC-ARCH-004 | AI-OS Design Principles            | Architecture | Registry          | Active | 1.1.0   | AI-OS Architecture | /01_Architecture                            |
@@ -99,17 +99,17 @@ Each registered document SHALL include the following metadata.
 | DOC-CAPA-004 | Capability Writing Guide           | Capability   | Guide             | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
 | DOC-CAPA-005 | Capability Review Standard         | Capability   | Review Standard   | Active | 1.0.2  | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
 | DOC-CAPA-006 | Capability Lifecycle               | Capability   | Lifecycle         | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-007 | Capability Dependency Matrix       | Capability   | Dependency Matrix | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-008 | Capability Index                   | Capability   | Index             | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-CAPA-009 | Capability Change Log              | Capability   | Change Log        | Active | 1.0.1   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
-| DOC-EXEC-005 | Execution Registry                 | Execution    | Registry          | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-006 | Execution Blueprint                | Execution    | Standard          | Active | 1.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-007 | Execution Writing Guide            | Execution    | Guide             | Active | 1.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
+| DOC-CAPA-007 | Capability Dependency Matrix       | Capability   | Dependency Matrix | Active | 1.1.0   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
+| DOC-CAPA-008 | Capability Index                   | Capability   | Index             | Active | 1.1.0   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
+| DOC-CAPA-009 | Capability Change Log              | Capability   | Change Log        | Active | 1.0.2   | AI-OS Architecture | /02_Capability_Layer/00_Governance          |
+| DOC-EXEC-005 | Execution Registry                 | Execution    | Registry          | Active | 1.0.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
+| DOC-EXEC-006 | Execution Blueprint                | Execution    | Standard          | Active | 1.1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
+| DOC-EXEC-007 | Execution Writing Guide            | Execution    | Guide             | Active | 1.1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
 | DOC-EXEC-008 | Execution Review Standard          | Execution    | Review Standard   | Active | 1.0.2  | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-009 | Execution Lifecycle                | Execution    | Lifecycle         | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-010 | Execution Dependency Matrix        | Execution    | Dependency Matrix | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-011 | Execution Index                    | Execution    | Index             | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
-| DOC-EXEC-012 | Execution Change Log               | Execution    | Change Log        | Active | 1.0     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
+| DOC-EXEC-009 | Execution Lifecycle                | Execution    | Lifecycle         | Active | 1.0.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
+| DOC-EXEC-010 | Execution Dependency Matrix        | Execution    | Dependency Matrix | Active | 1.0.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
+| DOC-EXEC-011 | Execution Index                    | Execution    | Index             | Active | 1.0.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
+| DOC-EXEC-012 | Execution Change Log               | Execution    | Change Log        | Active | 1.0.1     | AI-OS Architecture | /03_Execution_Layer/00_Execution_Governance |
 | DOC-EXEC-013 | Analyze                            | Execution    | Execution Module  | Active | 1.0.1  | AI-OS Architecture | /03_Execution_Layer/02_Analysis             |
 | DOC-EXEC-014 | Generate                           | Execution    | Execution Module  | Active | 1.0.1  | AI-OS Architecture | /03_Execution_Layer/03_Generation           |
 | DOC-EXEC-015 | Validate                           | Execution    | Execution Module  | Active | 1.0.1  | AI-OS Architecture | /03_Execution_Layer/04_Validation           |
@@ -225,12 +225,12 @@ Registry updates SHALL occur before publishing architectural changes.
 
 | Field          | Value                                                                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Version        | 1.15.0                                                                                                                              |
+| Version        | 1.16.0                                                                                                                              |
 | Status         | Active                                                                                                                             |
 | Owner          | AI-OS Architecture                                                                                                                 |
 | Last Updated   | 2026-07-14                                                                                                                         |
 | Created date   | 2026-07-10                                                                                                                         |
-| Change Summary | MAS pilot: registered Power Query (DOC-CAPA-022, Active 1.0.1); Orchestration Standard promoted to Active 1.1.0 per DP-015; Excel → 1.0.2; registry now 81 documents |
+| Change Summary | Metadata audit: semver normalization and version sync for 10 rows (DOC-EXEC-005…012, DOC-CAPA-007/008/009) |
 
 ---
 

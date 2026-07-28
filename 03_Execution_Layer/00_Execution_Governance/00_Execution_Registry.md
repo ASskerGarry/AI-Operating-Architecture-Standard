@@ -1,5 +1,5 @@
 # Execution Registry
-Version: 1.0
+Version: 1.0.1
 Status: Active
 Document ID: DOC-EXEC-005
 Owner: AI-OS Architecture

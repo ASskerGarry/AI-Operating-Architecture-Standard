@@ -75,3 +75,15 @@ Change Logging Policy (mandatory):
 • Changes to official documents must also stay consistent with `AI-OS_Document_Registry` and the document's own Version Information / Change Log fields (DP-008 Traceability).
 • No change is considered complete until it is logged.
 
+---
+
+## Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.1.0              |
+| Status         | Active             |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-20         |
+| Created date   | 2026-07-11         |
+| Change Summary | Version Information section added per DOC-ARCH-006 (metadata audit) |

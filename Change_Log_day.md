@@ -23,6 +23,19 @@ Owner: AI-OS Architecture
 
 ---
 
+## Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.1.0              |
+| Status         | Active             |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-20         |
+| Created date   | 2026-07-10         |
+| Change Summary | Version Information section added per DOC-ARCH-006 (metadata audit); placed above the day sections so append-only entries remain valid |
+
+---
+
 ## 2026-07-10
 
 ### Morning — Viktor — Repository changes (observed)
@@ -414,4 +427,14 @@ Owner: AI-OS Architecture
 - Reason: Owner request ("приведи до ладу") after the duplicate was flagged; external audit #6 independently identified missing link-checking as a real gap — this closes it without adding a new workflow file.
 - Files: `.github/workflows/aios_validate.yml`, `Knowledge_Base/check_links.py` (new), `Change_Log_day.md`
 - Result: Gate verified both ways: 25 relative links across official markdown → PASS; synthetic broken link → FAIL exit 1 with file/target diagnostics. Repository now has four CI gates: structure, behavior, FinOps, link integrity.
+- Status: done
+
+## 2026-07-20
+
+### 09:15 — Assistant — Repository audit: metadata consistency defects + validator hardening
+
+- Change: Full cross-check of every registered document against its own header and Version Information table surfaced 18 real defects that the existing gates could not see. Fixed: (1) **six Execution governance documents had no Version Information table at all** (DOC-EXEC-006/007/009/010/011/012) — added, per DOC-ARCH-006; (2) **seven non-semver versions** (`1.0`, `1.1`) normalized to `X.Y.Z` in both documents and registry (DOC-EXEC-005…012) — the registry's own rule requires semantic versioning; (3) **header ≠ Version Information** reconciled in DOC-EXEC-005 (1.0 vs 1.0.1) and DOC-CAPA-008 (1.0.1 vs 1.1.0); (4) **registry stale** for DOC-CAPA-009 (1.0.1 vs actual 1.0.2); (5) **MAS-pilot side effect**: Capability Index and Dependency Matrix were edited (Power Query rows) without the required version bump — corrected to 1.1.0 with registry sync. Additionally **hardened `validate_aios.py`** with four new checks (C11 registry-version mismatch, C12 header-vs-table mismatch, C13 non-semver version, C14 missing Version Information) so this defect class cannot recur silently.
+- Reason: Owner request to audit and fix everything. The four CI gates verify structure, behavior, links and context size — none compared registry rows against document self-declarations, which is exactly where drift accumulated over ten days of rapid change.
+- Files: `Knowledge_Base/validate_aios.py`, `01_Architecture/AI-OS_Document_Registry.md`, 7 × Execution governance documents, `02_Capability_Layer/00_Governance/05_Capability_Dependency_Matrix.md`, `06_Capability_Index.md`, `AGENTS.md`, `CLAUDE.md`, `Change_Log_day.md`, Working Kits (regenerated)
+- Result: 21 defects fixed in total. The hardened validator immediately surfaced three more governed documents with no Version Information section (AGENTS.md, CLAUDE.md, Change_Log_day.md) — added, with the change log's block placed above the day sections so append-only growth stays valid. Documented exemptions encoded for templates, generated artifacts (Working Kits — the lean kit is deliberately metadata-free) and foreign-schema platform assets (Claude Skill YAML front matter). New checks verified on a broken copy: each of C11/C12/C13/C14 fires correctly. All four gates green: structural 0 flags (81 IDs), behavioral PASS, links PASS, FinOps PASS (+2.8%/+3.0%). Registry → v1.16.0.
 - Status: done

@@ -28,3 +28,16 @@ See `Knowledge_Base/Agents/AGENTS.md` for the full repository-specific instructi
 ## Available custom agents
 
 - `AI_Operation_system` — repository-focused agent for AI-OS governance, documentation review, and autonomous repair tasks.
+
+---
+
+## Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.1.0              |
+| Status         | Active             |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-20         |
+| Created date   | 2026-07-11         |
+| Change Summary | Version Information section added per DOC-ARCH-006 (metadata audit) |
