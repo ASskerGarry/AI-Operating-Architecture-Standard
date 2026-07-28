@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aios-mcp-server"
+version = "1.1.0"
+description = "Read-only MCP server that serves an AI-OS governed documentation deployment (registry, capability and execution modules) to any MCP client on demand."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "AI-OS Architecture" }]
+keywords = ["mcp", "model-context-protocol", "ai-os", "prompt-engineering", "governance", "documentation"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Documentation",
+]
+# No runtime dependencies by design: the server is standard-library only,
+# which keeps its supply-chain surface at zero (see DOC-PLAT-005).
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ASskerGarry/AI-Operating-Architecture-Standard"
+Documentation = "https://github.com/ASskerGarry/AI-Operating-Architecture-Standard/blob/main/04_Platforms/AIOS_MCP_Server.md"
+Repository = "https://github.com/ASskerGarry/AI-Operating-Architecture-Standard"
+
+[project.scripts]
+aios-mcp-server = "aios_mcp_server:main"
+
+# The module is packaged in place from Knowledge_Base/ — there is no second
+# copy of the source in the repository (DP-003 DRY).
+[tool.setuptools]
+package-dir = { "" = "Knowledge_Base" }
+py-modules = ["aios_mcp_server"]

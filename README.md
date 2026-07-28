@@ -1,7 +1,9 @@
+<!-- mcp-name: io.github.asskergarry/ai-operating-architecture-standard -->
+
 # AI-OS — AI Operating Architecture Standard
 
 Document ID: DOC-CORE-005
-Version: 1.3.5
+Version: 1.3.6
 Status: Active
 Layer: Core
 Document Type: README
@@ -46,7 +48,7 @@ The design rules are defined in [`01_Architecture/AI-OS_Design_Principles.md`](0
 AI-OS content is deployed through **Platform Adapters** — no vendor-specific behavior lives in the Core.
 
 - **Claude** (Projects, Claude Code, MCP): see the [Claude Adapter](04_Platforms/Claude_Adapter.md) (`DOC-PLAT-002`) — assembly rule, concept mapping, constraints, and the governed [Prompt Generator Skill](04_Platforms/Claude/prompt-generator.skill.md).
-- **Any MCP client** (Claude Desktop, Claude Code, other MCP hosts): the read-only [AI-OS MCP Server](04_Platforms/AIOS_MCP_Server.md) (`DOC-PLAT-005`) serves the registry and modules as on-demand tools — no static context needed.
+- **Any MCP client** (Claude Desktop, Claude Code, other MCP hosts): the read-only [AI-OS MCP Server](04_Platforms/AIOS_MCP_Server.md) (`DOC-PLAT-005`) serves the registry and modules as on-demand tools — no static context needed. Install it with `uvx aios-mcp-server` (set `AIOS_ROOT` to your deployment), or run it from this clone.
 - **GPT** ([adapter](04_Platforms/GPT_Adapter.md), `DOC-PLAT-006`), **Gemini** ([adapter](04_Platforms/Gemini_Adapter.md), `DOC-PLAT-007`), **GitHub Copilot** ([adapter](04_Platforms/Copilot_Adapter.md), `DOC-PLAT-008`): Draft adapters — complete mappings pending live-platform validation. Overview: [Platform Layer README](04_Platforms/README.md).
 
 Quick start (Claude): assemble `Core_Identity` + `Core_Execution_Engine` + the Capability and Execution modules your task needs, in that order, per the adapter's Assembly Rule — or use a single generated file: [`AI-OS_AI_Working_Kit.md`](AI-OS_AI_Working_Kit.md) (full, with provenance for audit) or [`AI-OS_AI_Working_Kit_lean.md`](AI-OS_AI_Working_Kit_lean.md) (token-efficient, for the model's context window). Both are rebuilt deterministically by `python3 Knowledge_Base/generate_working_kit.py`.
@@ -78,12 +80,12 @@ Compliance is checked automatically at two layers: **structural** — [`Knowledg
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.3.5              |
+| Version        | 1.3.6              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
 | Last Updated   | 2026-07-14         |
 | Created date   | 2026-07-14         |
-| Change Summary | 81 documents; Orchestration Standard now Active (validated by the MAS pilot) |
+| Change Summary | MCP server distribution: uvx install pointer and registry ownership marker |
 
 ---
 

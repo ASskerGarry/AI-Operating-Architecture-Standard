@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.asskergarry/ai-operating-architecture-standard",
+  "title": "AI-OS Documentation Server",
+  "description": "Read-only access to an AI-OS governed documentation deployment: list the document registry, fetch any capability or execution module by ID, and search across official documents — so a model pulls governance content on demand instead of carrying it in context. Standard-library only, no dependencies; paths are sandboxed and there is no write surface.",
+  "version": "1.1.0",
+  "websiteUrl": "https://asskergarry.github.io/AI-Operating-Architecture-Standard/",
+  "repository": {
+    "url": "https://github.com/ASskerGarry/AI-Operating-Architecture-Standard",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "aios-mcp-server",
+      "version": "1.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "AIOS_ROOT",
+          "description": "Absolute path to the AI-OS deployment to serve (a clone of the AI-Operating-Architecture-Standard repository, or your own AI-OS-structured documentation root). If omitted, the server searches upward from the working directory.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
