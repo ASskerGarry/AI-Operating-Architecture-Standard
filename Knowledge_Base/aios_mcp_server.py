@@ -27,8 +27,48 @@ import os
 import re
 import sys
 
-ROOT = os.path.realpath(sys.argv[1] if len(sys.argv) > 1
-                        else os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+REGISTRY_MARKER = os.path.join("01_Architecture", "AI-OS_Document_Registry.md")
+
+
+def _looks_like_aios(path):
+    return os.path.isfile(os.path.join(path, REGISTRY_MARKER))
+
+
+def resolve_root(argv):
+    """Locate the AI-OS deployment to serve.
+
+    Order: explicit argument -> AIOS_ROOT -> the repository this file lives in
+    -> upward search from the working directory (an installed copy run inside
+    a deployment). Installed via pip/uvx the first two are the normal path.
+    """
+    if len(argv) > 1:
+        return os.path.realpath(argv[1])
+    env = os.environ.get("AIOS_ROOT")
+    if env:
+        return os.path.realpath(env)
+    here = os.path.dirname(os.path.abspath(__file__))
+    repo = os.path.realpath(os.path.join(here, ".."))
+    if _looks_like_aios(repo):
+        return repo
+    cur = os.path.realpath(os.getcwd())
+    while True:
+        if _looks_like_aios(cur):
+            return cur
+        parent = os.path.dirname(cur)
+        if parent == cur:
+            break
+        cur = parent
+    sys.stderr.write(
+        "aios-mcp-server: no AI-OS deployment found.\n"
+        "Point it at one, e.g.:\n"
+        "  aios-mcp-server /path/to/AI-Operating-Architecture-Standard\n"
+        "  AIOS_ROOT=/path/to/AI-Operating-Architecture-Standard aios-mcp-server\n"
+        "Get a deployment: git clone "
+        "https://github.com/ASskerGarry/AI-Operating-Architecture-Standard\n")
+    sys.exit(2)
+
+
+ROOT = resolve_root(sys.argv)
 SKIP_PREFIXES = ("Knowledge_Base", "Archive")
 PROTOCOL_VERSION = "2025-06-18"
 SERVER_INFO = {"name": "aios-mcp-server", "version": "1.0.0"}

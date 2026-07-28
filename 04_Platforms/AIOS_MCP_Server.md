@@ -1,7 +1,7 @@
 # AI-OS MCP Server
 
 Document ID: DOC-PLAT-005
-Version: 1.0.0
+Version: 1.1.0
 Status: Active
 Layer: Platform
 Document Type: Platform Asset
@@ -76,6 +76,22 @@ separate review).
 
 Claude Desktop / Claude Code (`.mcp.json` or `claude_desktop_config.json`):
 
+Installed from PyPI:
+
+```json
+{
+  "mcpServers": {
+    "aios": {
+      "command": "uvx",
+      "args": ["aios-mcp-server"],
+      "env": { "AIOS_ROOT": "/path/to/AI-OS" }
+    }
+  }
+}
+```
+
+From a clone:
+
 ```json
 {
   "mcpServers": {
@@ -111,12 +127,12 @@ handoff itself remains out of this server's scope.
 
 | Field          | Value              |
 | -------------- | ------------------ |
-| Version        | 1.0.0              |
+| Version        | 1.1.0              |
 | Status         | Active             |
 | Owner          | AI-OS Architecture |
-| Last Updated   | 2026-07-14         |
+| Last Updated   | 2026-07-20         |
 | Created date   | 2026-07-14         |
-| Change Summary | Initial release: three read-only tools, sandboxed stdio server, container isolation guidance; 9/9 acceptance checks passed |
+| Change Summary | Distribution: PyPI packaging, official MCP registry manifest, flexible document-root resolution |
 
 ---
 
