@@ -1,6 +1,6 @@
 # Execution Blueprint
 
-Version: 1.1
+Version: 1.1.0
 Status: Active
 Document ID: DOC-EXEC-006
 Owner: AI-OS Architecture
@@ -108,3 +108,16 @@ Core Execution Engine
 AI-OS Architectural Principles
 00_Capability_Registry
 00_Execution_Registry
+
+---
+
+# Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.1.0              |
+| Status         | Active             |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-20         |
+| Created date   | 2026-07-10         |
+| Change Summary | Version normalized to semantic versioning; Version Information table added per DOC-ARCH-006 |

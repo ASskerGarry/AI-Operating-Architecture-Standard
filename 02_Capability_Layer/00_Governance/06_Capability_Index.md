@@ -1,6 +1,6 @@
 # Capability Index
 
-Version: 1.0.1
+Version: 1.1.0
 Status: Active
 Document ID: DOC-CAPA-008
 Layer: Capability Layer

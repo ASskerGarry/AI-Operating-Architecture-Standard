@@ -6,7 +6,7 @@ Status: Active
 Layer: Core
 Document Type: Reference
 Owner: AI-OS Architecture
-Last Updated: 2026-07-19
+Last Updated: 2026-07-28
 
 > **GENERATED FILE — do not edit by hand.** This is a rendered copy assembled
 > from the official AI-OS documents (sources prevail on conflict, DP-001).

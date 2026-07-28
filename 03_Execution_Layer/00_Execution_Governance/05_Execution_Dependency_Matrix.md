@@ -1,6 +1,6 @@
 # Execution Dependency Matrix
 
-Version: 1.0
+Version: 1.0.1
 Status: Active
 Document ID: DOC-EXEC-010
 Scope: Execution Layer
@@ -133,3 +133,16 @@ Whenever a dependency changes:
 - Documentation Standards
 - 04_Execution_Lifecycle
 - 03_Execution_Review_Standard
+
+---
+
+# Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.0.1              |
+| Status         | Active             |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-20         |
+| Created date   | 2026-07-10         |
+| Change Summary | Version normalized to semantic versioning; Version Information table added per DOC-ARCH-006 |

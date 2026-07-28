@@ -1,6 +1,6 @@
 # Execution Index
 
-Version: 1.0
+Version: 1.0.1
 Status: Active
 Document ID: DOC-EXEC-011
 Scope: Execution Layer
@@ -185,3 +185,16 @@ The Execution Index SHALL be updated whenever:
 - 04_Execution_Lifecycle
 - 03_Execution_Review_Standard
 - 05_Execution_Dependency_Matrix
+
+---
+
+# Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.0.1              |
+| Status         | Active             |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-20         |
+| Created date   | 2026-07-10         |
+| Change Summary | Version normalized to semantic versioning; Version Information table added per DOC-ARCH-006 |

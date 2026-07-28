@@ -51,7 +51,7 @@ for p in md_files:
         "chars": len(t),
         "text": t,
         "doc_id": get_field(t, "Document ID"),
-        "version": get_field(t, "Version"),
+        "version": (get_field(t, "Version") or "").strip('"\'') or None,
         "status": get_field(t, "Status"),
         "owner": get_field(t, "Owner"),
         "dtype": get_field(t, "Document Type"),
@@ -64,10 +64,27 @@ def add(code, msg): findings.setdefault(code, []).append(msg)
 # Registry doc IDs (parse the Document Registry table)
 registry = next((d for d in docs if "Document_Registry" in d["path"]), None)
 registered_ids, registered_titles = set(), set()
+registered_version = {}   # doc_id -> version string declared by the registry
 if registry:
     for row in re.findall(r"\|\s*(DOC-[A-Z]+-\d+)\s*\|\s*([^|]+)\|", registry["text"]):
         registered_ids.add(row[0].strip())
         registered_titles.add(row[1].strip().lower())
+    # full row parse for the version column (ID | title | layer | category | status | version)
+    for m in re.finditer(r"^\|\s*(DOC-[A-Z]+-\d+)\s*\|[^|]*\|[^|]*\|[^|]*\|\s*\w+\s*\|\s*([\d][\d.]*)\s*\|",
+                         registry["text"], re.M):
+        registered_version[m.group(1)] = m.group(2).strip()
+
+SEMVER = re.compile(r"^\d+\.\d+\.\d+$")
+
+def declared_version(text):
+    """Version value from the document's own Version Information table.
+    Uses the LAST such section so template files, whose earlier blocks are
+    illustrative examples, report their real metadata."""
+    starts = [m.end() for m in re.finditer(r"^#{1,3}\s*(?:\d+\.\s*)?Version Information\s*$", text, re.M)]
+    if not starts:
+        return None
+    m = re.search(r"^\|\s*Version\s*\|\s*([\d][\d.]*)\s*\|", text[starts[-1]:], re.M)
+    return m.group(1).strip() if m else None
 
 for d in docs:
     P = d["path"]
@@ -104,6 +121,36 @@ for d in docs:
         n = len(re.findall(r"\bWorkflow\b", d["text"]))
         add("C10_TERM_WORKFLOW_IN_EXEC", f"{P} ('Workflow' x{n})")
 
+    # --- metadata-consistency checks (added 2026-07-20 after the audit that
+    # found ten registry/document version disagreements the gates missed) ---
+    is_template = "template" in d["name"].lower()
+    hdr_v = (d["version"] or "").strip()
+    doc_v = declared_version(d["text"])
+
+    # C11 registry row disagrees with the document's own header
+    reg_v = registered_version.get(d["doc_id"]) if d["doc_id"] else None
+    if reg_v and hdr_v and reg_v != hdr_v:
+        add("C11_REGISTRY_VERSION_MISMATCH", f"{P} -> registry {reg_v} != header {hdr_v}")
+
+    # C12 header disagrees with the document's own Version Information table
+    if hdr_v and doc_v and hdr_v != doc_v:
+        add("C12_HEADER_VS_TABLE_MISMATCH", f"{P} -> header {hdr_v} != Version Information {doc_v}")
+
+    # C13 version is not semantic (X.Y.Z)
+    if hdr_v and not SEMVER.match(hdr_v):
+        add("C13_NON_SEMVER_VERSION", f"{P} -> '{hdr_v}'")
+
+    # C14 no Version Information section at all. Exempt: templates (their
+    # blocks are placeholders), generated artifacts (the generator owns their
+    # metadata and the lean kit is deliberately metadata-free), and platform
+    # assets whose schema is dictated by the host platform (e.g. a Claude
+    # Skill's YAML front matter) — DOC-ARCH-006 scopes metadata to documents
+    # AI-OS itself authors.
+    is_generated = "GENERATED FILE" in d["text"][:1200]
+    is_foreign_schema = d["text"].startswith("---\nname:")
+    if not (is_template or is_generated or is_foreign_schema) and doc_v is None:
+        add("C14_MISSING_VERSION_INFO", P)
+
 # C11 broken Related Documents references (title not matching any doc h1/name)
 doc_titles = set()
 for d in docs:
@@ -130,7 +177,9 @@ print(f"Scanned {len(docs)} markdown files under {os.path.abspath(ROOT)}")
 print("="*70)
 order = ["C1_MISSING_DOC_ID","C2_EMPTY_VERSION","C3_EMPTY_STATUS","C4_INVALID_STATUS",
          "C4b_NONCANON_STATUS","C5_TYPO_STANDART","C6_OWNER_INCONSISTENT",
-         "C7_ID_NOT_IN_REGISTRY","C8_STUB","C9_FILENAME_SPACES","C10_TERM_WORKFLOW_IN_EXEC"]
+         "C7_ID_NOT_IN_REGISTRY","C8_STUB","C9_FILENAME_SPACES","C10_TERM_WORKFLOW_IN_EXEC",
+         "C11_REGISTRY_VERSION_MISMATCH","C12_HEADER_VS_TABLE_MISMATCH",
+         "C13_NON_SEMVER_VERSION","C14_MISSING_VERSION_INFO"]
 total = 0
 for code in order:
     items = findings.get(code, [])

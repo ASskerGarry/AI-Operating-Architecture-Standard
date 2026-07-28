@@ -1,6 +1,6 @@
 # Execution Lifecycle
 
-Version: 1.0
+Version: 1.0.1
 Status: Active
 Document ID: DOC-EXEC-009
 Scope: Execution Layer
@@ -151,3 +151,16 @@ Execution Modules SHALL NOT:
 - 01_Execution_Blueprint
 - Documentation Standards
 - AI-OS Architectural Principles
+
+---
+
+# Version Information
+
+| Field          | Value              |
+| -------------- | ------------------ |
+| Version        | 1.0.1              |
+| Status         | Active             |
+| Owner          | AI-OS Architecture |
+| Last Updated   | 2026-07-20         |
+| Created date   | 2026-07-10         |
+| Change Summary | Version normalized to semantic versioning; Version Information table added per DOC-ARCH-006 |

@@ -1,5 +1,5 @@
 # Capability Dependency Matrix
-Version: 1.0.1
+Version: 1.1.0
 Status: Active
 Document ID: DOC-CAPA-007
 Layer: Capability Layer
@@ -135,7 +135,7 @@ Modules without dependency metadata shall not be considered production-ready.
 # 12. Version Information
 | Field | Value |
 |------|------|
-| Version | 1.0.1 |
+| Version | 1.1.0 |
 | Status | Active |
 | Current Stage | Active |
 | Last Updated | 2026-07-10 |
