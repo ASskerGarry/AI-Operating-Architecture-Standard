@@ -446,3 +446,13 @@ Owner: AI-OS Architecture
 - Files: `server.json` (new), `pyproject.toml` (new), `Knowledge_Base/aios_mcp_server.py`, `Knowledge_Base/mcp_publication/submission.md` (new), `04_Platforms/AIOS_MCP_Server.md`, `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: Manifest validated against the official schema fetched from modelcontextprotocol.io (required fields name/description/version and package registryType/identifier/transport all present). Wheel builds cleanly and contains exactly one module — no duplicated source. All four root-resolution modes verified end-to-end, including the installed-outside-the-repo case, which exits with the actionable message instead of serving nothing. Registry v1.16.1; DOC-PLAT-005 → 1.1.0; README → 1.3.6. Remaining work is owner-side and cannot be automated: PyPI account + upload, then `mcp-publisher login github && publish`.
 - Status: done
+
+## 2026-11-24
+
+### 21:00 — Assistant — Phase 3 architecture discovery and proposal (Draft)
+
+- Change: Start Phase 3 System Architecture & Technology Selection. Inspect current repository assets, CI evidence, product scope, deployment constraints, and AI-OS governance; prepare a non-binding architecture proposal and decision register on a dedicated branch.
+- Reason: Phase 2 owner decisions define the product boundary; implementation requires evidence-based choices for application architecture, content synchronization, authentication/private features, AI Chat/RAG, hosting, privacy, offline/PWA feasibility, and operational controls.
+- Files: planned `Product/AI-OS_System_Architecture_Proposal_DRAFT_0.1.0.md`, `Product/AI-OS_Technology_Evaluation_DRAFT_0.1.0.md`, `Product/AI-OS_Architecture_Decision_Register_DRAFT_0.1.0.md`, `Change_Log_day.md`.
+- Status: in-progress
+- Constraints: No implementation, main-branch changes, merge, deployment, or promotion to an official AI-OS standard. Keep the existing MCP server read-only and stdio-only; public product API, if required, is a separately designed service.
