@@ -1,7 +1,7 @@
 # AI-OS — Product Requirements & MVP Scope
 
 Document ID: TBD — assign only after approval and registry reservation  
-Version: 0.1.0  
+Version: 0.1.1  
 Status: Draft  
 Layer: Product Specification (proposed; must map to a canonical AI-OS layer before registration)  
 Document Type: Specification (proposed)  
@@ -12,13 +12,13 @@ Last Updated: 2026-11-24
 
 ## 1. Purpose
 
-Define the product requirements and the first deliverable scope for turning the existing AI-OS repository into a digital product with a public website and a mobile-friendly companion experience.
+Define the product requirements and the first deliverable scope for turning the existing AI-OS repository into a bilingual digital product: public documentation portal, authenticated private features, mobile-first web experience, and AI Chat capability.
 
 This document is a Phase 2 working specification. It does not authorize implementation, changes to canonical AI-OS standards, deployments, publication, or mobile store submissions.
 
 ## 2. Product Vision
 
-Provide a reliable, accessible way for people to understand AI-OS, navigate its architecture, discover official documents, and read the authoritative content with clear provenance and version information.
+Provide a reliable, accessible bilingual portal for public AI-OS adopters and internal/project users to understand AI-OS, navigate its architecture, discover/read authoritative documents, and use an AI Chat assistant grounded in repository content. The product combines a public portal with authenticated private features.
 
 The repository remains the canonical source of truth. The product is a presentation and access layer, not a replacement governance system.
 
@@ -70,7 +70,7 @@ A visitor searches by Document ID or title, optionally filters by layer/status, 
 A visitor reads a document and can identify its ID, version, status, owner, source repository path, and last-updated information where available.
 
 ### UJ-05 — Use on mobile
-A visitor opens the same public portal on a phone and can browse, search, and read documents with a touch-friendly responsive interface.
+A visitor opens the same Web product on a phone and can browse, search, and read documents with a touch-friendly responsive interface. Native mobile apps are a later phase.
 
 ## 6. MVP Scope
 
@@ -91,7 +91,7 @@ A visitor opens the same public portal on a phone and can browse, search, and re
 
 ### 6.2 Mobile Companion MVP — Proposed scope
 
-For the first product release, the mobile experience SHALL be the responsive web portal / PWA candidate rather than a separately released native Android/iOS app.
+The first release SHALL be a responsive, mobile-first Web experience. Native Android/iOS applications are planned for a later phase, subject to architecture and product validation.
 
 Required mobile journeys:
 - Browse layers.
@@ -100,9 +100,22 @@ Required mobile journeys:
 - View version, status, Document ID, and source link.
 - Navigate back to layer / search results.
 
-PWA installation and offline caching are candidates, not confirmed requirements. Their value and data-staleness risks must be assessed in Phase 3.
+PWA installation and Offline Mode are open research items for Phase 3; they are not commitments.
 
-### 6.3 Shared Content Foundation — Required
+### 6.3 Document Reading — Both Modes Required
+
+- Built-in Markdown reader/rendering for a seamless portal experience.
+- Direct link to the canonical GitHub source for verification or alternate reading.
+- Source metadata and provenance remain visible in both modes.
+- Rendered content must safely handle untrusted Markdown/HTML.
+
+### 6.4 Public Portal and Private Features
+
+- Public, anonymous access to core portal navigation, catalogue, document reading, and public AI-OS information.
+- Authenticated private features are in scope for MVP; feature set, roles, data storage, session management, and authorization boundaries SHALL be designed in Phase 3.
+- Public content and private user data must remain separated. Private functionality must not expose private-by-reference documents or user data to anonymous visitors.
+
+### 6.5 Shared Content Foundation — Required
 
 - Repository remains the canonical source.
 - Registry metadata and document bodies are not manually duplicated as independent authoritative content.
@@ -115,8 +128,9 @@ PWA installation and offline caching are candidates, not confirmed requirements.
 
 - Native Android application.
 - Native iOS application.
-- Offline-first document library and synchronization.
-- Authenticated workspaces or saved reading lists.
+- Offline-first document library and synchronization (pending Phase 3 research and feasibility decision).
+- Native Android and iOS apps.
+- Expanded authenticated workspaces or saved reading lists beyond the MVP private-feature baseline.
 - User annotations, bookmarks, and personal collections.
 - Advanced full-text search with relevance ranking.
 - API access for external consumers.
@@ -129,8 +143,8 @@ Each candidate requires evidence of user value, architecture review, security as
 
 Unless a later product decision justifies them, MVP excludes:
 
-- AI chatbot or AI-generated answers over the Knowledge Base.
-- User accounts, social login, and cloud profiles.
+
+
 - Subscriptions, payments, and monetization.
 - Collaboration, comments, editing, or user-generated documents.
 - Public write API or repository write access.
@@ -154,8 +168,13 @@ Unless a later product decision justifies them, MVP excludes:
 | FR-09 | Distinguish lifecycle status | Must | Draft and Active are visually distinguishable and never conflated. |
 | FR-10 | Responsive navigation and reading | Must | Primary journeys work on phone, tablet, and desktop viewports. |
 | FR-11 | Provide UI states | Must | Loading, empty, not-found, and error states are defined and usable. |
-| FR-12 | Install as PWA | Could | Only accepted if Phase 3 confirms manifest, service-worker, update, and stale-content strategy. |
-| FR-13 | Offline reading | Later | Only accepted after cache invalidation, version freshness, and storage behavior are specified. |
+| FR-12 | Install as PWA | Research | Phase 3 evaluates installability, manifest/service worker, update, and stale-content strategy. |
+| FR-13 | Offline Mode | Research | Phase 3 evaluates scope, cache invalidation, freshness, storage, privacy, and limitations. |
+| FR-14 | Bilingual UI and documentation navigation | Must | English and Ukrainian are available at launch; untranslated content is clearly labelled. |
+| FR-15 | Markdown reader and GitHub source link | Must | Content renders safely and includes canonical source link. |
+| FR-16 | Public portal | Must | Core portal/catalogue/document access is available without authentication. |
+| FR-17 | Private features | Must | Private features require authentication and authorization; details are defined in Phase 3. |
+| FR-18 | AI Chat | Must | Answers are grounded in retrieved sources, cite documents, disclose insufficient evidence, and cannot modify repository content. |
 
 ## 10. Non-Functional Requirements
 
@@ -163,10 +182,10 @@ Unless a later product decision justifies them, MVP excludes:
 The product MUST preserve Document ID, title, version, lifecycle status, and canonical repository source. It MUST NOT silently rewrite official source content.
 
 ### NFR-02 — Security
-The product MUST default to read-only access. It MUST validate source paths, avoid path traversal, safely render untrusted Markdown/HTML, and keep secrets out of client code. Any future write capability requires a separate authorization design and explicit approval.
+Public portal functions MUST be read-only. Private features MUST use authentication/server-side authorization, secure sessions, and least privilege. AI Chat MUST be retrieval-grounded, resistant to prompt injection from source content, and separated from write-capable tools. Source paths must be validated, path traversal prevented, Markdown/HTML safely rendered, and secrets kept out of client code.
 
 ### NFR-03 — Privacy
-The MVP SHOULD avoid collecting personal data. No account or tracking requirement is assumed. Any analytics must be privacy-reviewed and documented before activation.
+Because private features are in scope, the MVP will collect the minimum data required for authentication and those features. Data retention, deletion, privacy notices, analytics, and access controls must be defined in Phase 3 before implementation.
 
 ### NFR-04 — Performance
 Core navigation, search, and document reading SHOULD remain usable on typical mobile connections. Numeric performance budgets are to be set in Phase 3 after a deployment model is selected.
@@ -181,7 +200,7 @@ Product UI, document content ingestion, and source governance MUST remain separa
 The service SHOULD provide clear failure states when the repository or content source is unavailable. Availability targets and recovery objectives are TBD in Phase 3.
 
 ### NFR-08 — Freshness
-The product MUST display source/version information and define an update mechanism. A stale cache MUST NOT present an older version as current without an explicit indication.
+The product MUST refresh derived catalogue/index/content after each merge to the canonical source branch. It MUST display source/version information and commit provenance where feasible. Stale cache must be identified; Phase 3 must design and test merge-triggered update, failure, and retry behavior.
 
 ### NFR-09 — Portability
 The content model and product logic SHOULD avoid unnecessary vendor lock-in and preserve the platform-agnostic AI-OS core.
@@ -221,32 +240,42 @@ The following is a proposed application read model, not a replacement for the of
 
 ## 12. Assumptions and Constraints
 
-- Assumption A-01: The initial product is a public read-only portal.
+- Assumption A-01: The product has a public read-only portal plus authenticated private features.
 - Assumption A-02: A single responsive application can serve desktop and mobile MVP needs.
 - Assumption A-03: The existing repository and current GitHub Pages deployment path may be reusable, subject to Phase 3 validation.
 - Constraint C-01: Current MCP server remains stdio and read-only.
 - Constraint C-02: GPT, Gemini, and Copilot adapters are Draft in the inspected source.
 - Constraint C-03: Native Android/iOS implementation is not justified by repository evidence alone.
-- Constraint C-04: Product scope must not introduce chat, accounts, billing, collaboration, or write access without a separate approved requirement.
+- Constraint C-04: AI Chat and authenticated private features are approved for MVP scope, but implementation details and authorization boundaries remain subject to Phase 3 design. Billing, collaboration, and repository write access remain out of scope unless separately approved.
 
-## 13. Open Product Decisions
+## 13. Product Decisions — Owner Confirmed
 
-1. Is the primary audience public AI-OS adopters, internal project users, or both?
-2. Which source languages must the portal support at launch: English only, Ukrainian only, or both?
-3. Should all seven layers be public, including Memory and platform-related operational documents?
-4. Should Draft documents be visible to all visitors, clearly labelled, or hidden by default?
-5. Is the first launch strictly public and anonymous, with no user accounts?
-6. Is PWA installation required for MVP, or is responsive mobile web sufficient?
-7. Is offline reading a real launch requirement or a later enhancement?
-8. Should document reading render Markdown from source or link directly to GitHub for the first iteration?
-9. What update freshness is expected after a change is merged to the canonical branch?
-10. Is GitHub Pages the intended initial host, or should a separate product host be evaluated?
+1. **Target audience:** Both public adopters/developers and internal/project users.
+2. **Launch languages:** English and Ukrainian.
+3. **Draft visibility:** Draft documents are visible to everyone and must carry a prominent Draft label.
+4. **Mobile strategy:** Web first; Native Android/iOS later.
+5. **Offline Mode:** Research required in Phase 3; not yet committed.
+6. **Document reading:** Both built-in Markdown reader and direct canonical GitHub source link.
+7. **Content freshness:** Refresh after every merge to the canonical source branch.
+8. **Hosting:** Compare options in Phase 3; no hosting choice made yet.
+9. **Access model:** Public portal plus authenticated private features.
+10. **AI Chat:** Included in MVP from the start.
+
+### Phase 3 Design Questions (not product-decision blockers)
+
+- Define private feature set, user roles, identity/authentication provider, authorization model, session security, and data minimization.
+- Define AI Chat retrieval corpus, indexing, citations, fallback/abstention, prompt-injection defenses, privacy boundary, model/provider strategy, cost controls, and evaluation suite.
+- Decide whether translated document bodies are maintained in-source or translated with review; do not silently claim full translation coverage.
+- Research Offline Mode/PWA and establish freshness, invalidation, and storage constraints.
+- Compare hosting, deployment, and merge-triggered synchronization options.
 
 ## 14. Phase 2 Exit Criteria
 
 Phase 2 is complete only when:
 - Target users and user journeys are reviewed.
-- Website and mobile scope are separately defined.
+- Website/Web-first mobile scope and Native-later strategy are defined.
+- Public portal versus authenticated private features is defined.
+- AI Chat is included with grounding, citation, and safety requirements.
 - MVP, later-stage candidates, and exclusions are explicit.
 - Functional requirements have testable acceptance criteria.
 - Non-functional requirements and open decisions are recorded.
@@ -261,12 +290,12 @@ No implementation is authorized by this draft.
 
 | Field | Value |
 |---|---|
-| Version | 0.1.0 |
+| Version | 0.1.1 |
 | Status | Draft |
 | Owner | AI-OS Product |
 | Last Updated | 2026-11-24 |
 | Created date | 2026-11-24 |
-| Change Summary | Initial Phase 2 working specification derived from the read-only repository audit |
+| Change Summary | Updated MVP scope with owner-confirmed decisions: bilingual, public Draft visibility, Web-first/Native-later, offline research, dual reading modes, merge-triggered freshness, public/private access, and AI Chat |
 
 ---
 
