@@ -446,3 +446,13 @@ Owner: AI-OS Architecture
 - Files: `server.json` (new), `pyproject.toml` (new), `Knowledge_Base/aios_mcp_server.py`, `Knowledge_Base/mcp_publication/submission.md` (new), `04_Platforms/AIOS_MCP_Server.md`, `README.md`, `01_Architecture/AI-OS_Document_Registry.md`, `Change_Log_day.md`
 - Result: Manifest validated against the official schema fetched from modelcontextprotocol.io (required fields name/description/version and package registryType/identifier/transport all present). Wheel builds cleanly and contains exactly one module — no duplicated source. All four root-resolution modes verified end-to-end, including the installed-outside-the-repo case, which exits with the actionable message instead of serving nothing. Registry v1.16.1; DOC-PLAT-005 → 1.1.0; README → 1.3.6. Remaining work is owner-side and cannot be automated: PyPI account + upload, then `mcp-publisher login github && publish`.
 - Status: done
+
+## 2026-11-24
+
+### Decision update — Assistant — Phase 2 product scope
+
+- Change: Recorded owner decisions for audience, bilingual launch, public Draft visibility, Web-first/Native-later, offline research, dual document-reading modes, merge-triggered freshness, hosting comparison, public portal with private features, and AI Chat in MVP.
+- Reason: Resolve Phase 2 product decisions and update the requirements draft and PR #11 to reflect approved direction.
+- Files: `Product/AI-OS_Product_Requirements_MVP_Scope_DRAFT_0.1.0.md`, PR #11 metadata/discussion.
+- Status: in-progress
+- Note: This entry is added retroactively in the same update sequence because the initial draft/PR was created before the log-first requirement was followed.
